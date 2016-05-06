@@ -1,0 +1,537 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMenu.master.cs" Inherits="PIEEDRAWEB.SiteMenu" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    
+    <meta charset="utf-8">
+     <title>Bioepoc Web</title>
+        <meta name="description" content="">
+		<meta name="author" content="">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<%= Page.ResolveClientUrl("~/Content/css/bootstrap.min.css") %>">
+		<link rel="stylesheet" type="text/css" media="screen" href="<%= Page.ResolveClientUrl("~/Content/css/font-awesome.min.css") %>">
+
+		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<%= Page.ResolveClientUrl("~/Content/css/smartadmin-production-plugins.min.css") %>">
+		<link rel="stylesheet" type="text/css" media="screen" href="<%= Page.ResolveClientUrl("~/Content/css/smartadmin-production.min.css") %>">
+		<link rel="stylesheet" type="text/css" media="screen" href="<%= Page.ResolveClientUrl("~/Content/css/smartadmin-skins.min.css") %>">
+
+		<!-- SmartAdmin RTL Support  -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<%= Page.ResolveClientUrl("~/Content/css/smartadmin-rtl.min.css") %>">
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="<%= Page.ResolveClientUrl("~/Content/css/demo.min.css") %>">
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="<%= Page.ResolveClientUrl("~/img/favicon/iner_Ok.png") %>" type="image/x-icon">
+		<link rel="icon" href="<%= Page.ResolveClientUrl("~/img/favicon/iner_Ok.png") %>" type="image/x-icon">
+
+		<!-- GOOGLE FONT -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="<%= Page.ResolveClientUrl("~/img/splash/sptouch-icon-iphone.png") %>">
+		<link rel="apple-touch-icon" sizes="76x76" href="<%= Page.ResolveClientUrl("~/img/splash/touch-icon-ipad.png") %>">
+		<link rel="apple-touch-icon" sizes="120x120" href="<%= Page.ResolveClientUrl("~/img/splash/touch-icon-iphone-retina.png") %>">
+		<link rel="apple-touch-icon" sizes="152x152" href="<%= Page.ResolveClientUrl("~/Connt/img/splash/touch-icon-ipad-retina.png") %>">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="<%= Page.ResolveClientUrl("~/img/splash/ipad-landscape.png") %>" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="<%= Page.ResolveClientUrl("~/img/splash/ipad-portrait.png") %>" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="<%= Page.ResolveClientUrl("~/img/splash/iphone.png") %>" media="screen and (max-device-width: 320px)">
+        
+        <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <script type="text/javascript">
+        javascript:window.history.forward(1); //Esto es para cuando le pulse al botón de Atrás
+    </script>
+    
+    <script type="text/javascript">
+            onload= function() {
+            document.getElementById('dir').value = self.location.href.match(/\/([^/]+)$/)[1];
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>      
+      
+        
+        <header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<span id="logo"> <img src="<%= Page.ResolveClientUrl("../../img/iner_Ok.png") %>" alt="INER" style="width:90px;height:30px"> </span>
+				<!-- END LOGO PLACEHOLDER -->
+
+				<!-- Note: The activity badge color changes when clicked and resets the number to 0
+				Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
+				<span id="activity" class="activity-dropdown"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
+
+				<!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
+				<div class="ajax-dropdown">
+
+					<!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
+					<div class="btn-group btn-group-justified" data-toggle="buttons">
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="<%= Page.ResolveClientUrl("~/Content/ajax/notify/mail.html") %>">
+							Msgs (14) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="<%= Page.ResolveClientUrl("~/Content/ajax/notify/notifications.html") %>">
+							notify (3) </label>
+						<label class="btn btn-default">
+							<input type="radio" name="activity" id="<%= Page.ResolveClientUrl("~/Content/ajax/notify/tasks.html") %>">
+							Tasks (4) </label>
+					</div>
+
+					<!-- notification content -->
+					<div class="ajax-notifications custom-scroll">
+
+						<div class="alert alert-transparent">
+							<h4>Click a button to show messages here</h4>
+							This blank page message helps protect your privacy, or you can show the first message here automatically.
+						</div>
+
+						<i class="fa fa-lock fa-4x fa-border"></i>
+
+					</div>
+					<!-- end notification content -->
+
+					<!-- footer: refresh area -->
+					<span> Last updated on: 12/12/2013 9:43AM
+						<button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
+							<i class="fa fa-refresh"></i>
+						</button> 
+					</span>
+					<!-- end footer -->
+
+				</div>
+				<!-- END AJAX-DROPDOWN -->
+			</div>
+
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+			    
+                <!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+
+				<!-- #MOBILE -->
+         
+				<!-- logout button -->
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a href="../Views/Account/LogOutMVC.aspx" title="Sign Out" data-action="userLogout" data-logout-msg="Por su seguridad despues de cerrar la sesión cierre el navegador abierto."><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+                
+				<!-- end logout button -->
+
+				<!-- input: search field -->
+				<form class="header-search pull-right">
+					<i class="txt-color-blueLight hidden-mobile"><strong>Usuario: <asp:Label ID="LabelBienvenido" runat="server" Text="Label"></asp:Label></strong> </i>
+				</form>
+				<!-- end input: search field -->
+
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+			</div>
+			<!-- end pulled right: nav area -->
+            
+
+		</header>
+        <!-- END HEADER -->
+        
+        
+        <!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+					
+                    <%--<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+                        <img src="<%= Page.ResolveClientUrl("~/Content/img/avatars/sunny.png") %>" alt="me" class="online" />
+                        <span>john.doe 
+                        </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>--%> 
+					
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<!-- NAVIGATION : This navigation is also responsive-->
+			<nav>
+				<ul>
+				    <li id="MenuHigiene" runat="server">
+						<a href="#"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Espirometrías</span></a>
+					</li>					
+					<li id="MenuInformes" runat="server">
+						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">EPOC</span></a>
+						<ul>
+							<li>
+								<a href="#">Normal Tables</a>
+							</li>
+							<li>
+								<a href="#">Data Tables <span class="badge inbox-badge bg-color-greenLight">v1.10</span></a>
+							</li>
+							<li>
+								<a href="#">Jquery Grid</a>
+							</li>
+						</ul>
+					</li>
+                    <li id="MenuReportes" runat="server">
+						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Reportes</span></a>
+						<ul>
+							<li>
+								<a href="#">Flot Chart</a>
+							</li>
+							<li>
+								<a href="#">Morris Charts</a>
+							</li>
+							<li>
+								<a href="#">Inline Charts</a>
+							</li>
+							<li>
+								<a href="#">Dygraphs</a>
+							</li>
+							<li>
+								<a href="#">Chart.js <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>
+						</ul>
+					</li>
+					<li id="MenuExamMedic" runat="server">
+						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Admin Usuarios</span></a>
+						<ul>
+							<li>
+								<a href="ExamenGencshtml.aspx#wid-id-0">Ficha General</a>
+							</li>
+							<li>
+								<a href="ExamenGencshtml.aspx#wid-id-1">Antecedentes</a>
+							</li>
+							<li>
+								<a href="ExamenGencshtml.aspx#wid-id-2">Antecedentes Laborales</a>
+							</li>
+							<li>
+								<a href="ExamenGencshtml.aspx#wid-id-3">Int Aparatos y Sistemas</a>
+							</li>
+							<li>
+								<a href="ExamenGencshtml.aspx#wid-id-4">Exploración Física</a>
+							</li>
+							<li>
+								<a href="ExamenGencshtml.aspx#wid-id-5">Aux. Diagnóstico</a>
+							</li>
+							<li>
+								<a href="ExamenGencshtml.aspx#wid-id-6">Conclusiones</a>
+							</li>
+							<%--<li>
+								<a href="#">Dropzone </a>
+							</li>
+							<li>
+								<a href="#">Image Cropping <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+							</li>--%>
+						</ul>
+					</li>                    
+				</ul>
+			</nav>
+			<span class="minifyme" data-action="minifyMenu"> 
+				<i class="fa fa-arrow-circle-left hit"></i> 
+			</span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+        
+        
+        <!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- RIBBON -->
+			<div id="ribbon">
+
+				<span class="ribbon-button-alignment"> 
+					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Al dar Click! Limpia la página actual." data-html="true">
+						<i class="fa fa-refresh"></i>
+					</span> 
+				</span>
+
+				<!-- breadcrumb -->
+				<ol class="breadcrumb">
+					<li>Navegando en</li><li><input type="text" id="dir" value="" style="border: none; background-color: #474544" /></li>
+				</ol>
+				<!-- end breadcrumb -->
+
+				<!-- You can also add more buttons to the
+				ribbon for further usability
+
+				Example below:
+
+				<span class="ribbon-button-alignment pull-right">
+				<span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
+				<span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-plus"></i> Add</span>
+				<span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
+				</span> -->
+                
+			</div>
+			<!-- END RIBBON -->
+
+		</div>
+		<!-- END MAIN PANEL -->
+        
+        <!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/pace/pace.min.js") %>"></script>
+
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="<%= Page.ResolveClientUrl("~/Scripts/js/libs/jquery-2.1.1.min.js") %>"><\/script>');
+			}
+		</script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="<%= Page.ResolveClientUrl("~/Scripts/js/libs/jquery-ui-1.10.3.min.js") %>"><\/script>');
+			}
+		</script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/app.config.js") %>"></script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js") %>"></script> 
+
+		<!-- BOOTSTRAP JS -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/bootstrap/bootstrap.min.js") %>"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/notification/SmartNotification.min.js") %>"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/smartwidgets/jarvis.widget.min.js") %>"></script>
+
+		<!-- EASY PIE CHARTS -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js") %>"></script>
+
+		<!-- SPARKLINES -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/sparkline/jquery.sparkline.min.js") %>"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/jquery-validate/jquery.validate.min.js") %>"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/masked-input/jquery.maskedinput.min.js") %>"></script>
+
+		<!-- JQUERY SELECT2 INPUT -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/select2/select2.min.js") %>"></script>
+
+		<!-- JQUERY UI + Bootstrap Slider -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/bootstrap-slider/bootstrap-slider.min.js") %>"></script>
+
+		<!-- browser msie issue fix -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/msie-fix/jquery.mb.browser.min.js") %>"></script>
+
+		<!-- FastClick: For mobile devices -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/fastclick/fastclick.min.js") %>"></script>
+
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+
+		<!-- MAIN APP JS FILE -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/app.min.js") %>"></script>
+
+		<!-- SmartChat UI : plugin -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/smart-chat-ui/smart.chat.ui.min.js") %>"></script>
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/smart-chat-ui/smart.chat.manager.min.js") %>"></script>
+		
+		<!-- PAGE RELATED PLUGIN(S) -->
+		
+		<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip -->
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/flot/jquery.flot.cust.min.js") %>"></script>
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/flot/jquery.flot.resize.min.js") %>"></script>
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/flot/jquery.flot.time.min.js") %>"></script>
+		<script src="<%= Page.ResolveClientUrl("~/Scripts/js/plugin/flot/jquery.flot.tooltip.min.js") %>"></script>
+
+		<script>
+			$(document).ready(function() {
+
+				// DO NOT REMOVE : GLOBAL FUNCTIONS!
+				pageSetUp();
+
+				/*
+				 * PAGE RELATED SCRIPTS
+				 */
+
+				$(".js-status-update a").click(function() {
+					var selText = $(this).text();
+					var $this = $(this);
+					$this.parents('.btn-group').find('.dropdown-toggle').html(selText + ' <span class="caret"></span>');
+					$this.parents('.dropdown-menu').find('li').removeClass('active');
+					$this.parent().addClass('active');
+				});
+
+				/*
+				* TODO: add a way to add more todo's to list
+				*/
+
+				// initialize sortable
+				$(function() {
+					$("#sortable1, #sortable2").sortable({
+						handle : '.handle',
+						connectWith : ".todo",
+						update : countTasks
+					}).disableSelection();
+				});
+
+				// check and uncheck
+			    $('.todo .checkbox > input[type="checkbox"]').click(function() {
+			        var $this = $(this).parent().parent().parent();
+
+			        if ($(this).prop('checked')) {
+			            $this.addClass("complete");
+
+			            // remove this if you want to undo a check list once checked
+			            //$(this).attr("disabled", true);
+			            $(this).parent().hide();
+
+			            // once clicked - add class, copy to memory then remove and add to sortable3
+			            $this.slideUp(500, function() {
+			                $this.clone().prependTo("#sortable3").effect("highlight", {}, 800);
+			                $this.remove();
+			                countTasks();
+			            });
+			        } else {
+			            // insert undo code here...
+			        }
+
+			    });
+				// count tasks
+				function countTasks() {
+
+					$('.todo-group-title').each(function() {
+						var $this = $(this);
+						$this.find(".num-of-tasks").text($this.next().find("li").size());
+					});
+
+				}
+				
+
+				/* hide default buttons */
+				$('.fc-header-right, .fc-header-center').hide();
+
+			});
+
+		</script>
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+        
+        <!-- PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">INER © 2016</span>
+				</div>
+				<div class="col-xs-6 col-sm-6 text-right hidden-xs">
+					<div class="txt-color-white inline-block">
+						<i class="txt-color-blueLight hidden-mobile">Última conexión<i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
+						<div class="btn-group dropup">
+							<button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
+								<i class="fa fa-link"></i> <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right text-left">
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Download Progress</p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-success" style="width: 50%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Server Load</p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-success" style="width: 20%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Memory Load <span class="text-danger">*critical*</span></p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<button class="btn btn-block btn-default">refresh</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE FOOTER -->
+        
+         <div class="container body-content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
