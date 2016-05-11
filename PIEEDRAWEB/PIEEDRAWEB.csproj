@@ -833,6 +833,7 @@
     <Content Include="Views\Account\LogInMVC.aspx" />
     <Content Include="Views\Account\LogOutMVC.aspx" />
     <Content Include="Views\Account\OpenAuthProviders.ascx" />
+    <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Account\register.html" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -961,10 +962,18 @@
     <Compile Include="Views\Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="img\realestate\thumbs\" />
+    <Folder Include="Views\EPOC\" />
     <Folder Include="Views\Espirometrias\" />
   </ItemGroup>
   <ItemGroup>

@@ -90,7 +90,7 @@
 
 		        <span id="extr-page-header-space">
                  <span class="hidden-mobile hiddex-xs">¿No es usuario del sistema?</span> 
-                    <a href="register.html" class="btn btn-danger">Solicite una cuenta</a> 
+                    <a href="Register.aspx" class="btn btn-danger">Solicite una cuenta</a> 
                 </span>
 
 		    </header>
