@@ -156,6 +156,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ajax\email-compose.html" />
+    <Content Include="Content\ajax\email-opened.html" />
+    <Content Include="Content\ajax\email-reply.html" />
+    <Content Include="Content\ajax\email-template.html" />
+    <Content Include="Content\ajax\email\email-list.html" />
+    <Content Include="Content\ajax\modal-content\modal-voicecommand.html" />
+    <Content Include="Content\ajax\notify\mail.html" />
+    <Content Include="Content\ajax\notify\notifications.html" />
+    <Content Include="Content\ajax\notify\tasks.html" />
+    <Content Include="Content\ajax\website-template.html" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\demo.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
@@ -820,6 +830,7 @@
     <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.AutenticaUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Content\ajax\demowidget.php" />
     <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA.disco" />
     <None Include="Service References\SRWSPIEEDRA\configuration91.svcinfo" />
     <None Include="Service References\SRWSPIEEDRA\configuration.svcinfo" />
