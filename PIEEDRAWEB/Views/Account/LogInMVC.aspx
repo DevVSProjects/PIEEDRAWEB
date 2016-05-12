@@ -177,7 +177,7 @@
 									    <button type="submit" class="btn btn-primary"  OnClick="Alerta()">
 										    Ingresar
 									    </button>
-                                        <button type="submit" class="btn btn-primary" onclick="CleanField()" >
+                                        <button type="submit" class="btn btn-primary" OnClick="CleanField()" >
 										    Limpiar</button>
 									    <button type="submit" class="hidden"  id="eg1" runat="server" ></button>
 

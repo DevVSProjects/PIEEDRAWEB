@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="PIEEDRAWEB.Views.Account.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="PIEEDRAWEB.Views.Account.Register"  EnableEventValidation = "true"%>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en-us" id="extr-page">
 <head>
 		<meta charset="utf-8"/>
 		<title>Bioepoc Web</title>
@@ -23,10 +23,6 @@
 
 		<!-- SmartAdmin RTL Support -->
 		<link rel="stylesheet" type="text/css" media="screen" href="../../Content/css/smartadmin-rtl.min.css"/> 
-
-		<!-- We recommend you use "your_style.css" to override SmartAdmin
-		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
 
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 		<link rel="stylesheet" type="text/css" media="screen" href="../../Content/css/demo.min.css"/>
@@ -54,13 +50,23 @@
 		<link rel="apple-touch-startup-image" href="../../img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)"/>
 		<link rel="apple-touch-startup-image" href="../../img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)"/>
 		<link rel="apple-touch-startup-image" href="../../img/splash/iphone.png" media="screen and (max-device-width: 320px)"/>
-        
-       
 
+        <script language="javascript" type="text/javascript">
+
+             function EntraCB() {
+                 debugger;
+               
+                 alert('que onda front');
+                return true;
+             }        
+            
+        </script>
+    
+       
 	</head>
 
 <body class="animated fadeInDown">
-
+    
 	
 		<header id="header">
 			<!--<span id="logo"></span>-->
@@ -114,86 +120,114 @@
 								</p>
 							</div>
 						</div>
-
 					</div>
+
 					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 						<div class="well no-padding">
 
-							<form action="#" id="smart-form-register" class="smart-form client-form">
+							<form id="smart-form-register" class="smart-form client-form">
 								<header>
-									Registrate*
+									Regístrate*
 								</header>
 
-								<fieldset>
+								<fieldset>                                   
 									<section>
 										<label class="input"> <i class="icon-append fa fa-user"></i>
-											<input type="text" name="username" placeholder="Usuario">
+											<input type="text" name="username" placeholder="Usuario" id="IpUsuario" runat="server">
 											<b class="tooltip tooltip-bottom-right">Necesario para registrarte</b> </label>
+									</section>									
+
+									<section>
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<input type="password" name="password" placeholder="Password" id="IpPassword" runat="server">
+											<b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> </label>
 									</section>
 
 									<section>
+										<label class="input"> <i class="icon-append fa fa-lock"></i>
+											<input type="password" name="passwordConfirm" placeholder="Confirmar password" id="IpConfirmPass" runat="server">
+											<b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> </label>
+									</section>
+
+                                    <section>
 										<label class="input"> <i class="icon-append fa fa-envelope"></i>
-											<input type="email" name="email" placeholder="Email">
+											<input type="email" name="email" placeholder="Email" id="IpEmail" runat="server">
 											<b class="tooltip tooltip-bottom-right">Necesario para verificar tu cuenta</b> </label>
-									</section>
-
-									<section>
-										<label class="input"> <i class="icon-append fa fa-lock"></i>
-											<input type="password" name="password" placeholder="Password" id="password">
-											<b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> </label>
-									</section>
-
-									<section>
-										<label class="input"> <i class="icon-append fa fa-lock"></i>
-											<input type="password" name="passwordConfirm" placeholder="Confirmar password">
-											<b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> </label>
-									</section>
+									</section>                               
 								</fieldset>
 
 								<fieldset>
 									<div class="row">
 										<section class="col col-6">
 											<label class="input">
-												<input type="text" name="firstname" placeholder="Nombre(s)">
+												<input type="text" name="firstname" placeholder="Nombre(s)" id="IpNombre" runat="server">
 											</label>
 										</section>
 										<section class="col col-6">
 											<label class="input">
-												<input type="text" name="lastname" placeholder="Apellidos">
+												<input type="text" name="lastname" placeholder="Apellidos" id="IpApellidos" runat="server">
 											</label>
 										</section>
 									</div>
 
 									<div class="row">
+                                        <section class="col col-6">
+											<label class="input">
+												<input type="text" name="ciudad" placeholder="Ciudad" id="IpCiudad" runat="server">
+											</label>
+										</section>
 										<section class="col col-6">
 											<label class="select">
-												<select name="gender">
+												<select name="gender" id="SlGnenero" runat="server">
 													<option value="0" selected="" disabled="">Genero</option>
 													<option value="1">Masculino</option>
 													<option value="2">Femenino</option>													
 												</select> <i></i> </label>
-										</section>
-										<section class="col col-6">
-											<label class="input"> <i class="icon-append fa fa-calendar"></i>
-												<input type="text" name="request" placeholder="Fecha de registro" class="datepicker" data-dateformat='dd/mm/yy'>
-											</label>
-										</section>
+										</section>										
 									</div>
-                                    									
-								</fieldset>
-								<footer>
-									<button type="submit" class="btn btn-primary">
-										Registrar
-									</button>
-								</footer>
 
-								<div class="message">
+                                    <div class="row">										
+										<section class="col col-6">
+											<label class="select">
+												<select name="TipoAtencion" id="SlTipAten" runat="server">
+													<option value="0" selected="" disabled="">Tipo de Atención</option>
+													<option value="1">Público</option>
+													<option value="2">Privado</option>													
+												</select> <i></i> </label>
+										</section>
+                                        <section class="col col-6">
+											<label class="select">
+												<select name="Ambito" id="SlAmbito" runat="server">
+													<option value="0" selected="" disabled="">Ámbito</option>
+													<option value="1">Espirometrías</option>
+													<option value="2">EPOC</option>													
+												</select> <i></i> </label>
+										</section>
+									</div>                                                                        									
+								</fieldset>                                
+                            </form> 
+                                                      
+                                   <footer>
+									<button type="submit" class="btn btn-primary" onclick="EntraCB()">
+										Registrar
+									</button> 
+                                    <asp:LinkButton ID="LBRegistrar" runat="server" OnClick="LBRegistrar_Click" class="btn btn-primary">Registrar 2</asp:LinkButton> 
+                                                                        
+								</footer>
+                             
+                               
+                            <form>
+                                <div class="message">
 									<i class="fa fa-check"></i>
 									<p>
 										Gracias por registrarse!
 									</p>
 								</div>
-							</form>
+                            </form>
+								
+							
+
+                            
 
 						</div>
 						<p class="note text-center">*El registro estará bajo autorización del administrador del sistema.</p>
@@ -248,7 +282,7 @@
 		<![endif]-->
 
 		<!-- MAIN APP JS FILE -->
-		<script src="../../Scripts/js/app.min.js"></script>
+		<script src="../../Scripts/js/app.min.js"></script>    
 
 		<script type="text/javascript">
 			runAllForms();
@@ -328,15 +362,6 @@
 						gender : {
 							required : 'Selecciona tu género'
 						}
-					},
-
-					// Ajax form submition
-					submitHandler : function(form) {
-						$(form).ajaxSubmit({
-							success : function() {
-								$("#smart-form-register").addClass('submited');
-							}
-						});
 					},
 
 					// Do not change code below

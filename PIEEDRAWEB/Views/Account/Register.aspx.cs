@@ -13,5 +13,24 @@ namespace PIEEDRAWEB.Views.Account
         {
 
         }
+
+        private void Alerta(string out_texto)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Alerta", "alert('" + out_texto + "');", true);
+        }
+
+       
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            /* Verifies that the control is rendered */
+        }
+
+        protected void LBRegistrar_Click(object sender, EventArgs e)
+        {
+           Alerta("que onda");
+        }
+
+      
     }
 }
