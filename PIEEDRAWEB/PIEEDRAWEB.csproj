@@ -156,6 +156,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ajax\email-compose.html" />
+    <Content Include="Content\ajax\email-opened.html" />
+    <Content Include="Content\ajax\email-reply.html" />
+    <Content Include="Content\ajax\email-template.html" />
+    <Content Include="Content\ajax\email\email-list.html" />
+    <Content Include="Content\ajax\modal-content\modal-voicecommand.html" />
+    <Content Include="Content\ajax\notify\mail.html" />
+    <Content Include="Content\ajax\notify\notifications.html" />
+    <Content Include="Content\ajax\notify\tasks.html" />
+    <Content Include="Content\ajax\website-template.html" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\demo.min.css" />
     <Content Include="Content\css\font-awesome.min.css" />
@@ -820,7 +830,6 @@
     <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.AutenticaUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA.disco" />
     <None Include="Service References\SRWSPIEEDRA\configuration91.svcinfo" />
     <None Include="Service References\SRWSPIEEDRA\configuration.svcinfo" />
@@ -834,6 +843,7 @@
     <Content Include="Views\Account\LogInMVC.aspx" />
     <Content Include="Views\Account\LogOutMVC.aspx" />
     <Content Include="Views\Account\OpenAuthProviders.ascx" />
+    <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Account\register.html" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -963,10 +973,18 @@
     <Compile Include="Views\Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="img\realestate\thumbs\" />
+    <Folder Include="Views\EPOC\" />
     <Folder Include="Views\Espirometrias\" />
   </ItemGroup>
   <ItemGroup>
