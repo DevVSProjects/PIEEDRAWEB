@@ -54,9 +54,8 @@
         <script language="javascript" type="text/javascript">
 
              function EntraCB() {
-                 debugger;
-               
-                 alert('que onda front');
+                 document.getElementById('<%= ButtonIngresar.ClientID %>').click();
+              
                 return true;
              }        
             
@@ -125,107 +124,105 @@
 					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 						<div class="well no-padding">
 
-							<form id="smart-form-register" class="smart-form client-form">
-								<header>
-									Regístrate*
-								</header>
+							<%--<form id="smart-form-register" class="smart-form client-form">								                                
+                            </form> --%>                           
+					        <form  id="login-form" class="smart-form client-form">
+                                <header>
+                                    Regístrate*
+                                </header>
 
-								<fieldset>                                   
-									<section>
-										<label class="input"> <i class="icon-append fa fa-user"></i>
-											<input type="text" name="username" placeholder="Usuario" id="IpUsuario" runat="server">
-											<b class="tooltip tooltip-bottom-right">Necesario para registrarte</b> </label>
-									</section>									
+						        <fieldset>
+							        <form id="FormInputs" runat="server">
+                                        <section>
+                                            <label class="input"> <i class="icon-append fa fa-user"></i>
+                                                <input type="text" name="username" placeholder="Usuario" id="IpUsuario" runat="server">
+                                                <b class="tooltip tooltip-bottom-right">Necesario para registrarte</b> 
+                                            </label>                                        
+                                        </section>
 
-									<section>
-										<label class="input"> <i class="icon-append fa fa-lock"></i>
-											<input type="password" name="password" placeholder="Password" id="IpPassword" runat="server">
-											<b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> </label>
-									</section>
+                                        <section>
+									        <label class="input"> <i class="icon-append fa fa-lock"></i>
+										        <input type="password" name="password" placeholder="Password" id="IpPassword" runat="server">
+										        <b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> 
+									        </label>
+								        </section>
 
-									<section>
-										<label class="input"> <i class="icon-append fa fa-lock"></i>
-											<input type="password" name="passwordConfirm" placeholder="Confirmar password" id="IpConfirmPass" runat="server">
-											<b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> </label>
-									</section>
+								        <section>
+									        <label class="input"> <i class="icon-append fa fa-lock"></i>
+										        <input type="password" name="passwordConfirm" placeholder="Confirmar password" id="IpConfirmPass" runat="server">
+										        <b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> 
+									        </label>
+								        </section>
 
-                                    <section>
-										<label class="input"> <i class="icon-append fa fa-envelope"></i>
-											<input type="email" name="email" placeholder="Email" id="IpEmail" runat="server">
-											<b class="tooltip tooltip-bottom-right">Necesario para verificar tu cuenta</b> </label>
-									</section>                               
-								</fieldset>
+                                        <section>
+									        <label class="input"> <i class="icon-append fa fa-envelope"></i>
+										        <input type="email" name="email" placeholder="Email" id="IpEmail" runat="server">
+										        <b class="tooltip tooltip-bottom-right">Necesario para verificar tu cuenta</b> 
+									        </label>
+								        </section>                                                                                       
+                                        <asp:Button ID="ButtonIngresar" runat="server" Text="Ingresar2"  class="hidden"  OnClick="ButtonIngresar_Click" />                              
+                                  
+								        <div class="row">                                            
+									        <section class="col col-6">
+										        <label class="input">
+											        <input type="text" name="firstname" placeholder="Nombre(s)" id="IpNombre" runat="server">
+                                                    <b class="tooltip tooltip-bottom-right">Ingresa tu nombre</b> 
+										        </label>
+									        </section>
+									        <section class="col col-6">
+										        <label class="input">
+											        <input type="text" name="lastname" placeholder="Apellidos" id="IpApellidos" runat="server">
+                                                    <b class="tooltip tooltip-bottom-right">Ingresa tus apellidos</b> 
+										        </label>
+									        </section>                                                
+								        </div>
 
-								<fieldset>
-									<div class="row">
-										<section class="col col-6">
-											<label class="input">
-												<input type="text" name="firstname" placeholder="Nombre(s)" id="IpNombre" runat="server">
-											</label>
-										</section>
-										<section class="col col-6">
-											<label class="input">
-												<input type="text" name="lastname" placeholder="Apellidos" id="IpApellidos" runat="server">
-											</label>
-										</section>
-									</div>
+								        <div class="row">
+                                            <section class="col col-6">
+										        <label class="input">
+											        <input type="text" name="ciudad" placeholder="Ciudad" id="IpCiudad" runat="server">
+                                                    <b class="tooltip tooltip-bottom-right">Ingresa tu ciudad de orígen</b> 
+										        </label>
+									        </section>
+									        <section class="col col-6">
+										        <label class="select">
+											        <select name="gender" id="SlGnenero" runat="server">
+												        <option value="0" selected="" disabled="">Genero</option>
+												        <option value="1">Masculino</option>
+												        <option value="2">Femenino</option>													
+											        </select> <i></i> 
+										        </label>
+									        </section>										
+								        </div>
 
-									<div class="row">
-                                        <section class="col col-6">
-											<label class="input">
-												<input type="text" name="ciudad" placeholder="Ciudad" id="IpCiudad" runat="server">
-											</label>
-										</section>
-										<section class="col col-6">
-											<label class="select">
-												<select name="gender" id="SlGnenero" runat="server">
-													<option value="0" selected="" disabled="">Genero</option>
-													<option value="1">Masculino</option>
-													<option value="2">Femenino</option>													
-												</select> <i></i> </label>
-										</section>										
-									</div>
-
-                                    <div class="row">										
-										<section class="col col-6">
-											<label class="select">
-												<select name="TipoAtencion" id="SlTipAten" runat="server">
-													<option value="0" selected="" disabled="">Tipo de Atención</option>
-													<option value="1">Público</option>
-													<option value="2">Privado</option>													
-												</select> <i></i> </label>
-										</section>
-                                        <section class="col col-6">
-											<label class="select">
-												<select name="Ambito" id="SlAmbito" runat="server">
-													<option value="0" selected="" disabled="">Ámbito</option>
-													<option value="1">Espirometrías</option>
-													<option value="2">EPOC</option>													
-												</select> <i></i> </label>
-										</section>
-									</div>                                                                        									
-								</fieldset>                                
-                            </form> 
-                                                      
-                                   <footer>
-									<button type="submit" class="btn btn-primary" onclick="EntraCB()">
-										Registrar
-									</button> 
-                                    <asp:LinkButton ID="LBRegistrar" runat="server" OnClick="LBRegistrar_Click" class="btn btn-primary">Registrar 2</asp:LinkButton> 
-                                                                        
-								</footer>
-                             
-                               
-                            <form>
-                                <div class="message">
-									<i class="fa fa-check"></i>
-									<p>
-										Gracias por registrarse!
-									</p>
-								</div>
-                            </form>
-								
-							
+                                        <div class="row">										
+									        <section class="col col-6">
+										        <label class="select">
+											        <select name="TipoAtencion" id="SlTipAten" runat="server">
+												        <option value="0" selected="" disabled="">Tipo de Atención</option>
+												        <option value="1">Público</option>
+												        <option value="2">Privado</option>													
+											        </select> <i></i> 
+										        </label>
+									        </section>
+                                            <section class="col col-6">
+										        <label class="select">
+											        <select name="Ambito" id="SlAmbito" runat="server">
+												        <option value="0" selected="" disabled="">Ámbito</option>
+												        <option value="1">Espirometrías</option>
+												        <option value="2">EPOC</option>													
+											        </select> <i></i> 
+										        </label>
+									        </section>
+								        </div>                                                                        									
+							         </form>
+						        </fieldset>
+                                    
+                                <footer>
+                                    <button type="submit" class="btn btn-primary" onclick="EntraCB()" style="margin:0 0 10px 15px">
+                                        Registrar
+                                    </button>                                                                         
+                                </footer>
 
                             
 

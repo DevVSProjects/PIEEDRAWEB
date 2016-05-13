@@ -13,6 +13,15 @@ namespace PIEEDRAWEB.Views.Account {
     public partial class Register {
         
         /// <summary>
+        /// FormInputs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm FormInputs;
+        
+        /// <summary>
         /// IpUsuario control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace PIEEDRAWEB.Views.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl IpEmail;
+        
+        /// <summary>
+        /// ButtonIngresar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonIngresar;
         
         /// <summary>
         /// IpNombre control.
@@ -101,14 +119,5 @@ namespace PIEEDRAWEB.Views.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect SlAmbito;
-        
-        /// <summary>
-        /// LBRegistrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LBRegistrar;
     }
 }
