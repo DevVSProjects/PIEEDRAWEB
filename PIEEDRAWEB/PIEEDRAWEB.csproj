@@ -820,6 +820,7 @@
     <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.AutenticaUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA.disco" />
     <None Include="Service References\SRWSPIEEDRA\configuration91.svcinfo" />
     <None Include="Service References\SRWSPIEEDRA\configuration.svcinfo" />
@@ -885,6 +886,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="GeneralClases\Seguridad.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

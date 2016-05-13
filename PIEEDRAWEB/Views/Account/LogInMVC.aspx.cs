@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,6 +10,7 @@ using System.Web.Script.Services;
 using System.IO;
 using System.Text;
 using System.Security;
+using PIEEDRAWEB.GeneralClases;
 using PIEEDRAWEB.SRWSPIEEDRA;
 
 
@@ -76,16 +78,19 @@ namespace PIEEDRAWEB.Views.Account
                 string Salida = "";
                 int Resultado = 0;
                 string Campo_Curp = "";
+                string password = "";
+                password = Pass.Encriptar();
+                password = password.DesEncriptar();
 
                 WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
-                bool resp = pieedra.AutenticaUser(sUser, Pass, ref res, ref msj);
+                DataSet resp = pieedra.AutenticaUser(sUser, password, ref res, ref msj);
 
-                if (resp == true)
+                if (res == 1)
                 {
                     Response.Redirect("../../Index.aspx",false);
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
-                else
+                else if(res==0)
                 {   
                     Alerta("Ficha o contraseña inválidos");
                 }
