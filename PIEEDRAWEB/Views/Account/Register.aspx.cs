@@ -5,11 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using PIEEDRAWEB.GeneralClases;
+using PIEEDRAWEB.SRWSPIEEDRA;
 
 namespace PIEEDRAWEB.Views.Account
 {
     public partial class Register : System.Web.UI.Page
     {
+
+        private int res;
+        private string msj;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,6 +29,7 @@ namespace PIEEDRAWEB.Views.Account
         {
             /* Verifies that the control is rendered */
         }       
+
 
         protected void ButtonIngresar_Click(object sender, EventArgs e)
         {
@@ -83,6 +89,35 @@ namespace PIEEDRAWEB.Views.Account
                     }
                     else
                     {
+                        bool resp = false;
+                        string usuario = IpUsuario.Value;
+                        string password = IpPassword.Value;
+                        string conpassword = IpConfirmPass.Value;
+                        string email = IpEmail.Value;
+                        string nombre = IpNombre.Value;
+                        string apellidos = IpApellidos.Value;
+                        string ciudad = IpCiudad.Value;
+                        string genero = SlGnenero.Value;
+                        string atencion = SlTipAten.Value;
+                        string ambito = SlAmbito.Value;
+                        if (password.Equals(conpassword)) { 
+                            WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
+                            string passw = "";
+                            passw = password.Encriptar();
+                            resp = pieedra.RegistraUser(usuario, passw, email, nombre, apellidos, ciudad, genero, atencion,ambito, ref res, ref msj);
+                        }
+                        else
+                        {
+                            Alerta("El Password no coincide");
+                        }
+                        if (resp == true)
+                        {
+                        }
+                        else if (resp == false)
+                        {
+                            Alerta("Ficha o contraseña inválidos");
+                        }
+                        Alerta(msj);
                         Alerta("Después de las validaciones entra al método");
                         LimpiaCampos();
                     }

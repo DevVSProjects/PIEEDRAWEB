@@ -80,7 +80,7 @@ namespace PIEEDRAWEB.Views.Account
                 string Campo_Curp = "";
                 string password = "";
                 password = Pass.Encriptar();
-                password = password.DesEncriptar();
+                //password = password.DesEncriptar();
 
                 WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
                 DataSet resp = pieedra.AutenticaUser(sUser, password, ref res, ref msj);

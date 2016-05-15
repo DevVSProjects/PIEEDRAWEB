@@ -830,6 +830,9 @@
     <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.AutenticaUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.RegistraUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA.disco" />
     <None Include="Service References\SRWSPIEEDRA\configuration91.svcinfo" />
     <None Include="Service References\SRWSPIEEDRA\configuration.svcinfo" />
@@ -884,6 +887,7 @@
     <Content Include="Views\Account\Web.config" />
     <Content Include="SiteMenu.Master" />
     <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA.wsdl" />
+    <Content Include="System.Data.DataSet.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
