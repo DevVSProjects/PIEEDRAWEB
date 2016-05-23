@@ -23,9 +23,7 @@ namespace PIEEDRAWEB.Views.Account
         string Pass;
         private int res;
         private string msj;
-        string Platform = "Plataforma_Web";
-        //SIAS.Domain.Cs.pr_autentica_usuario AuntenticaUser = new SIAS.Domain.Cs.pr_autentica_usuario();
-        //SIAS.Domain.Cs.Roles_USUA Roles_Usua = new SIAS.Domain.Cs.Roles_USUA();
+        string Platform = "Plataforma_Web";      
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -46,8 +44,8 @@ namespace PIEEDRAWEB.Views.Account
                 int out_codigo = 0;
                 string out_texto = "";
 
-                res = 0;
-                msj = "";
+                int res = 0;
+                string msj = "";
 
 
                 EstacionTrabajo = Request.ServerVariables["REMOTE_HOST"];
@@ -92,7 +90,9 @@ namespace PIEEDRAWEB.Views.Account
                 }
                 else if(res==0)
                 {   
-                    Alerta("Ficha o contraseña inválidos");
+                    Alerta(msj);
+                    InFicha.Value = "";
+                    InFicha.Focus();
                 }
                 //System.Data.DataSet ds = AuntenticaUser.autentica_usuarioClass(sUser, Pass, 0, Session["UserRedName"].ToString(), Session["IP"].ToString(), Session["EstacionTrabajo"].ToString(), ref out_codigo, ref out_texto);
 

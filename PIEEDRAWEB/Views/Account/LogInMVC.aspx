@@ -142,7 +142,7 @@
 								    <fieldset>
 								        <form id="FormInputs" runat="server">
 								            <section>
-										    <label class="label">Ficha</label>
+										    <label class="label">Usuario</label>
 									        <label class="input"> <i class="icon-append fa fa-user"></i>
 									            <input type="text" name="Ficha" id="InFicha" runat="server" class="form-control"/>
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 

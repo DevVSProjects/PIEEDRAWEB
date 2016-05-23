@@ -171,6 +171,7 @@
     <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\invoice.min.css" />
     <Content Include="Content\css\lockscreen.min.css" />
+    <Content Include="Content\css\simple.css" />
     <Content Include="Content\css\smartadmin-production-plugins.min.css" />
     <Content Include="Content\css\smartadmin-production.min.css" />
     <Content Include="Content\css\smartadmin-rtl.min.css" />
@@ -848,6 +849,8 @@
     <Content Include="Views\Account\OpenAuthProviders.ascx" />
     <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Account\register.html" />
+    <Content Include="Views\EmailTemplate\RegisterTemplate.html" />
+    <Content Include="Views\Token\ValidaToken.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -983,6 +986,13 @@
     </Compile>
     <Compile Include="Views\Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Token\ValidaToken.aspx.cs">
+      <DependentUpon>ValidaToken.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Token\ValidaToken.aspx.designer.cs">
+      <DependentUpon>ValidaToken.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

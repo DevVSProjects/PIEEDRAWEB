@@ -7,6 +7,9 @@ using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 using PIEEDRAWEB.GeneralClases;
 using PIEEDRAWEB.SRWSPIEEDRA;
+using System.Web.Mail;
+using System.Configuration;
+using System.IO;
 
 namespace PIEEDRAWEB.Views.Account
 {
@@ -17,7 +20,14 @@ namespace PIEEDRAWEB.Views.Account
         private string msj;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                IpUsuario.Focus();
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.ToString());
+            }
         }
 
         private void Alerta(string out_texto)
@@ -100,7 +110,9 @@ namespace PIEEDRAWEB.Views.Account
                         string genero = SlGnenero.Value;
                         string atencion = SlTipAten.Value;
                         string ambito = SlAmbito.Value;
-                        if (password.Equals(conpassword)) { 
+
+                        if (password.Equals(conpassword))
+                        { 
                             WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
                             string passw = "";
                             passw = password.Encriptar();
@@ -112,14 +124,21 @@ namespace PIEEDRAWEB.Views.Account
                         }
                         if (resp == true)
                         {
+                            Alerta(msj);
+                            LimpiaCampos();
+
+                            //entra enviar mail
+                            string guidResult = System.Guid.NewGuid().ToString();
+                            string body = this.PopulateBody(ConfigurationManager.AppSettings["SystemAdminName"].ToString(), usuario, nombre, apellidos, ciudad, atencion, ambito, email, guidResult);
+                            this.EnviarCorreo(body);
+
+                        
                         }
                         else if (resp == false)
                         {
-                            Alerta("Ficha o contraseña inválidos");
-                        }
-                        Alerta(msj);
-                        Alerta("Después de las validaciones entra al método");
-                        LimpiaCampos();
+                            Alerta(msj);
+                            LimpiaCampos();
+                        }                        
                     }
                 }
             }
@@ -169,6 +188,137 @@ namespace PIEEDRAWEB.Views.Account
             {
                 Alerta(ex.ToString());
             }            
+        }
+
+        public void EnviaMail()
+        {
+            try
+            {
+                string guidResult = System.Guid.NewGuid().ToString();
+
+                // Construct the alternate body as HTML. 
+                string body = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">";
+                body += "<HTML><HEAD><META http-equiv=Content-Type content=\"text/html; charset=iso-8859-1\">";
+                body += "</HEAD><BODY><DIV><FONT face=Arial color=#ff0000 size=12px><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">" +
+                        "<tr>" +
+                        "<td>" +
+                        "<p>" + "Has click en la siguiente liga para validar el Token y restablecer tu nueva contraseña, </br> esta liga sólo tiene validez por un día" + "</p>" +
+                        "</td>" +
+                        "</tr>" +
+                        "</br>" +
+                        "<tr>" +
+                        "<td>" +
+                        "<h3>" + "https://www.subrogados.pemex.com/AtencionMedica/Paginas/ValidaToken.aspx?" + guidResult.ToString() + "</h3>" +
+                        "</td>" +
+                        "</tr>" +
+                        "</table>";
+                body += "</FONT></DIV></BODY></HTML>";
+
+                //enviaCorreo("jjveral@hotmail.com", "Solicitud de cuenta", body); //-------------------- 
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "CallMyFunction", "cerrarpagina()", true);
+                return;
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.ToString());
+            }            
+        }
+
+        private string PopulateBody(string SystemAdminName, string UserName, string Nombre, string Apellidos, string Ciudad, string TipoAtencion, string Modulo, string Email, string guidResult)
+        {
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader(Server.MapPath("../EmailTemplate/RegisterTemplate.html")))
+            {
+                body = reader.ReadToEnd();
+            }
+            if (TipoAtencion == "1")
+            {
+                TipoAtencion = "Público";
+            } else if (TipoAtencion == "2")
+            {
+                TipoAtencion = "Privado";
+            }
+            if (Modulo == "1")
+            {
+                Modulo = "Espirometrías";
+            } else if (Modulo == "2")
+            {
+                Modulo = "EPOC";
+            }
+            body = body.Replace("{SystemAdminName}", SystemAdminName);
+            body = body.Replace("{UserName}", UserName);
+            body = body.Replace("{Nombre}", Nombre);
+            body = body.Replace("{Apellidos}", Apellidos);
+            body = body.Replace("{Ciudad}", Ciudad);
+            body = body.Replace("{TipoAtencion}", TipoAtencion);
+            body = body.Replace("{Modulo}", Modulo);
+            body = body.Replace("{Email}", Email);
+            body = body.Replace("{Token}", guidResult);
+
+            //System.Data.DataSet ds = ValidateToken.GuardaToken(UserName, guidResult, ref out_codigo, ref out_texto);
+
+            return body;          
+        }
+
+        public void EnviarCorreo(string body)
+        {
+            /*-------------------------MENSAJE DE CORREO----------------------*/
+
+            //Creamos un nuevo Objeto de mensaje
+            System.Net.Mail.MailMessage mmsg = new System.Net.Mail.MailMessage();
+
+            //Direccion de correo electronico a la que queremos enviar el mensaje
+            mmsg.To.Add(ConfigurationManager.AppSettings["mailTo"].ToString());
+
+            //Nota: La propiedad To es una colección que permite enviar el mensaje a más de un destinatario
+
+            //Asunto
+            mmsg.Subject = ConfigurationManager.AppSettings["mailSubject"].ToString();
+            mmsg.SubjectEncoding = System.Text.Encoding.UTF8;
+
+            //Direccion de correo electronico que queremos que reciba una copia del mensaje
+            //mmsg.Bcc.Add("destinatariocopia@servidordominio.com"); //Opcional
+
+            //Cuerpo del Mensaje
+
+            string guidResult = System.Guid.NewGuid().ToString();
+            mmsg.Body = body;
+            mmsg.BodyEncoding = System.Text.Encoding.UTF8;
+            mmsg.IsBodyHtml = true; //Si no queremos que se envíe como HTML
+
+            //Correo electronico desde la que enviamos el mensaje
+            mmsg.From = new System.Net.Mail.MailAddress(ConfigurationManager.AppSettings["mailFrom"].ToString());
+
+
+            /*-------------------------CLIENTE DE CORREO----------------------*/
+
+            //Creamos un objeto de cliente de correo
+            System.Net.Mail.SmtpClient cliente = new System.Net.Mail.SmtpClient();
+
+            //Hay que crear las credenciales del correo emisor
+            cliente.Credentials =
+                new System.Net.NetworkCredential(ConfigurationManager.AppSettings["Credentials1"].ToString(), ConfigurationManager.AppSettings["Credentials2"].ToString());
+
+            //Lo siguiente es obligatorio si enviamos el mensaje desde Gmail
+            
+            cliente.Port = Convert.ToInt32(ConfigurationManager.AppSettings["Servidorsmtppto"].ToString());
+            //cliente.EnableSsl = true;
+            
+
+            cliente.Host = ConfigurationManager.AppSettings["Servidorsmtp"].ToString(); //Para Gmail "smtp.gmail.com";
+
+
+            /*-------------------------ENVIO DE CORREO----------------------*/
+
+            try
+            {
+                //Enviamos el mensaje      
+                cliente.Send(mmsg);
+            }
+            catch (System.Net.Mail.SmtpException ex)
+            {
+                //Aquí gestionamos los errores al intentar enviar el correo
+            }
         }
 
 

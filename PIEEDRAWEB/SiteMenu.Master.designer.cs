@@ -31,31 +31,40 @@ namespace PIEEDRAWEB {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// LabelBienvenido control.
+        /// LabelBienvenida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelBienvenido;
+        protected global::System.Web.UI.WebControls.Label LabelBienvenida;
         
         /// <summary>
-        /// MenuHigiene control.
+        /// LabelUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuHigiene;
+        protected global::System.Web.UI.WebControls.Label LabelUsuario;
         
         /// <summary>
-        /// MenuInformes control.
+        /// MenuEspirometrias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuInformes;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuEspirometrias;
+        
+        /// <summary>
+        /// MenuEpoc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuEpoc;
         
         /// <summary>
         /// MenuReportes control.
@@ -67,13 +76,13 @@ namespace PIEEDRAWEB {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuReportes;
         
         /// <summary>
-        /// MenuExamMedic control.
+        /// MenuAdminUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuExamMedic;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MenuAdminUser;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

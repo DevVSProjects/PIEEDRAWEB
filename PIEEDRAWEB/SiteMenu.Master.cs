@@ -9,6 +9,8 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Data;
 using System.Text;
+using PIEEDRAWEB.GeneralClases;
+using PIEEDRAWEB.SRWSPIEEDRA;
 
 
 namespace PIEEDRAWEB
@@ -19,8 +21,7 @@ namespace PIEEDRAWEB
         string Unidad_Descri;
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
-        private string _antiXsrfTokenValue;
-        //SIAS.Domain.Cs.Roles_USUA Roles_Usua = new SIAS.Domain.Cs.Roles_USUA();
+        private string _antiXsrfTokenValue;       
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -89,32 +90,11 @@ namespace PIEEDRAWEB
                 {
                     if (Session["Usuario"] == null)
                     {
-                        //Response.Redirect("~/Views/Account/LogOutMVC.aspx");
+                        Response.Redirect("~/Views/Account/LogOutMVC.aspx");
                     }
                     else
                     {
-                        int out_codigo = 0;
-                        string out_texto = "";
-                        MenuHigiene.Visible = false;
-
-                        //System.Data.DataSet ds = Roles_Usua.Roles_UsuaClass(Session["Usuario"].ToString(), ref out_codigo, ref out_texto);
-                        //LabelBienvenido.Text = ds.Tables[0].Rows[0].ItemArray[0].ToString();
-
-                        //if (ds.Tables[0].Rows[0].ItemArray[2].ToString() == "OSPMT")
-                        //{
-                        //    MenuIndicadores.Visible = false;
-                        //    MenuMedicPeric.Visible = false;
-                        //}
-                        //else if (ds.Tables[0].Rows[0].ItemArray[2].ToString() == "S")
-                        //{
-                        //    MenuIndicadores.Visible = false;
-                        //    MenuMedicPeric.Visible = false;
-                        //}
-                        //else if (ds.Tables[0].Rows[0].ItemArray[2].ToString() == "CR")
-                        //{
-                        //    MenuIndicadores.Visible = false;
-                        //    MenuMedicPeric.Visible = false;
-                        //}
+                        DatosUser();
                     }
                 }
                 catch (Exception ex)
@@ -128,6 +108,19 @@ namespace PIEEDRAWEB
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+        }
+
+        private void DatosUser()
+        {
+            int res = 0;
+            string msj = "";
+            string passw = "";
+            passw = Session["Pass"].ToString().Encriptar();
+
+            WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
+            DataSet resp = pieedra.AutenticaUser(Session["Usuario"].ToString(), passw.ToString(), ref res, ref msj);
+
+            LabelBienvenida.Text = resp.Tables[0].Rows[0].ItemArray[0].ToString();
         }
 
 

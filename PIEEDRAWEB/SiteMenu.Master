@@ -152,7 +152,12 @@
 
 				<!-- input: search field -->
 				<form class="header-search pull-right">
-					<i class="txt-color-blueLight hidden-mobile"><strong>Usuario: <asp:Label ID="LabelBienvenido" runat="server" Text="Label"></asp:Label></strong> </i>
+					<i class="txt-color-blueLight hidden-mobile">
+                        <strong>
+                        <asp:Label ID="LabelBienvenida" runat="server" Text="Label"></asp:Label> 
+                        <asp:Label ID="LabelUsuario" runat="server" Text="Label"></asp:Label>
+                        </strong>
+					</i>
 				</form>
 				<!-- end input: search field -->
 
@@ -191,10 +196,10 @@
 			<!-- NAVIGATION : This navigation is also responsive-->
 			<nav>
 				<ul>
-				    <li id="MenuHigiene" runat="server">
-						<a href="#"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Espirometrías</span></a>
+				    <li id="MenuEspirometrias" runat="server">
+						<a href="#"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Espirometrias</span></a>
 					</li>					
-					<li id="MenuInformes" runat="server">
+					<li id="MenuEpoc" runat="server">
 						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">EPOC</span></a>
 						<ul>
 							<li>
@@ -228,7 +233,7 @@
 							</li>
 						</ul>
 					</li>
-					<li id="MenuExamMedic" runat="server">
+					<li id="MenuAdminUser" runat="server">
 						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Admin Usuarios</span></a>
 						<ul>
 							<li>
