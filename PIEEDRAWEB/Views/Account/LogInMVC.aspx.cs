@@ -85,6 +85,9 @@ namespace PIEEDRAWEB.Views.Account
 
                 if (res == 1)
                 {
+                    bool respHist = pieedra.RegistraHistorico(sUser, Session["UserRedName"].ToString(),
+                        Session["IP"].ToString(), Session["EstacionTrabajo"].ToString(), "Ingreso al Sistema", ref res,
+                        ref msj);
                     Response.Redirect("../../Index.aspx",false);
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }

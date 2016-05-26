@@ -43,6 +43,7 @@ namespace PIEEDRAWEB.Views.Account
 
         protected void ButtonIngresar_Click(object sender, EventArgs e)
         {
+            WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
             try
             {
                 if (IpUsuario.Value == "")
@@ -113,7 +114,6 @@ namespace PIEEDRAWEB.Views.Account
 
                         if (password.Equals(conpassword))
                         { 
-                            WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
                             string passw = "";
                             passw = password.Encriptar();
                             resp = pieedra.RegistraUser(usuario, passw, email, nombre, apellidos, ciudad, genero, atencion,ambito, ref res, ref msj);
@@ -127,8 +127,12 @@ namespace PIEEDRAWEB.Views.Account
                             Alerta(msj);
                             LimpiaCampos();
 
+                            bool respupdate = false;
+                            string controlupd = "token";
                             //entra enviar mail
                             string guidResult = System.Guid.NewGuid().ToString();
+
+                            respupdate = pieedra.RegistraUser(usuario, controlupd, email, nombre, apellidos, guidResult, genero, atencion, ambito, ref res, ref msj);
                             string body = this.PopulateBody(ConfigurationManager.AppSettings["SystemAdminName"].ToString(), usuario, nombre, apellidos, ciudad, atencion, ambito, email, guidResult);
                             this.EnviarCorreo(body);
 

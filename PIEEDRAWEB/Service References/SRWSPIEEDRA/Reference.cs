@@ -31,6 +31,22 @@ namespace PIEEDRAWEB.SRWSPIEEDRA {
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistraUser", ReplyAction="*")]
         System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.RegistraUserResponse> RegistraUserAsync(PIEEDRAWEB.SRWSPIEEDRA.RegistraUserRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistraHistorico", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoResponse RegistraHistorico(PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistraHistorico", ReplyAction="*")]
+        System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoResponse> RegistraHistoricoAsync(PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AutenticaToken", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse AutenticaToken(PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AutenticaToken", ReplyAction="*")]
+        System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse> AutenticaTokenAsync(PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -165,6 +181,126 @@ namespace PIEEDRAWEB.SRWSPIEEDRA {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RegistraHistorico", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class RegistraHistoricoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string usuariored;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string ip;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string estacion;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string accion;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public int _resultado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=6)]
+        public string _mensaje;
+        
+        public RegistraHistoricoRequest() {
+        }
+        
+        public RegistraHistoricoRequest(string usuario, string usuariored, string ip, string estacion, string accion, int _resultado, string _mensaje) {
+            this.usuario = usuario;
+            this.usuariored = usuariored;
+            this.ip = ip;
+            this.estacion = estacion;
+            this.accion = accion;
+            this._resultado = _resultado;
+            this._mensaje = _mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="RegistraHistoricoResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class RegistraHistoricoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool RegistraHistoricoResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public int _resultado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string _mensaje;
+        
+        public RegistraHistoricoResponse() {
+        }
+        
+        public RegistraHistoricoResponse(bool RegistraHistoricoResult, int _resultado, string _mensaje) {
+            this.RegistraHistoricoResult = RegistraHistoricoResult;
+            this._resultado = _resultado;
+            this._mensaje = _mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AutenticaToken", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class AutenticaTokenRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string token;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string bandera;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public int _resultado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public string _mensaje;
+        
+        public AutenticaTokenRequest() {
+        }
+        
+        public AutenticaTokenRequest(string usuario, string token, string bandera, int _resultado, string _mensaje) {
+            this.usuario = usuario;
+            this.token = token;
+            this.bandera = bandera;
+            this._resultado = _resultado;
+            this._mensaje = _mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AutenticaTokenResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class AutenticaTokenResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool AutenticaTokenResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public int _resultado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string _mensaje;
+        
+        public AutenticaTokenResponse() {
+        }
+        
+        public AutenticaTokenResponse(bool AutenticaTokenResult, int _resultado, string _mensaje) {
+            this.AutenticaTokenResult = AutenticaTokenResult;
+            this._resultado = _resultado;
+            this._mensaje = _mensaje;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WsPIEEDRASoapChannel : PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap, System.ServiceModel.IClientChannel {
     }
@@ -239,6 +375,52 @@ namespace PIEEDRAWEB.SRWSPIEEDRA {
         
         public System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.RegistraUserResponse> RegistraUserAsync(PIEEDRAWEB.SRWSPIEEDRA.RegistraUserRequest request) {
             return base.Channel.RegistraUserAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoResponse PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap.RegistraHistorico(PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoRequest request) {
+            return base.Channel.RegistraHistorico(request);
+        }
+        
+        public bool RegistraHistorico(string usuario, string usuariored, string ip, string estacion, string accion, ref int _resultado, ref string _mensaje) {
+            PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoRequest inValue = new PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoRequest();
+            inValue.usuario = usuario;
+            inValue.usuariored = usuariored;
+            inValue.ip = ip;
+            inValue.estacion = estacion;
+            inValue.accion = accion;
+            inValue._resultado = _resultado;
+            inValue._mensaje = _mensaje;
+            PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoResponse retVal = ((PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap)(this)).RegistraHistorico(inValue);
+            _resultado = retVal._resultado;
+            _mensaje = retVal._mensaje;
+            return retVal.RegistraHistoricoResult;
+        }
+        
+        public System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoResponse> RegistraHistoricoAsync(PIEEDRAWEB.SRWSPIEEDRA.RegistraHistoricoRequest request) {
+            return base.Channel.RegistraHistoricoAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap.AutenticaToken(PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest request) {
+            return base.Channel.AutenticaToken(request);
+        }
+        
+        public bool AutenticaToken(string usuario, string token, string bandera, ref int _resultado, ref string _mensaje) {
+            PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest inValue = new PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest();
+            inValue.usuario = usuario;
+            inValue.token = token;
+            inValue.bandera = bandera;
+            inValue._resultado = _resultado;
+            inValue._mensaje = _mensaje;
+            PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse retVal = ((PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap)(this)).AutenticaToken(inValue);
+            _resultado = retVal._resultado;
+            _mensaje = retVal._mensaje;
+            return retVal.AutenticaTokenResult;
+        }
+        
+        public System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse> AutenticaTokenAsync(PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest request) {
+            return base.Channel.AutenticaTokenAsync(request);
         }
     }
 }
