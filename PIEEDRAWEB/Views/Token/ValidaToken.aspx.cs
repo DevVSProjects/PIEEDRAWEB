@@ -6,32 +6,40 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web;
 using System.Web.UI;
+using PIEEDRAWEB.SRWSPIEEDRA;
 
 namespace PIEEDRAWEB.Views.Token
 {
     public partial class ValidaToken : System.Web.UI.Page
     {
+        private int res;
+        private string msj;
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
+                int res = 0;
+                string msj = "";
+                WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
 
                 try
                 {
+                    bool aut = false;
                     string url = HttpContext.Current.Request.Url.AbsoluteUri;
                     string[] token;
                     string[] Estatus;
-                    token = url.Split('?', '%');
-                    Estatus = url.Split('%');
+                    token = url.Split('?', '&');
+                    Estatus = url.Split('&');
 
-                    if (!token[1].Equals(""))
+                    if (token[2]!="")
                     {
-                        ValidaToken_SP(token[1], Estatus[1]);
+                       aut =pieedra.AutenticaToken(token[1], token[2], token[3], ref res, ref msj);
                     }
+                        Alerta(msj);
 
-                    DateTime today = System.DateTime.Today;
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "CallMyFunction", "cerrarpagina()", true);
                 }
 
                 catch (Exception ex)
