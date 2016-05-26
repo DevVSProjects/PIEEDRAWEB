@@ -843,6 +843,7 @@
     </None>
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\Account\ForgotPass.aspx" />
     <Content Include="Views\Account\forgotpassword.html" />
     <Content Include="Views\Account\LogInMVC.aspx" />
     <Content Include="Views\Account\LogOutMVC.aspx" />
@@ -958,6 +959,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Account\ForgotPass.aspx.cs">
+      <DependentUpon>ForgotPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Account\ForgotPass.aspx.designer.cs">
+      <DependentUpon>ForgotPass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Account\LogInMVC.aspx.cs">
       <DependentUpon>LogInMVC.aspx</DependentUpon>
