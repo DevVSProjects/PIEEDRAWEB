@@ -141,26 +141,12 @@
                                         </section>
 
                                         <section>
-									        <label class="input"> <i class="icon-append fa fa-lock"></i>
-										        <input type="password" name="password" placeholder="Password" id="IpPassword" runat="server">
-										        <b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> 
-									        </label>
-								        </section>
-
-								        <section>
-									        <label class="input"> <i class="icon-append fa fa-lock"></i>
-										        <input type="password" name="passwordConfirm" placeholder="Confirmar password" id="IpConfirmPass" runat="server">
-										        <b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> 
-									        </label>
-								        </section>
-
-                                        <section>
 									        <label class="input"> <i class="icon-append fa fa-envelope"></i>
 										        <input type="email" name="email" placeholder="Email" id="IpEmail" runat="server">
 										        <b class="tooltip tooltip-bottom-right">Necesario para verificar tu cuenta</b> 
 									        </label>
 								        </section>                                                                                       
-                                        <asp:Button ID="ButtonIngresar" runat="server" Text="Ingresar2"  class="hidden"  OnClick="ButtonIngresar_Click" />                              
+                                        <asp:Button ID="ButtonIngresar" runat="server" Text="Ingresar2"  class="hidden"  OnClick="ButtonIngresar_Click" />                                                                                                  
                                   
 								        <div class="row">                                            
 									        <section class="col col-6">
@@ -195,8 +181,8 @@
 									        </section>										
 								        </div>
 
-                                        <div class="row">										
-									        <section class="col col-6">
+                                       									
+									        <section>
 										        <label class="select">
 											        <select name="TipoAtencion" id="SlTipAten" runat="server">
 												        <option value="0" selected="" disabled="">Tipo de Atención</option>
@@ -205,23 +191,39 @@
 											        </select> <i></i> 
 										        </label>
 									        </section>
-                                            <section class="col col-6">
-										        <label class="select">
-											        <select name="Ambito" id="SlAmbito" runat="server">
-												        <option value="0" selected="" disabled="">Ámbito</option>
-												        <option value="1">Espirometrías</option>
-												        <option value="2">EPOC</option>													
-											        </select> <i></i> 
-										        </label>
-									        </section>
-								        </div>                                                                        									
+
+                                            <div class="hidden">
+                                                <div class="row">	
+                                                    <section class="col col-6">
+										                <label class="select">
+											                <select name="Ambito" id="SlAmbito" runat="server">
+												                <option value="0" disabled="">Ámbito</option>
+												                <option value="1" selected="">Espirometrías</option>
+												                <option value="2">EPOC</option>													
+											                </select> <i></i> 
+										                </label>
+									                </section>
+                                                </div>   
+                                            </div>
+                                         <section>
+									        <label class="input"> <i class="icon-append fa fa-lock"></i>
+										        <input type="password" name="password" placeholder="Password" id="IpPassword" runat="server">
+										        <b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> 
+									        </label>
+								        </section>
+
+								        <section>
+									        <label class="input"> <i class="icon-append fa fa-lock"></i>
+										        <input type="password" name="passwordConfirm" placeholder="Confirmar password" id="IpConfirmPass" runat="server">
+										        <b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> 
+									        </label>
+								        </section>           
 							         </form>
 						        </fieldset>
                                     
                                 <footer>
                                     <button type="submit" class="btn btn-primary" onclick="EntraCB()" style="margin:0 0 10px 15px">
-                                        Registrar
-                                    </button>                                                                         
+                                        Registrar</button>                                                                         
                                 </footer>
 
                             

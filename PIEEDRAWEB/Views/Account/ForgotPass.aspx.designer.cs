@@ -13,6 +13,51 @@ namespace PIEEDRAWEB.Views.Account {
     public partial class ForgotPass {
         
         /// <summary>
+        /// ForgotPass_form control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm ForgotPass_form;
+        
+        /// <summary>
+        /// IngUsuMail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl IngUsuMail;
+        
+        /// <summary>
+        /// IpEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl IpEmail;
+        
+        /// <summary>
+        /// IpUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText IpUser;
+        
+        /// <summary>
+        /// ButtonResetPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonResetPass;
+        
+        /// <summary>
         /// NewPass control.
         /// </summary>
         /// <remarks>
@@ -20,15 +65,6 @@ namespace PIEEDRAWEB.Views.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl NewPass;
-        
-        /// <summary>
-        /// FormInputs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm FormInputs;
         
         /// <summary>
         /// IpNewPassword control.
@@ -47,5 +83,14 @@ namespace PIEEDRAWEB.Views.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword IpConfirmNewPass;
+        
+        /// <summary>
+        /// ButtonCambiaPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonCambiaPass;
     }
 }

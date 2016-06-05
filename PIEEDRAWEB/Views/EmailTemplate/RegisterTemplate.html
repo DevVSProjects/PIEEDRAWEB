@@ -136,17 +136,22 @@
                             <br />
                                 <b>Tipo de atención:</b> {TipoAtencion}
                             <br />
-                                <b>Módulo:</b> {Modulo}
-                            <br />
+                                <!--<b>Módulo:</b> {Modulo}
+                            <br />-->
                            </p>
 
                             <table>
                                 <tr>
                                     <td align="center">
                                         <p>
-                                            <a href="http://localhost:53964/Views/Token/ValidaToken.aspx?{UserName}&{Token}&Yes" target="_blank" class="button">Aceptar</a>                                
+                                            <b>Aceptar:</b>
+                                            <br />
+                                            <a href="http://localhost:53964/Views/Token/ValidaToken.aspx?{UserName}&{Token}&Yes&Espirometria&{Email}" target="_blank" class="button">Espirometrías</a>                                
                                         </p>
-                                    </td>
+                                        <p>                                           
+                                            <a href="http://localhost:53964/Views/Token/ValidaToken.aspx?{UserName}&{Token}&Yes&EPOC&{Email}" target="_blank" class="button">EPOC</a>
+                                        </p>
+                                    </td>                                 
                                     <td align="center">
                                         <p>
                                         </p>
@@ -162,7 +167,7 @@
                                     </td>
                                     <td align="center">
                                         <p>
-                                            <a href="http://localhost:53964/Views/Token/ValidaToken.aspx?{UserName}&{Token}&No" target="_blank"class="button">Rechazar</a>
+                                            <a href="http://localhost:53964/Views/Token/ValidaToken.aspx?{UserName}&{Token}&No&Ninguno&{Email}" target="_blank"class="button">Rechazar</a>
                                         </p>
                                     </td>
                                 </tr>

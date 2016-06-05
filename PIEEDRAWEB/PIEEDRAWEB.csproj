@@ -53,6 +53,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
@@ -857,8 +858,11 @@
     <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Account\register.html" />
     <Content Include="Views\EmailTemplate\RegisterTemplate.html" />
+    <Content Include="Views\EmailTemplate\StatusRegister.html" />
     <Content Include="Views\Token\ValidaToken.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />

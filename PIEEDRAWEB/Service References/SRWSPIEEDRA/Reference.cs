@@ -260,18 +260,22 @@ namespace PIEEDRAWEB.SRWSPIEEDRA {
         public string bandera;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
-        public int _resultado;
+        public string modulo;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public int _resultado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
         public string _mensaje;
         
         public AutenticaTokenRequest() {
         }
         
-        public AutenticaTokenRequest(string usuario, string token, string bandera, int _resultado, string _mensaje) {
+        public AutenticaTokenRequest(string usuario, string token, string bandera, string modulo, int _resultado, string _mensaje) {
             this.usuario = usuario;
             this.token = token;
             this.bandera = bandera;
+            this.modulo = modulo;
             this._resultado = _resultado;
             this._mensaje = _mensaje;
         }
@@ -406,11 +410,12 @@ namespace PIEEDRAWEB.SRWSPIEEDRA {
             return base.Channel.AutenticaToken(request);
         }
         
-        public bool AutenticaToken(string usuario, string token, string bandera, ref int _resultado, ref string _mensaje) {
+        public bool AutenticaToken(string usuario, string token, string bandera, string modulo, ref int _resultado, ref string _mensaje) {
             PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest inValue = new PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest();
             inValue.usuario = usuario;
             inValue.token = token;
             inValue.bandera = bandera;
+            inValue.modulo = modulo;
             inValue._resultado = _resultado;
             inValue._mensaje = _mensaje;
             PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse retVal = ((PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap)(this)).AutenticaToken(inValue);

@@ -112,15 +112,43 @@ namespace PIEEDRAWEB
 
         private void DatosUser()
         {
-            int res = 0;
-            string msj = "";
-            string passw = "";
-            passw = Session["Pass"].ToString().Encriptar();
+            try
+            {
+                int res = 0;
+                string msj = "";
+                string passw = "";
+                passw = Session["Pass"].ToString().Encriptar();
 
-            WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
-            DataSet resp = pieedra.AutenticaUser(Session["Usuario"].ToString(), passw.ToString(), ref res, ref msj);
+                WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
+                DataSet resp = pieedra.AutenticaUser(Session["Usuario"].ToString(), passw.ToString(), ref res, ref msj);
 
-            LabelBienvenida.Text = resp.Tables[0].Rows[0].ItemArray[0].ToString();
+                if (resp.Tables[0].Rows[0].ItemArray[11].ToString() == "1")
+                {
+                    LabelBienvenida.Text = "Bienvenido";
+                }
+                else
+                {
+                    LabelBienvenida.Text = "Bienvenida";
+                }
+                LabelUsuario.Text = resp.Tables[0].Rows[0].ItemArray[3].ToString() + ' ' + resp.Tables[0].Rows[0].ItemArray[4].ToString();
+
+                if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "Espirometria")
+                {
+                    MenuEpoc.Visible = false;
+                    MenuReportes.Visible = false;
+                    MenuAdminUser.Visible = false;
+                }
+                else if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "EPOC")
+                {
+                    MenuEspirometrias.Visible = false;
+                    MenuReportes.Visible = false;
+                    MenuAdminUser.Visible = false;
+                }               
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.ToString());
+            }
         }
 
 

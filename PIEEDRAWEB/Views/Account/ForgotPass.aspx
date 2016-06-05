@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgotPass.aspx.cs" Inherits="PIEEDRAWEB.Views.Account.ForgotPass" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgotPass.aspx.cs" Inherits="PIEEDRAWEB.Views.Account.ForgotPass" enableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -120,17 +120,17 @@
                     </div>
 					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
 						<div class="well no-padding">
-							<form action="LogInMVC.aspx" id="login-form" class="smart-form client-form">
+							<form id="ForgotPass_form" class="smart-form client-form" runat="server">
 								<header>
 									Olvidaste tu Password?
 								</header>
 
-								<fieldset>
+								<fieldset id="IngUsuMail" runat="server">
 									
 									<section>
 										<label class="label">Ingresa tu E-mail</label>
 										<label class="input"> <i class="icon-append fa fa-envelope"></i>
-											<input type="email" name="email">
+											<input type="email" name="email" id="IpEmail" runat="server">
 											<b class="tooltip tooltip-top-right"><i class="fa fa-envelope txt-color-teal"></i>Ingresa tu E-mail para resetear tu password</b></label>
 									</section>
 									<section>
@@ -139,7 +139,7 @@
 									<section>
 										<label class="label">Tu usuario</label>
 										<label class="input"> <i class="icon-append fa fa-user"></i>
-											<input type="text" name="username">
+											<input type="text" name="username" id="IpUser" runat="server">
 											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>Ingresa tu usuario</b> </label>
 										<div class="note">
 											<a href="LogInMVC.aspx">He recordado mi password!</a>
@@ -147,18 +147,16 @@
 									</section>
 
 								</fieldset>
+   
 								<footer>
-									<button type="submit" class="btn btn-primary" onclick="EntraCB()">
-										<i class="fa fa-refresh"></i> 
-                                        Resetear password
-									</button>
+                                    <asp:Button ID="ButtonResetPass" runat="server" Text="Reset Password" class="btn btn-primary" OnClick="ButtonResetPass_Click"/>                                   
 								</footer>
 
                               
 						        <div class="well no-padding" id="NewPass" runat="server">						            
 					                <form  id="login-form" class="smart-form client-form">  
 						                <fieldset>
-							                <form id="FormInputs" runat="server"> 
+							                <form id="FormInputs"> 
                                                 <section>
 									                <label class="input"> <i class="icon-append fa fa-lock"></i>
 										                <input type="password" name="password" placeholder="Escribe nuevo password" id="IpNewPassword" runat="server">
@@ -169,20 +167,24 @@
 									                <label class="input"> <i class="icon-append fa fa-lock"></i>
 										                <input type="password" name="passwordConfirm" placeholder="Confirmar nuevo password" id="IpConfirmNewPass" runat="server">
 										                <b class="tooltip tooltip-bottom-right">Anota tu password para no olvidarlo</b> 
+									            
 									                </label>
 								                </section>                                                                                                                									
 							                 </form>
 						                </fieldset>
                                     
                                         <footer>
-                                            <button type="submit" class="btn btn-primary" onclick="EntraCB()" style="margin:0 0 10px 15px">
-                                                Cambiar password
-                                            </button>                                                                         
-                                        </footer>
+                                            <div>                                             
+                                                    <asp:Button ID="ButtonCambiaPass" runat="server" Text="Cambia Password" class="btn btn-primary" OnClick="ButtonCambiaPass_Click"/>
+                                       
+                                            </div>
+                                                
+                                        </footer>                                                           
                                     </form>
                                 </div>										
 							</form>
 						</div>
+                        
 						
 						<!--<h5 class="text-center"> - Or sign in using -</h5>
 															
@@ -228,9 +230,7 @@
 		
 		<!--[if IE 8]>
 			
-			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
-			
-		<![endif]-->
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download-->
 
 		<!-- MAIN APP JS FILE -->
 		<script src="../../Scripts/js/app.min.js"></script>

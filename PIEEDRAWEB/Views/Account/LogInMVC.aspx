@@ -159,7 +159,7 @@
                                                 ForeColor="Red">*Escriba el Password</asp:RequiredFieldValidator>
 											    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Ingresa tu password</b> </label>
 										    <div class="note">
-											    <a href="forgotpassword.html">olvidaste tu Password ?</a>
+											    <a href="ForgotPass.aspx">olvidaste tu Password ?</a>
 										    </div>
 									        </section>
                                               <!--<section>

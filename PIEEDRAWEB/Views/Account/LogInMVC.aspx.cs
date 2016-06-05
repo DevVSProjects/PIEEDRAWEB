@@ -88,36 +88,30 @@ namespace PIEEDRAWEB.Views.Account
                     bool respHist = pieedra.RegistraHistorico(sUser, Session["UserRedName"].ToString(),
                         Session["IP"].ToString(), Session["EstacionTrabajo"].ToString(), "Ingreso al Sistema", ref res,
                         ref msj);
-                    Response.Redirect("../../Index.aspx",false);
-                    HttpContext.Current.ApplicationInstance.CompleteRequest();
+                    if (respHist == true)
+                    {
+                        if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "Espirometria")
+                        {
+                            Response.Redirect("../../Espirometria.aspx", false);
+                            HttpContext.Current.ApplicationInstance.CompleteRequest();
+                        }
+                        else if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "EPOC")
+                        {
+                            Response.Redirect("../../EPOC.aspx", false);
+                            HttpContext.Current.ApplicationInstance.CompleteRequest();
+                        }
+                    }
+                    else
+                    {
+                        Alerta(msj);
+                    }                   
                 }
                 else if(res==0)
                 {   
                     Alerta(msj);
                     InFicha.Value = "";
                     InFicha.Focus();
-                }
-                //System.Data.DataSet ds = AuntenticaUser.autentica_usuarioClass(sUser, Pass, 0, Session["UserRedName"].ToString(), Session["IP"].ToString(), Session["EstacionTrabajo"].ToString(), ref out_codigo, ref out_texto);
-
-                //if (out_codigo == 0)
-                //{
-                //    System.Web.Security.FormsAuthentication.SetAuthCookie(InFicha.Value, false);
-
-                //    System.Data.DataSet ds2 = Roles_Usua.Roles_UsuaClass(sUser, ref out_codigo, ref out_texto);
-
-                //    if (ds2.Tables[0].Rows[0].ItemArray[2].ToString() == "OSPMT")
-                //    {
-                //        Response.Redirect("WbWelcome.aspx");
-                //        return;
-
-                //    }
-                //}
-                //else
-                //{
-                //    Alerta(out_texto);
-                //    InFicha.Value = "";
-                //    InFicha.Focus();
-                //}
+                }                
             }
 
             catch (Exception ex)

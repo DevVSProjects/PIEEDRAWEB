@@ -8,8 +8,13 @@ using System.Text.RegularExpressions;
 using PIEEDRAWEB.GeneralClases;
 using PIEEDRAWEB.SRWSPIEEDRA;
 using System.Web.Mail;
+using System.Net.Mail;
 using System.Configuration;
 using System.IO;
+using System.Text;
+using System.Web.Configuration;
+using System.Net.Mime;
+
 
 namespace PIEEDRAWEB.Views.Account
 {
@@ -193,40 +198,7 @@ namespace PIEEDRAWEB.Views.Account
                 Alerta(ex.ToString());
             }            
         }
-
-        public void EnviaMail()
-        {
-            try
-            {
-                string guidResult = System.Guid.NewGuid().ToString();
-
-                // Construct the alternate body as HTML. 
-                string body = "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">";
-                body += "<HTML><HEAD><META http-equiv=Content-Type content=\"text/html; charset=iso-8859-1\">";
-                body += "</HEAD><BODY><DIV><FONT face=Arial color=#ff0000 size=12px><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\">" +
-                        "<tr>" +
-                        "<td>" +
-                        "<p>" + "Has click en la siguiente liga para validar el Token y restablecer tu nueva contraseña, </br> esta liga sólo tiene validez por un día" + "</p>" +
-                        "</td>" +
-                        "</tr>" +
-                        "</br>" +
-                        "<tr>" +
-                        "<td>" +
-                        "<h3>" + "https://www.subrogados.pemex.com/AtencionMedica/Paginas/ValidaToken.aspx?" + guidResult.ToString() + "</h3>" +
-                        "</td>" +
-                        "</tr>" +
-                        "</table>";
-                body += "</FONT></DIV></BODY></HTML>";
-
-                //enviaCorreo("jjveral@hotmail.com", "Solicitud de cuenta", body); //-------------------- 
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "CallMyFunction", "cerrarpagina()", true);
-                return;
-            }
-            catch (Exception ex)
-            {
-                Alerta(ex.ToString());
-            }            
-        }
+            
 
         private string PopulateBody(string SystemAdminName, string UserName, string Nombre, string Apellidos, string Ciudad, string TipoAtencion, string Modulo, string Email, string guidResult)
         {
@@ -257,9 +229,7 @@ namespace PIEEDRAWEB.Views.Account
             body = body.Replace("{TipoAtencion}", TipoAtencion);
             body = body.Replace("{Modulo}", Modulo);
             body = body.Replace("{Email}", Email);
-            body = body.Replace("{Token}", guidResult);
-
-            //System.Data.DataSet ds = ValidateToken.GuardaToken(UserName, guidResult, ref out_codigo, ref out_texto);
+            body = body.Replace("{Token}", guidResult);          
 
             return body;          
         }
@@ -306,7 +276,7 @@ namespace PIEEDRAWEB.Views.Account
             //Lo siguiente es obligatorio si enviamos el mensaje desde Gmail
             
             cliente.Port = Convert.ToInt32(ConfigurationManager.AppSettings["Servidorsmtppto"].ToString());
-            //cliente.EnableSsl = true;
+            cliente.EnableSsl = true;
             
 
             cliente.Host = ConfigurationManager.AppSettings["Servidorsmtp"].ToString(); //Para Gmail "smtp.gmail.com";
@@ -321,7 +291,7 @@ namespace PIEEDRAWEB.Views.Account
             }
             catch (System.Net.Mail.SmtpException ex)
             {
-                //Aquí gestionamos los errores al intentar enviar el correo
+                Alerta(ex.ToString());
             }
         }
 

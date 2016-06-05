@@ -31,24 +31,6 @@ namespace PIEEDRAWEB.Views.Account {
         protected global::System.Web.UI.HtmlControls.HtmlInputText IpUsuario;
         
         /// <summary>
-        /// IpPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword IpPassword;
-        
-        /// <summary>
-        /// IpConfirmPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword IpConfirmPass;
-        
-        /// <summary>
         /// IpEmail control.
         /// </summary>
         /// <remarks>
@@ -119,5 +101,23 @@ namespace PIEEDRAWEB.Views.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect SlAmbito;
+        
+        /// <summary>
+        /// IpPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword IpPassword;
+        
+        /// <summary>
+        /// IpConfirmPass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword IpConfirmPass;
     }
 }
