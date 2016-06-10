@@ -47,6 +47,14 @@ namespace PIEEDRAWEB.SRWSPIEEDRA {
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AutenticaToken", ReplyAction="*")]
         System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse> AutenticaTokenAsync(PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CambContr", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        PIEEDRAWEB.SRWSPIEEDRA.CambContrResponse CambContr(PIEEDRAWEB.SRWSPIEEDRA.CambContrRequest request);
+        
+        // CODEGEN: Generating message contract since the operation has multiple return values.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CambContr", ReplyAction="*")]
+        System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.CambContrResponse> CambContrAsync(PIEEDRAWEB.SRWSPIEEDRA.CambContrRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -305,6 +313,66 @@ namespace PIEEDRAWEB.SRWSPIEEDRA {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CambContr", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CambContrRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public int accion;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public string email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=3)]
+        public string password;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=4)]
+        public int _resultado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=5)]
+        public string _mensaje;
+        
+        public CambContrRequest() {
+        }
+        
+        public CambContrRequest(int accion, string email, string usuario, string password, int _resultado, string _mensaje) {
+            this.accion = accion;
+            this.email = email;
+            this.usuario = usuario;
+            this.password = password;
+            this._resultado = _resultado;
+            this._mensaje = _mensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="CambContrResponse", WrapperNamespace="http://tempuri.org/", IsWrapped=true)]
+    public partial class CambContrResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=0)]
+        public bool CambContrResult;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=1)]
+        public int _resultado;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org/", Order=2)]
+        public string _mensaje;
+        
+        public CambContrResponse() {
+        }
+        
+        public CambContrResponse(bool CambContrResult, int _resultado, string _mensaje) {
+            this.CambContrResult = CambContrResult;
+            this._resultado = _resultado;
+            this._mensaje = _mensaje;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WsPIEEDRASoapChannel : PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap, System.ServiceModel.IClientChannel {
     }
@@ -426,6 +494,29 @@ namespace PIEEDRAWEB.SRWSPIEEDRA {
         
         public System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse> AutenticaTokenAsync(PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenRequest request) {
             return base.Channel.AutenticaTokenAsync(request);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PIEEDRAWEB.SRWSPIEEDRA.CambContrResponse PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap.CambContr(PIEEDRAWEB.SRWSPIEEDRA.CambContrRequest request) {
+            return base.Channel.CambContr(request);
+        }
+        
+        public bool CambContr(int accion, string email, string usuario, string password, ref int _resultado, ref string _mensaje) {
+            PIEEDRAWEB.SRWSPIEEDRA.CambContrRequest inValue = new PIEEDRAWEB.SRWSPIEEDRA.CambContrRequest();
+            inValue.accion = accion;
+            inValue.email = email;
+            inValue.usuario = usuario;
+            inValue.password = password;
+            inValue._resultado = _resultado;
+            inValue._mensaje = _mensaje;
+            PIEEDRAWEB.SRWSPIEEDRA.CambContrResponse retVal = ((PIEEDRAWEB.SRWSPIEEDRA.WsPIEEDRASoap)(this)).CambContr(inValue);
+            _resultado = retVal._resultado;
+            _mensaje = retVal._mensaje;
+            return retVal.CambContrResult;
+        }
+        
+        public System.Threading.Tasks.Task<PIEEDRAWEB.SRWSPIEEDRA.CambContrResponse> CambContrAsync(PIEEDRAWEB.SRWSPIEEDRA.CambContrRequest request) {
+            return base.Channel.CambContrAsync(request);
         }
     }
 }

@@ -20,6 +20,9 @@ namespace PIEEDRAWEB.Views.Account
     public partial class ForgotPass : System.Web.UI.Page
     {
 
+        private int res;
+        private string msj;
+        WsPIEEDRASoapClient pieedra = new WsPIEEDRASoapClient();
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -42,6 +45,7 @@ namespace PIEEDRAWEB.Views.Account
 
         protected void ButtonResetPass_Click(object sender, EventArgs e)
         {
+            bool result =  false;
             try
             {
                 if (IpEmail.Value == "" &&
@@ -51,17 +55,28 @@ namespace PIEEDRAWEB.Views.Account
                 }
                 else
                 {
-                    Alerta("Ingresó todos los campos");
-                    IpEmail.Value = "";
-                    IpUser.Value = "";
+                    //Alerta("Ingresó todos los campos");
+                    //IpEmail.Value = "";
+                    //IpUser.Value = "";
 
                     //si alguno de los campos que ingresó son válidos para las credenciales
                     //entonces se muestra el cuadro de restablecer contraseña, sino manda el pop que no existe en la DB
+                    result = pieedra.CambContr(1, IpEmail.Value, IpUser.Value, "", ref res, ref msj);
 
-                    NewPass.Visible = true;
-                    IpNewPassword.Focus();
-                    IngUsuMail.Visible = false;
-                    ButtonResetPass.Visible = false;
+                    if (result == true)
+                    {
+
+                        NewPass.Visible = true;
+                        IpNewPassword.Focus();
+                        IngUsuMail.Visible = false;
+                        ButtonResetPass.Visible = false;
+                    }
+                    else
+                    {
+                        IpEmail.Value = "";
+                        IpUser.Value = "";
+                        Alerta(msj);
+                    }
                 }              
             }
             catch (Exception ex)
@@ -72,6 +87,7 @@ namespace PIEEDRAWEB.Views.Account
 
         protected void ButtonCambiaPass_Click(object sender, EventArgs e)
         {
+            bool result = false;
             try
             {
                 if (IpNewPassword.Value == "")
@@ -93,7 +109,12 @@ namespace PIEEDRAWEB.Views.Account
                     }
                     else
                     {
-                        Alerta("Entra al método para actualizar contraseña");
+                        string passw = "";
+                        passw = IpNewPassword.Value.Encriptar();
+                        result = pieedra.CambContr(2, IpEmail.Value, IpUser.Value, passw, ref res, ref msj);
+                        IpEmail.Value = "";
+                        IpUser.Value = "";
+                        Alerta(msj);
                     }
                 }                
             }
