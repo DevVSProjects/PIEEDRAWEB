@@ -841,6 +841,9 @@
     <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.CambContrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA.disco" />
     <None Include="Service References\SRWSPIEEDRA\configuration91.svcinfo" />
     <None Include="Service References\SRWSPIEEDRA\configuration.svcinfo" />
