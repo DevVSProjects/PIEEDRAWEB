@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 		
 		<!-- #CSS Links -->
-        <link href="../../Content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../../Content/css/bootstrap.min.css" rel="stylesheet" /> 
 		<!-- Basic Styles -->
 		<link rel="stylesheet" type="text/css" media="screen" href="../../Content/css/bootstrap.min.css"/>        
 		<link rel="stylesheet" type="text/css" media="screen" href="../../Content/css/font-awesome.min.css"/>
