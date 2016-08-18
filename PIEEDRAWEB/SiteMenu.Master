@@ -203,13 +203,19 @@
 						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">EPOC</span></a>
 						<ul>
 							<li>
-								<a href="#">Normal Tables</a>
+								<a href="Etapa1.aspx">Etapa 1</a>
 							</li>
 							<li>
-								<a href="#">Data Tables <span class="badge inbox-badge bg-color-greenLight">v1.10</span></a>
+								<a href="#">Etapa 2 <%--<span class="badge inbox-badge bg-color-greenLight">Etapa 2</span>--%></a>
 							</li>
 							<li>
-								<a href="#">Jquery Grid</a>
+								<a href="#">Etapa 3</a>
+							</li>
+                            <li>
+								<a href="#">Etapa 4</a>
+							</li>
+                            <li>
+								<a href="#">Etapa 5</a>
 							</li>
 						</ul>
 					</li>

@@ -862,6 +862,7 @@
     <Content Include="Views\Account\register.html" />
     <Content Include="Views\EmailTemplate\RegisterTemplate.html" />
     <Content Include="Views\EmailTemplate\StatusRegister.html" />
+    <Content Include="Views\EPOC\Etapa1.aspx" />
     <Content Include="Views\Token\ValidaToken.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1008,6 +1009,13 @@
     <Compile Include="Views\Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\EPOC\Etapa1.aspx.cs">
+      <DependentUpon>Etapa1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa1.aspx.designer.cs">
+      <DependentUpon>Etapa1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Token\ValidaToken.aspx.cs">
       <DependentUpon>ValidaToken.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1019,7 +1027,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="img\realestate\thumbs\" />
-    <Folder Include="Views\EPOC\" />
     <Folder Include="Views\Espirometrias\" />
   </ItemGroup>
   <ItemGroup>
