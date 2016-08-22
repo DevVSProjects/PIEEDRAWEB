@@ -270,10 +270,10 @@
   </wsdl:binding>
   <wsdl:service name="WsPIEEDRA">
     <wsdl:port name="WsPIEEDRASoap" binding="tns:WsPIEEDRASoap">
-      <soap:address location="http://localhost:59350/WebServices/WsPIEEDRA.asmx" />
+      <soap:address location="http://ws.bioepoc.mx/WebServices/WsPIEEDRA.asmx" />
     </wsdl:port>
     <wsdl:port name="WsPIEEDRASoap12" binding="tns:WsPIEEDRASoap12">
-      <soap12:address location="http://localhost:59350/WebServices/WsPIEEDRA.asmx" />
+      <soap12:address location="http://ws.bioepoc.mx/WebServices/WsPIEEDRA.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

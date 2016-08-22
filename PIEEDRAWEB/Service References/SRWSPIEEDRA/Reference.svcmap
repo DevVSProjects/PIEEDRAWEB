@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:59350/WebServices/WsPIEEDRA.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://ws.bioepoc.mx/WebServices/WsPIEEDRA.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WsPIEEDRA.disco" MetadataType="Disco" ID="1d7ce990-40aa-4c0b-8ca8-afc2e9afb423" SourceId="1" SourceUrl="http://localhost:59350/WebServices/WsPIEEDRA.asmx?disco" />
-    <MetadataFile FileName="WsPIEEDRA.wsdl" MetadataType="Wsdl" ID="abf3a1a6-a92f-4c89-a357-c2ca4462d8b6" SourceId="1" SourceUrl="http://localhost:59350/WebServices/WsPIEEDRA.asmx?wsdl" />
+    <MetadataFile FileName="WsPIEEDRA1.wsdl" MetadataType="Wsdl" ID="79fe6f5f-04cc-4c43-90f7-2f41f6f67dd9" SourceId="1" SourceUrl="http://ws.bioepoc.mx/WebServices/WsPIEEDRA.asmx?wsdl" />
+    <MetadataFile FileName="WsPIEEDRA1.disco" MetadataType="Disco" ID="40682ffd-efe5-4af9-9335-a73cf65eaec6" SourceId="1" SourceUrl="http://ws.bioepoc.mx/WebServices/WsPIEEDRA.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

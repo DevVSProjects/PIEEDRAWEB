@@ -1,43 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMenu.Master" AutoEventWireup="true" CodeBehind="Etapa1.aspx.cs" Inherits="PIEEDRAWEB.Views.EPOC.EPOC" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMenu.Master" AutoEventWireup="true" CodeBehind="Etapa3.aspx.cs" Inherits="PIEEDRAWEB.Views.EPOC.Etapa3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-    <style type="text/css">
-            .RadAutoCompleteBoxPopup
-            {
-                float:left !important;
-            }
-            .completionListElement
-            {
-                visibility : hidden; 
-                margin : 0px! important; 
-                background-color : inherit; 
-                color : black; 
-                border : solid 1px gray; 
-                cursor : pointer; 
-                text-align : left; 
-                list-style-type : none; 
-                font-family : Arial; 
-                font-size: 10px; 
-                padding : 0; 
-                width: 700px;
-            }
-            .listItem 
-            { 
-                background-color: white; 
-                padding : 0px; 
-            }      
-            .highlightedListItem 
-            { 
-                background-color: #c3ebf9; 
-                padding : 0px; 
-            }
-        </style>
 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  	<!-- MAIN PANEL -->
+    <!-- MAIN PANEL -->
 		<div id="main" role="main">
 		
 		    <div id="content">
@@ -101,8 +69,141 @@
 
                     <div class="alert alert-warning fade in">						
 						<i class="fa-fw fa fa-warning"></i>
-						<strong>Información sobre la primera visita.</strong>                        
-					</div>
+						<strong>Información sobre la segunda visita</strong> (Sexto mes).                        
+					</div>                   
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="select2">
+                                    <label>Tipo de visita:</label>                                               
+                                    <div class="input-group">                                                 
+                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                    
+                                            <asp:DropDownList ID="DropDownListTipoVisita" runat="server" class="select2">
+                                                <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
+                                                <asp:ListItem Value="1">Caso 1</asp:ListItem>
+                                                <asp:ListItem Value="2">Caso 2</asp:ListItem>
+                                                <asp:ListItem Value="3">Caso 3</asp:ListItem>
+                                                <asp:ListItem Value="4">Caso 4</asp:ListItem>
+                                                <asp:ListItem Value="5">Caso 5</asp:ListItem>
+                                                <asp:ListItem Value="6">Caso 6</asp:ListItem>
+                                                <asp:ListItem Value="7">Caso 7</asp:ListItem>
+                                                <asp:ListItem Value="8">Caso 8</asp:ListItem>
+                                            </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="select2">
+                                    <label>Si el tipo de visita es distinto a "En Persona", anote la causa:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-append fa fa-list"></i></span>
+                                        <input class="form-control input-md" type="text" id="TextNoVisita" name="Otros" placeholder="Causa" runat="server" />                                                                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                          
+
+                       <!-- row -->
+					<div class="row">
+				
+						<!-- NEW WIDGET START -->
+						<%--<article class="col-sm-12 col-md-12 col-lg-6">--%>
+						<article class="col-lg-12">
+						
+							<!-- Widget ID (each widget will need unique ID)-->
+							<div class="jarviswidget" id="PermanenciaProtocol" 
+                                data-widget-colorbutton="false" 
+                                data-widget-editbutton="false" 
+                                data-widget-deletebutton="false"
+                                 visible="True"
+                                runat="server">
+								<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+				
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+				
+								-->
+								<header>
+									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
+									<h2>I. Permanencia en el protocolo</h2>
+								</header>
+				
+								<!-- widget div-->
+								<div>
+								
+                                <section id="widget-grid1" class="">
+                                    <!-- row -->
+                                    <div class="row">
+                                        <!-- NEW WIDGET START -->
+                                        <article class="col-sm-12 col-md-12 col-lg-12">
+                                            <!-- Widget ID (each widget will need unique ID)-->
+                                                                                           
+                                                    <div class="row">
+                                                        <form id="filtrosBusquedaForm">
+                                                            <fieldset>
+                                                                <div id="bootstrap-wizard-0" class="col-sm-12">
+                                                                    <div class="row">                                                                                                                                                                                                                         
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">
+                                                                                            <label>Continúa en el protocolo:</label>
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxProtocoloSi" runat="server"><i></i>Sí
+                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxProtocoloNo"><i></i>No</label>                                                                                                    
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>                                                                                                                                                                                                                          
+                                                                            <div class="col-sm-6">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">
+                                                                                            <label style="color:white">Continúa en el protocolo:</label>
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
+                                                                                                    <input class="form-control input-md" type="text" id="Text1" name="Protocolo" placeholder="Causa" runat="server" />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                     
+                                                                    </div>
+                                                                </div>
+                                                             
+                                                            </fieldset>
+                                                        </form>
+                                                    </div>
+                                               
+                                                <!-- end widget content -->
+                                        
+                                            <!-- end widget -->
+                                        </article>
+                                        <!-- WIDGET END -->
+                                    </div>
+                                </section>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+        
+                    <!-- end row -->        
 				
 					<!-- row -->
 					<div class="row">
@@ -112,7 +213,7 @@
 						<article class="col-lg-12">
 						
 							<!-- Widget ID (each widget will need unique ID)-->
-							<div class="jarviswidget" id="idDatosDemograficos" 
+							<div class="jarviswidget" id="HistoriaExacerbaciones" 
                                 data-widget-colorbutton="false" 
                                 data-widget-editbutton="false" 
                                 data-widget-deletebutton="false"
@@ -132,7 +233,7 @@
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
-									<h2>I. Datos Demográficos</h2>
+									<h2>II. Historia de exacerbaciones desde la última visita</h2>
 								</header>
 				
 								<!-- widget div-->
@@ -150,187 +251,140 @@
                                                         <form>
                                                             <fieldset>
                                                                 <div id="bootstrap-wizard-0" class="col-sm-12">
-                                                                    <div class="row">                                                                        
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Fecha de Nacimiento (dd/mm/aaaa):</label>
-                                                                                        <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="icon-append fa fa-calendar"></i></span>
-                                                                                            <input type="text" name="startdate" id="startdate" placeholder="Fecha de Nacimiento" class="form-control input-md">                                                                                            
+                                                                    <div class="row">
+                                                                         <div class="col-sm-12">                                                                            
+                                                                            <div class="alert alert-info alert-block">								                                                
+								                                                <h4 class="alert-heading">Info!</h4>
+								                                                <strong>Definición de Exacerbación:</strong> Un complejo de eventos / síntomas en las vías 
+                                                                                respiratorias inferiores (aumento o nueva aparición), de al menos dos de los siguientes datos:
+                                                                                 tos, producción de esputo (volumen), sibilancia, dificultad para respirar u opresión en el pecho
+                                                                                 con duración de al menos tres días, que requieran un cambio en el tratamiento.
+                                                                                <br />
+                                                                                <br />
+                                                                                <strong>Moderada:</strong> Uso de cortisona sin requerir hospitalización (con o sin antibiótico agregado).
+                                                                                <br />
+                                                                                <br />
+                                                                                <strong>Grave:</strong> Hospitalización por exacerbación de EPOC, sin requerir algún tipo de ventilación mecánica.
+                                                                                <br />
+                                                                                <br />
+                                                                                <strong>Muy grave:</strong> Hospitalización por exacerbación de EPOC que requirió algún tipo de ventilación mecánica.
+							                                                </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">
+                                                                                            <dl>Exacerbaciones moderadas:
+                                                                                              <dt>¿requirió cortisona con o sin antibiótico, sin ameritar hospitalización, en el año previo?.</dt>
+                                                                                            </dl>                                                                                            
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">                                                                                            
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxExacerModeradasSi" runat="server"><i></i>Sí
+                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxExacerModeradasNo"><i></i>No</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">                                                                                                                                                                                        
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerModeradas" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Edad en años cumplidos:</label>
+
+                                                                        <div class="col-sm-12">                                                                    
+                                                                            <div class="col-sm-4">
+                                                                                    <div class="form-group">
                                                                                         <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                            <input class="form-control input-md" type="text" id="EdadAnios" name="Edad" placeholder="Mayores de 35 años" runat="server" />
+                                                                                            <div class="select2">
+                                                                                                <dl>Exacerbaciones graves:
+                                                                                                  <dt>¿requirió hospitalizarse por exacerbación de EPOC sin ameritar algún tipo de ventilación mecánica en el año previo?.</dt>
+                                                                                                </dl>                                                                                            
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">                                                                                            
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxExacerbaGravesSi" runat="server"><i></i>Sí
+                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxExacerbaGravesNo"><i></i>No</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">                                                                                                                                                                                        
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaGraves" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Estado de Residencia:</label>
-                                                                                        <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                            <input class="form-control input-md" type="text" id="EdoResidencia" name="Estado" placeholder="Estado" runat="server" />
+
+                                                                        <div class="col-sm-12">
+                                                              
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">
+                                                                                            <dl>Exacerbaciones muy graves:
+                                                                                              <dt>¿requirió hospitalizarse por exacerbación de EPOC ameritando algún tipo de ventilación mecánica en el año previo?.</dt>
+                                                                                            </dl>                                                                                            
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Ciudad de Residencia:</label>
-                                                                                        <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                            <input class="form-control input-md" type="text" id="CiudadResi" name="Ciudad" placeholder="Ciudad" runat="server" />
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">                                                                                            
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxExacerbaMuyGravesSi" runat="server"><i></i>Sí
+                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxExacerbaMuyGravesNo"><i></i>No</label>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Zona:</label>
-                                                                                        <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxUrbana" runat="server"><i></i>Urbana
-                                                                                                <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxRural"><i></i>Rural</label>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">                                                                                                                                                                                        
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaMuyGraves" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Se atiende en:</label>
-                                                                                        <div class="input-group">
-                                                                                           <span class="input-group-addon"><i class="fa fa-sitemap fa-fw"></i></span>
-                                                                                            <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxInsPublic" runat="server"><i></i>Ins. Pública
-                                                                                                <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxInsPriva"><i></i>Ins. Privada</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Género:</label>
-                                                                                        <div class="input-group">
-                                                                                           <span class="input-group-addon"><i class="fa fa-female fa-fw"></i><i class="fa fa-male fa-fw"></i></span>
-                                                                                           <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxMasculino" runat="server"><i></i>Masculino
-                                                                                                <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxFemenino"><i></i>Femenino</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Escolaridad:</label>
-                                                                                        <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="fa fa-book"></i></span>
-                                                                                                <asp:DropDownList ID="DropDownListEscolaridad" runat="server" class="select2">
-                                                                                                    <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                    <asp:ListItem Value="1">Primaria</asp:ListItem>
-                                                                                                    <asp:ListItem Value="2">Secundaria</asp:ListItem>
-                                                                                                    <asp:ListItem Value="3">Preparatoria</asp:ListItem>
-                                                                                                    <asp:ListItem Value="4">Carrera Técnica</asp:ListItem>
-                                                                                                    <asp:ListItem Value="5">Licenciatura</asp:ListItem>
-                                                                                                    <asp:ListItem Value="6">Posgrado</asp:ListItem>
-                                                                                                    <asp:ListItem Value="7">Doctorado</asp:ListItem>
-                                                                                                    <asp:ListItem Value="8">Ninguno</asp:ListItem>
-                                                                                                </asp:DropDownList>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Estado Civil:</label>
-                                                                                        <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                                <asp:DropDownList ID="DropDownListEdoCivil" runat="server" class="select2">
-                                                                                                    <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                    <asp:ListItem Value="1">Soltero/a</asp:ListItem>
-                                                                                                    <asp:ListItem Value="2">Comprometido/a</asp:ListItem>
-                                                                                                    <asp:ListItem Value="3">Casado/a</asp:ListItem>
-                                                                                                    <asp:ListItem Value="4">Divorciado/a</asp:ListItem>
-                                                                                                    <asp:ListItem Value="5">Viudo/a</asp:ListItem>
-                                                                                                    <asp:ListItem Value="6">Unión Libre</asp:ListItem>                                                                                                   
-                                                                                                </asp:DropDownList>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-4">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Ocupación:</label>
-                                                                                        <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="fa fa-search fa-fw"></i></span>
-                                                                                                <asp:DropDownList ID="DropDownListOcupacion" runat="server" class="select2">
-                                                                                                    <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                    <asp:ListItem Value="1">Estudiante</asp:ListItem>
-                                                                                                    <asp:ListItem Value="2">Empleado</asp:ListItem>
-                                                                                                    <asp:ListItem Value="3">Emprendedor</asp:ListItem>
-                                                                                                    <asp:ListItem Value="4">Desempleado</asp:ListItem>
-                                                                                                    <asp:ListItem Value="5">Actividad del hogar</asp:ListItem>
-                                                                                                </asp:DropDownList>
-                                                                                            <input class="form-control input-md" type="text" id="TextOtraOcupa" name="OtraOcupa" placeholder="Otra" runat="server" />
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-4">
-                                                                             <div class="form-group">
-                                                                                 <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Nivel socioeconómico:</label>
-                                                                                        <div class="input-group">
-                                                                                            <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                                <asp:DropDownList ID="DropDownListNivelSocio" runat="server" class="select2">
-                                                                                                    <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                    <asp:ListItem Value="1">Pobreza Extrema</asp:ListItem>
-                                                                                                    <asp:ListItem Value="2">Clase Baja</asp:ListItem>
-                                                                                                    <asp:ListItem Value="3">Clase Media Baja</asp:ListItem>
-                                                                                                    <asp:ListItem Value="4">Clase Media</asp:ListItem>
-                                                                                                    <asp:ListItem Value="5">Clase Media Alta</asp:ListItem>
-                                                                                                    <asp:ListItem Value="5">Clase Alta</asp:ListItem>
-                                                                                                </asp:DropDownList>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                        </div>                                                                        
                                                                     </div>
                                                                 </div>
                                                             </fieldset>
@@ -387,7 +441,7 @@
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
-									<h2>II. Comorbilidades</h2>
+									<h2>III. Comorbilidades desde la última visita</h2>
 								</header>
 				
 								<!-- widget div-->
@@ -406,7 +460,16 @@
                                                             <fieldset>
                                                                 <div id="bootstrap-wizard-1" class="col-sm-12">
                                                                     <div class="row">
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-12">
+                                                                            <div class="smart-form">
+                                                                                <div class="widget-body no-padding ">
+                                                                                    <header>
+                                                                                        ¿Le han hecho un diagnóstico adicional de los siguientes campos desde la última visita?
+                                                                                    </header>                                                                                    
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
@@ -415,14 +478,13 @@
                                                                                             <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
                                                                                                 <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxCancerSi" runat="server"><i></i>Sí
                                                                                                 <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxCancerNo"><i></i>No</label>
-                                                                                                <label class="form-control input-md">Con tratamiento <input type="checkbox" name="checkbox-inline" id="checkboxCancerTratSi" runat="server"><i></i>Sí
-                                                                                                <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxCancerTratNo"><i></i>No</label>
+                                                                                                <input class="form-control input-md" type="text" id="TextCancer" name="Cancer" placeholder="Tipo de cáncer" runat="server" />
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
@@ -430,9 +492,7 @@
                                                                                         <div class="input-group">
                                                                                             <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
                                                                                                 <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxDiabetesSi" runat="server"><i></i>Sí
-                                                                                                <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxDiabetesNo"><i></i>No</label>
-                                                                                                <label class="form-control input-md">Con tratamiento <input type="checkbox" name="checkbox-inline" id="checkboxDiabetesTrataSi" runat="server"><i></i>Sí
-                                                                                                <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxDiabetesTrataNo"><i></i>No</label>
+                                                                                                <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxDiabetesNo"><i></i>No</label>                                                                                                
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -470,7 +530,7 @@
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>Historia de Infarto Agudo al Miocardio:</label>
+                                                                                        <label>Infarto Agudo al Miocardio:</label>
                                                                                         <div class="input-group">
                                                                                             <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
                                                                                                 <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxInfartoSi" runat="server"><i></i>Sí
@@ -484,7 +544,7 @@
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>Historia de Insuficiencia Cardiaca:</label>
+                                                                                        <label>Insuficiencia Cardiaca:</label>
                                                                                         <div class="input-group">
                                                                                             <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
                                                                                                 <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxInsufiCardiSi" runat="server"><i></i>Sí
@@ -591,7 +651,34 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>                                                                        
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                        <label>Reflujo gastroesofágico:</label>
+                                                                                        <div class="input-group">
+                                                                                            <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxReflujoGastroSi" runat="server"><i></i>Sí
+                                                                                                <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxReflujoGastroNo"><i></i>No</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                        <label>Otro, ¿cuál?:</label>
+                                                                                        <div class="input-group">
+                                                                                            <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                <input class="form-control input-md" type="text" id="TextOtroCual" name="Cancer" placeholder="Especifique" runat="server" />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </fieldset>
@@ -618,718 +705,10 @@
 
 				    </div>
 				
-					<!-- end row -->  
-
-                    
-                    <!-- row -->
-					<div class="row">
-				
-						<!-- NEW WIDGET START -->
-						<%--<article class="col-sm-12 col-md-12 col-lg-6">--%>
-						<article class="col-lg-12">
-						
-							<!-- Widget ID (each widget will need unique ID)-->
-							<div class="jarviswidget" id="HistoriaEPOC" 
-                                data-widget-colorbutton="false" 
-                                data-widget-editbutton="false" 
-                                data-widget-deletebutton="false"
-                                 visible="True"
-                                runat="server">
-								<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-				
-								-->
-								<header>
-									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
-									<h2>III. Historia de la EPOC</h2>
-								</header>
-				
-								<!-- widget div-->
-								<div>
-								
-                                <section id="widget-grid1" class="">
-                                    <!-- row -->
-                                    <div class="row">
-                                        <!-- NEW WIDGET START -->
-                                        <article class="col-sm-12 col-md-12 col-lg-12">
-                                            <!-- Widget ID (each widget will need unique ID)-->
-                                                                                           
-                                                    <div class="row">
-                                                        <form id="filtrosBusquedaForm">
-                                                            <fieldset>
-                                                                <div id="bootstrap-wizard-0" class="col-sm-12">
-                                                                    <div class="row">
-
-                                                                         <div class="col-sm-12">
-                                                                            <div class="alert alert-success fade in">
-								                                                <i class="fa-fw fa fa-check"></i>
-								                                                <strong>A) Factores de riesgo:</strong>
-							                                                </div>
-                                                                             <div class="smart-form">
-                                                                                <div class="widget-body no-padding ">
-                                                                                    <header>
-                                                                                        Exposición a humo de leña
-                                                                                    </header>                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                             <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Exposición:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxExpoHumoLenaSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxExpoHumoLenaNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Horas por año:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                                <input class="form-control input-md" type="text" id="TextHorasXAñio" name="Edad" placeholder="Horas de exposición" runat="server" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                             <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Se expone actualmente:</label>                                                                                            
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxActualExpoHumoLenaSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxActualExpoHumoLenaNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>                                                                                                                                                          
-                                                                         </div>
-
-                                                                        <div class="col-sm-12">                                                                            
-                                                                             <div class="smart-form">
-                                                                                <div class="widget-body no-padding ">
-                                                                                    <header>
-                                                                                        Tabaquismo
-                                                                                    </header>                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                             <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Exposición:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxTabaquismoSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxTabaquismoNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Paquetes por año:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                                <input class="form-control input-md" type="text" id="TextPaquetesXAñio" name="Edad" placeholder="Paquetes fumados" runat="server" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                             <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>¿Fuma actualmente?:</label>                                                                                            
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxFumaActualSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxFumaActualNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>                                                                                                                                                          
-                                                                         </div>
-                                                                        <div class="col-sm-12">                                                                            
-                                                                             <div class="smart-form">
-                                                                                <div class="widget-body no-padding ">
-                                                                                    <header>
-                                                                                        Exposiciones de riesgo
-                                                                                    </header>                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                             <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Exposición:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxRiesgosSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxRiesgosNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Cuantos años:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                                <input class="form-control input-md" type="text" id="TextAniosdeRiesgo" name="Edad" placeholder="Años de riesgo" runat="server" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                             <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>¿Cuáles?:</label>                                                                                            
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextCualRiesgo" name="Edad" placeholder="Cuáles riesgos" runat="server" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>                                                                                                                                                          
-                                                                         </div>
-
-                                                                        <p style="margin: 20px 0 0 0"></p>
-                                                                        <div class="col-sm-12">
-                                                                            <div class="alert alert-success fade in">
-								                                                <i class="fa-fw fa fa-check"></i>
-								                                                <strong>B) Historia de exacerbaciones en el año previo:</strong>
-							                                                </div>
-                                                                            <div class="alert alert-info alert-block">								                                                
-								                                                <h4 class="alert-heading">Info!</h4>
-								                                                <strong>Definición de Exacerbación:</strong> Un complejo de eventos / síntomas en las vías 
-                                                                                respiratorias inferiores (aumento o nueva aparición), de al menos dos de los siguientes datos:
-                                                                                 tos, producción de esputo (volumen), sibilancia, dificultad para respirar u opresión en el pecho
-                                                                                 con duración de al menos tres días, que requieran un cambio en el tratamiento.
-                                                                                <br />
-                                                                                <br />
-                                                                                <strong>Moderada:</strong> Uso de cortisona sin requerir hospitalización (con o sin antibiótico agregado).
-                                                                                <br />
-                                                                                <br />
-                                                                                <strong>Grave:</strong> Hospitalización por exacerbación de EPOC, sin requerir algún tipo de ventilación mecánica.
-                                                                                <br />
-                                                                                <br />
-                                                                                <strong>Muy grave:</strong> Hospitalización por exacerbación de EPOC que requirió algún tipo de ventilación mecánica.
-							                                                </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <dl>Exacerbaciones moderadas:
-                                                                                              <dt>¿requirió cortisona con o sin antibiótico, sin ameritar hospitalización, en el año previo?.</dt>
-                                                                                            </dl>                                                                                            
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">                                                                                            
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxExacerModeradasSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxExacerModeradasNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">                                                                                                                                                                                        
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerModeradas" name="Edad" placeholder="¿Cuántas?" runat="server" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="col-sm-12">                                                                    
-                                                                            <div class="col-sm-4">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <dl>Exacerbaciones graves:
-                                                                                                  <dt>¿requirió hospitalizarse por exacerbación de EPOC sin ameritar algún tipo de ventilación mecánica en el año previo?.</dt>
-                                                                                                </dl>                                                                                            
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">                                                                                            
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxExacerbaGravesSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxExacerbaGravesNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">                                                                                                                                                                                        
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaGraves" name="Edad" placeholder="¿Cuántas?" runat="server" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                        <div class="col-sm-12">
-                                                              
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <dl>Exacerbaciones muy graves:
-                                                                                              <dt>¿requirió hospitalizarse por exacerbación de EPOC ameritando algún tipo de ventilación mecánica en el año previo?.</dt>
-                                                                                            </dl>                                                                                            
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">                                                                                            
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxExacerbaMuyGravesSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxExacerbaMuyGravesNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">                                                                                                                                                                                        
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaMuyGraves" name="Edad" placeholder="¿Cuántas?" runat="server" />
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            
-                                                                            <div class="col-sm-12">
-                                                                                <div class="alert alert-success fade in">
-								                                                    <i class="fa-fw fa fa-check"></i>
-								                                                    <strong>C) Tratamiento de la EPOC:</strong>
-							                                                    </div>
-                                                                            </div>                                                                            
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Oxígeno suplementario:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxOxiSupleSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxOxiSupleNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Indacaterol:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxIndacaterolSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxIndacaterolNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Tiotropio:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxTiotropioSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxTiotropioNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Broncodilatador/esteroide inhalado:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxbroncodilatadorSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxbroncodilatadorNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Esteroide inhalado solo:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxEsteroideSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxEsteroideNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Teofilina:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxTeofilinaSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxTeofilinaNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Esteroide sistémico:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxEsteroideSisteSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxEsteroideSisteNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Broncodilatador de corta acción:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxBroncodilatadorCortaSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxBroncodilatadorCortaNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Roflumilast:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxRoflumilastSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxRoflumilastNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Rehabilitación pulmonar:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxRehabilitacionSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxRehabilitacionNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Vacunas al corriente:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxVacunasSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxVacunasNo"><i></i>No</label>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-                                                                        </div>
-
-                                                                 
-                                                                        
-                                                                    </div>
-                                                                </div>
-                                                             
-                                                            </fieldset>
-                                                        </form>
-                                                    </div>
-                                               
-                                                <!-- end widget content -->
-                                        
-                                            <!-- end widget -->
-                                        </article>
-                                        <!-- WIDGET END -->
-                                    </div>
-                                </section>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-        
-                    <!-- end row -->                   
+					<!-- end row -->
 
 
-                    <!-- row -->
-					<div class="row">
-				
-						<!-- NEW WIDGET START -->
-						<%--<article class="col-sm-12 col-md-12 col-lg-6">--%>
-						<article class="col-lg-12">
-						
-							<!-- Widget ID (each widget will need unique ID)-->
-							<div class="jarviswidget" id="DivTratamientoComorbilidades" 
-                                data-widget-colorbutton="false" 
-                                data-widget-editbutton="false" 
-                                data-widget-deletebutton="false"
-                                 visible="True"
-                                runat="server">
-								<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-				
-								-->
-								<header>
-									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
-									<h2>IV. Tratamiento de las comorbilidades de la EPOC</h2>
-								</header>
-				
-								<!-- widget div-->
-
-                                <div>
-                                    <section id="widget-grid" class="">
-                                            <!-- row -->
-                                            <div class="row">
-                                                <!-- NEW WIDGET START -->
-                                                <article class="col-sm-12 col-md-12 col-lg-12">
-                                                    <!-- Widget ID (each widget will need unique ID)-->                
-                                             
-                                                            <div class="row">
-                                                                <form id="filtrosBusquedaForm2">
-                                                                    <fieldset>
-                                                                        <div id="bootstrap-wizard-3" class="col-sm-12">
-                                                                            <div class="row">
-                                                                                    <div class="col-sm-4">
-                                                                                        <div class="form-group">
-                                                                                            <div class="input-group">
-                                                                                                <div class="select2">
-                                                                                                    <label>Antihipertensivo:</label>
-                                                                                                    <div class="input-group">
-                                                                                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxAntihipertensivoSi" runat="server"><i></i>Sí
-                                                                                                            <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxAntihipertensivoNo"><i></i>No</label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-4">
-                                                                                        <div class="form-group">
-                                                                                            <div class="input-group">
-                                                                                                <div class="select2">
-                                                                                                    <label>Diurético:</label>
-                                                                                                    <div class="input-group">
-                                                                                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxDiureticoSi" runat="server"><i></i>Sí
-                                                                                                            <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxDiureticoNo"><i></i>No</label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-4">
-                                                                                        <div class="form-group">
-                                                                                            <div class="input-group">
-                                                                                                <div class="select2">
-                                                                                                    <label>Hipoglucemiante:</label>
-                                                                                                    <div class="input-group">
-                                                                                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxHipoglucemianteNo" runat="server"><i></i>Sí
-                                                                                                            <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxHipoglucemianteSi"><i></i>No</label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-4">
-                                                                                        <div class="form-group">
-                                                                                            <div class="input-group">
-                                                                                                <div class="select2">
-                                                                                                    <label>Estatina:</label>
-                                                                                                    <div class="input-group">
-                                                                                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxEstatinaSi" runat="server"><i></i>Sí
-                                                                                                            <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxEstatinaNo"><i></i>No</label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-4">
-                                                                                        <div class="form-group">
-                                                                                            <div class="input-group">
-                                                                                                <div class="select2">
-                                                                                                    <label>Medicamentos para dormir:</label>
-                                                                                                    <div class="input-group">
-                                                                                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxMediParaDormirSi" runat="server"><i></i>Sí
-                                                                                                            <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxMediParaDormirNo"><i></i>No</label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-4">
-                                                                                        <div class="form-group">
-                                                                                            <div class="input-group">
-                                                                                                <div class="select2">
-                                                                                                    <label>Antidepresivo:</label>
-                                                                                                    <div class="input-group">
-                                                                                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxAntidepresivoSi" runat="server"><i></i>Sí
-                                                                                                            <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxAntidepresivoNo"><i></i>No</label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-4">
-                                                                                        <div class="form-group">
-                                                                                            <div class="input-group">
-                                                                                                <div class="select2">
-                                                                                                    <label>Acido acetilsalicilico:</label>
-                                                                                                    <div class="input-group">
-                                                                                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxacetilsalicilicoSi" runat="server"><i></i>Sí
-                                                                                                            <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxacetilsalicilicoNo"><i></i>No</label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-sm-4">
-                                                                                        <div class="form-group">
-                                                                                            <div class="input-group">
-                                                                                                <div class="select2">
-                                                                                                    <label>Otros:</label>
-                                                                                                    <div class="input-group">
-                                                                                                        <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <input class="form-control input-md" type="text" id="TextOtros" name="Otros" placeholder="Cuales" runat="server" />
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>                                                                            
-                                                                            </div>
-                                                                        </div>                                                                
-                                                                    </fieldset>
-                                                                </form>
-                                                            </div>                                        
-                                                        <!-- end widget content -->                                     
-           
-                                                    <!-- end widget -->
-                                                </article>
-                                                <!-- WIDGET END -->
-                                            </div>
-                                    </section>
-                                </div>
-								
-                                
-                        </div>
-                        </article>
-                    </div>
-        
-                    <!-- end row -->                 
-
-                    <!-- row -->
+                       <!-- row -->
 					<div class="row">
 				
 						<!-- NEW WIDGET START -->
@@ -1358,7 +737,7 @@
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
-									<h2>V. Signos Vitales</h2>
+									<h2>IV. Signos Vitales</h2>
 								</header>
 				
 								<!-- widget div-->
@@ -1526,7 +905,7 @@
         
                     <!-- end row -->
 
-                       <!-- row  VI-->
+                     <!-- row -->
 					<div class="row">
 				
 						<!-- NEW WIDGET START -->
@@ -1555,7 +934,7 @@
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
-									<h2>VI. Evaluación integral de la EPOC</h2>
+									<h2>V. Evaluación integral de la EPOC</h2>
 								</header>
 				
 								<!-- widget div-->
@@ -1588,7 +967,7 @@
                                                                                     </header>                                                                                    
                                                                                 </div>
                                                                             </div>
-                                                                              <header style="margin-bottom:15px">
+                                                                            <header style="margin-bottom:15px">
                                                                                 Espirometría Post-BD
                                                                             </header>
                                                                             <div class="col-sm-2">
@@ -1667,15 +1046,15 @@
 													                                        </div>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxPruebaSi" runat="server"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxPruebaNo"><i></i>No</label>
+                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxPruebaSi" runat="server" disabled="disabled"><i></i>Sí
+                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxPruebaNo" disabled="disabled"><i></i>No</label>
                                                                                             </div>
                                                                                             <div class="note">
 														                                        En caso de NO indique porqué
 													                                        </div>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <asp:DropDownList ID="DropDownListPruebaNo" runat="server" class="select2">
+                                                                                                    <asp:DropDownList ID="DropDownListPruebaNo" runat="server" class="select2" disabled="disabled">
                                                                                                         <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
                                                                                                         <asp:ListItem Value="1">Caso 1</asp:ListItem>
                                                                                                         <asp:ListItem Value="2">Caso 2</asp:ListItem>
@@ -1698,7 +1077,7 @@
                                                                                                 <label>Metros caminados:</label>
                                                                                                 <div class="input-group">
                                                                                                     <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <input class="form-control input-md" type="text" id="TextMetrosCami" name="FC" placeholder="Metros Caminados" runat="server" />
+                                                                                                        <input class="form-control input-md" type="text" id="TextMetrosCami" name="FC" placeholder="Metros Caminados" runat="server" disabled="disabled"/>
                                                                                                 </div>                                                                                            
                                                                                             </div>
                                                                                         </div>
@@ -2188,13 +1567,7 @@
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
                                                                                                 <input class="form-control input-md" type="text" id="TextTotalPuntos" name="TotalPuntos" placeholder="" runat="server" />
-                                                                                            </div>
-                                                                                            <div class="note">
-														                                        <button class="btn btn-primary" type="submit">
-															                                        <i class="fa fa-save"></i>
-															                                        Guardar Cambios
-														                                        </button>
-													                                    </div>
+                                                                                            </div>                                                                                            
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -2224,10 +1597,332 @@
                                         
                     <!-- end row -->
 
-                 
-                     
-                    
 
+                    <!-- row -->
+					<div class="row">
+				
+						<!-- NEW WIDGET START -->
+						<%--<article class="col-sm-12 col-md-12 col-lg-6">--%>
+						<article class="col-lg-12">
+						
+							<!-- Widget ID (each widget will need unique ID)-->
+							<div class="jarviswidget" id="ManejoActualEOPC" 
+                                data-widget-colorbutton="false" 
+                                data-widget-editbutton="false" 
+                                data-widget-deletebutton="false"
+                                 visible="True"
+                                runat="server">
+								<!-- widget options:
+								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+				
+								data-widget-colorbutton="false"
+								data-widget-editbutton="false"
+								data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"
+								data-widget-custombutton="false"
+								data-widget-collapsed="true"
+								data-widget-sortable="false"
+				
+								-->
+								<header>
+									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
+									<h2>VI. Manejo actual de la EPOC</h2>
+								</header>
+				
+								<!-- widget div-->
+
+                                <div>
+                                    <section id="widget-grid" class="">
+                                            <!-- row -->
+                                            <div class="row">
+                                                <!-- NEW WIDGET START -->
+                                                <article class="col-sm-12 col-md-12 col-lg-12">
+                                                    <!-- Widget ID (each widget will need unique ID)-->                
+                                             
+                                                            <div class="row">
+                                                                <form id="filtrosBusquedaForm2">
+                                                                    <fieldset>
+                                                                        <div id="bootstrap-wizard-3" class="col-sm-12">
+                                                                            <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                    <div class="alert alert-success fade in">
+                                                                                        <i class="fa-fw fa fa-check"></i>
+                                                                                        <strong>Verificar si hay manejo previo y si hay algún nuevo medicamento</strong>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Oxígeno suplementario:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxOxigenoSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxOxigenoNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Indacaterol:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxIndacaterolSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxIndacaterolNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Tiotropio:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxTiotropioSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxTiotropioNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Broncodilatador / esteroide inhalado:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxCombinacionSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxCombinacionNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Esteroide inhalado solo:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxEsteroideSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxEsteroideNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Teofilina:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxTeofilinaSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxTeofilinaNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Esteroide sistémico:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxEsteSismeSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxEsteSismeNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Broncodilatador de corta acción:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxBroncoCortoSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxBroncoCortoNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Roflumilast:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxRoflumilastSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxRoflumilastNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Rehabilitación pulmonar:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxRehabiPulmoSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxRehabiPulmoNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Vacunas al corriente:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxVacuCorrienteSi" runat="server"><i></i>Sí
+                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxVacuCorrienteNo"><i></i>No</label>                                                                                                        
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Otra Causa:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <input class="form-control input-md" type="text" id="TextOtroManejo" name="Otros" placeholder="Cuales" runat="server" />
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-12">   
+                                                                                    <p class="alert alert-info">
+                                                                                        <strong>Reporte de defunción</strong>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Fecha de defunción:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="icon-append fa fa-calendar"></i></span>
+                                                                                                    <input type="text" name="startdate" id="startdate" placeholder="Fecha de defunción" class="form-control input-md">                                                                                            
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">
+                                                                                            <label>Causa de muerte:</label>
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <asp:DropDownList ID="DropDownListCausaMuerte" runat="server" class="select2">
+                                                                                                        <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
+                                                                                                        <asp:ListItem Value="1">Caso 1</asp:ListItem>
+                                                                                                        <asp:ListItem Value="2">Caso 2</asp:ListItem>
+                                                                                                        <asp:ListItem Value="3">Caso 3</asp:ListItem>
+                                                                                                        <asp:ListItem Value="4">Caso 4</asp:ListItem>
+                                                                                                        <asp:ListItem Value="5">Caso 5</asp:ListItem>
+                                                                                                        <asp:ListItem Value="6">Caso 6</asp:ListItem>
+                                                                                                        <asp:ListItem Value="7">Caso 7</asp:ListItem>
+                                                                                                        <asp:ListItem Value="8">Caso 8</asp:ListItem>
+                                                                                                    </asp:DropDownList>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Otra Causa:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <input class="form-control input-md" type="text" id="TextOtros" name="Otros" placeholder="Cuales" runat="server" />
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-sm-3">
+                                                                                    <div class="form-group">
+                                                                                        <div class="input-group">
+                                                                                            <div class="select2">
+                                                                                                <label>Notificación de muerte por:</label>
+                                                                                                <div class="input-group">
+                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                        <asp:DropDownList ID="DropDownListNotifiMuerte" runat="server" class="select2">
+                                                                                                            <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
+                                                                                                            <asp:ListItem Value="1">Caso 1</asp:ListItem>
+                                                                                                            <asp:ListItem Value="2">Caso 2</asp:ListItem>
+                                                                                                            <asp:ListItem Value="3">Caso 3</asp:ListItem>
+                                                                                                            <asp:ListItem Value="4">Caso 4</asp:ListItem>
+                                                                                                            <asp:ListItem Value="5">Caso 5</asp:ListItem>
+                                                                                                            <asp:ListItem Value="6">Caso 6</asp:ListItem>
+                                                                                                            <asp:ListItem Value="7">Caso 7</asp:ListItem>
+                                                                                                            <asp:ListItem Value="8">Caso 8</asp:ListItem>
+                                                                                                        </asp:DropDownList>
+                                                                                                </div>                                                                                                    
+                                                                                            </div>                                                                                                
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="note">
+                                                                                    <button class="btn btn-primary" type="submit">
+                                                                                        <i class="fa fa-save"></i>
+                                                                                        Guardar Cambios
+                                                                                    </button>
+                                                                                </div>
+                                                                                                                                                            
+                                                                            </div>
+                                                                        </div>                                                                
+                                                                    </fieldset>
+                                                                </form>
+                                                            </div>                                        
+                                                        <!-- end widget content -->                                     
+           
+                                                    <!-- end widget -->
+                                                </article>
+                                                <!-- WIDGET END -->
+                                            </div>
+                                    </section>
+                                </div>
+								
+                                
+                        </div>
+                        </article>
+                    </div>
+        
+                    <!-- end row -->
+                    
                 </section>								
 				
 			</div>								

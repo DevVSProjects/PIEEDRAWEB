@@ -841,16 +841,17 @@
     <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.AutenticaTokenResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Certificacion.pubxml" />
+    <None Include="Service References\SRWSPIEEDRA\configuration91.svcinfo" />
+    <None Include="Service References\SRWSPIEEDRA\configuration.svcinfo" />
     <Content Include="Service References\SRWSPIEEDRA\PIEEDRAWEB.SRWSPIEEDRA.CambContrResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA.disco" />
-    <None Include="Service References\SRWSPIEEDRA\configuration91.svcinfo" />
-    <None Include="Service References\SRWSPIEEDRA\configuration.svcinfo" />
     <None Include="Service References\SRWSPIEEDRA\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA1.disco" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Account\ForgotPass.aspx" />
@@ -863,6 +864,10 @@
     <Content Include="Views\EmailTemplate\RegisterTemplate.html" />
     <Content Include="Views\EmailTemplate\StatusRegister.html" />
     <Content Include="Views\EPOC\Etapa1.aspx" />
+    <Content Include="Views\EPOC\Etapa2.aspx" />
+    <Content Include="Views\EPOC\Etapa3.aspx" />
+    <Content Include="Views\EPOC\Etapa4.aspx" />
+    <Content Include="Views\EPOC\Etapa5.aspx" />
     <Content Include="Views\Token\ValidaToken.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -904,8 +909,8 @@
     <Content Include="Scripts\js\plugin\ckeditor\skins\moono\readme.md" />
     <Content Include="Views\Account\Web.config" />
     <Content Include="SiteMenu.Master" />
-    <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA.wsdl" />
     <Content Include="System.Data.DataSet.datasource" />
+    <None Include="Service References\SRWSPIEEDRA\WsPIEEDRA1.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1015,6 +1020,34 @@
     </Compile>
     <Compile Include="Views\EPOC\Etapa1.aspx.designer.cs">
       <DependentUpon>Etapa1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa2.aspx.cs">
+      <DependentUpon>Etapa2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa2.aspx.designer.cs">
+      <DependentUpon>Etapa2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa3.aspx.cs">
+      <DependentUpon>Etapa3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa3.aspx.designer.cs">
+      <DependentUpon>Etapa3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa4.aspx.cs">
+      <DependentUpon>Etapa4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa4.aspx.designer.cs">
+      <DependentUpon>Etapa4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa5.aspx.cs">
+      <DependentUpon>Etapa5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\EPOC\Etapa5.aspx.designer.cs">
+      <DependentUpon>Etapa5.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Token\ValidaToken.aspx.cs">
       <DependentUpon>ValidaToken.aspx</DependentUpon>

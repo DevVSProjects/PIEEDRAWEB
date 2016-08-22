@@ -10,7 +10,7 @@
 namespace PIEEDRAWEB.Views.EPOC {
     
     
-    public partial class EPOC {
+    public partial class Etapa3 {
         
         /// <summary>
         /// LabelNombrePaciente control.
@@ -49,139 +49,148 @@ namespace PIEEDRAWEB.Views.EPOC {
         protected global::System.Web.UI.HtmlControls.HtmlInputText IdSexoheader;
         
         /// <summary>
-        /// idDatosDemograficos control.
+        /// DropDownListTipoVisita control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl idDatosDemograficos;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListTipoVisita;
         
         /// <summary>
-        /// EdadAnios control.
+        /// TextNoVisita control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText EdadAnios;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextNoVisita;
         
         /// <summary>
-        /// EdoResidencia control.
+        /// PermanenciaProtocol control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText EdoResidencia;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PermanenciaProtocol;
         
         /// <summary>
-        /// CiudadResi control.
+        /// checkboxProtocoloSi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText CiudadResi;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxProtocoloSi;
         
         /// <summary>
-        /// checkboxUrbana control.
+        /// checkboxProtocoloNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxUrbana;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxProtocoloNo;
         
         /// <summary>
-        /// checkboxRural control.
+        /// Text1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRural;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
         
         /// <summary>
-        /// checkboxInsPublic control.
+        /// HistoriaExacerbaciones control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxInsPublic;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HistoriaExacerbaciones;
         
         /// <summary>
-        /// checkboxInsPriva control.
+        /// checkboxExacerModeradasSi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxInsPriva;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerModeradasSi;
         
         /// <summary>
-        /// checkboxMasculino control.
+        /// checkboxExacerModeradasNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxMasculino;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerModeradasNo;
         
         /// <summary>
-        /// checkboxFemenino control.
+        /// TextExacerModeradas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxFemenino;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextExacerModeradas;
         
         /// <summary>
-        /// DropDownListEscolaridad control.
+        /// checkboxExacerbaGravesSi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEscolaridad;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerbaGravesSi;
         
         /// <summary>
-        /// DropDownListEdoCivil control.
+        /// checkboxExacerbaGravesNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListEdoCivil;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerbaGravesNo;
         
         /// <summary>
-        /// DropDownListOcupacion control.
+        /// TextExacerbaGraves control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListOcupacion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextExacerbaGraves;
         
         /// <summary>
-        /// TextOtraOcupa control.
+        /// checkboxExacerbaMuyGravesSi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextOtraOcupa;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerbaMuyGravesSi;
         
         /// <summary>
-        /// DropDownListNivelSocio control.
+        /// checkboxExacerbaMuyGravesNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListNivelSocio;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerbaMuyGravesNo;
+        
+        /// <summary>
+        /// TextExacerbaMuyGraves control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextExacerbaMuyGraves;
         
         /// <summary>
         /// Comorbilidades control.
@@ -211,22 +220,13 @@ namespace PIEEDRAWEB.Views.EPOC {
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxCancerNo;
         
         /// <summary>
-        /// checkboxCancerTratSi control.
+        /// TextCancer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxCancerTratSi;
-        
-        /// <summary>
-        /// checkboxCancerTratNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxCancerTratNo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextCancer;
         
         /// <summary>
         /// checkboxDiabetesSi control.
@@ -245,24 +245,6 @@ namespace PIEEDRAWEB.Views.EPOC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxDiabetesNo;
-        
-        /// <summary>
-        /// checkboxDiabetesTrataSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxDiabetesTrataSi;
-        
-        /// <summary>
-        /// checkboxDiabetesTrataNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxDiabetesTrataNo;
         
         /// <summary>
         /// checkboxHipertensionSi control.
@@ -463,562 +445,31 @@ namespace PIEEDRAWEB.Views.EPOC {
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTuberculosisNo;
         
         /// <summary>
-        /// HistoriaEPOC control.
+        /// checkboxReflujoGastroSi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HistoriaEPOC;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxReflujoGastroSi;
         
         /// <summary>
-        /// checkboxExpoHumoLenaSi control.
+        /// checkboxReflujoGastroNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExpoHumoLenaSi;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxReflujoGastroNo;
         
         /// <summary>
-        /// checkboxExpoHumoLenaNo control.
+        /// TextOtroCual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExpoHumoLenaNo;
-        
-        /// <summary>
-        /// TextHorasXAñio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextHorasXAñio;
-        
-        /// <summary>
-        /// checkboxActualExpoHumoLenaSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxActualExpoHumoLenaSi;
-        
-        /// <summary>
-        /// checkboxActualExpoHumoLenaNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxActualExpoHumoLenaNo;
-        
-        /// <summary>
-        /// checkboxTabaquismoSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTabaquismoSi;
-        
-        /// <summary>
-        /// checkboxTabaquismoNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTabaquismoNo;
-        
-        /// <summary>
-        /// TextPaquetesXAñio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextPaquetesXAñio;
-        
-        /// <summary>
-        /// checkboxFumaActualSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxFumaActualSi;
-        
-        /// <summary>
-        /// checkboxFumaActualNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxFumaActualNo;
-        
-        /// <summary>
-        /// checkboxRiesgosSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRiesgosSi;
-        
-        /// <summary>
-        /// checkboxRiesgosNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRiesgosNo;
-        
-        /// <summary>
-        /// TextAniosdeRiesgo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextAniosdeRiesgo;
-        
-        /// <summary>
-        /// TextCualRiesgo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextCualRiesgo;
-        
-        /// <summary>
-        /// checkboxExacerModeradasSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerModeradasSi;
-        
-        /// <summary>
-        /// checkboxExacerModeradasNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerModeradasNo;
-        
-        /// <summary>
-        /// TextExacerModeradas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextExacerModeradas;
-        
-        /// <summary>
-        /// checkboxExacerbaGravesSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerbaGravesSi;
-        
-        /// <summary>
-        /// checkboxExacerbaGravesNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerbaGravesNo;
-        
-        /// <summary>
-        /// TextExacerbaGraves control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextExacerbaGraves;
-        
-        /// <summary>
-        /// checkboxExacerbaMuyGravesSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerbaMuyGravesSi;
-        
-        /// <summary>
-        /// checkboxExacerbaMuyGravesNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxExacerbaMuyGravesNo;
-        
-        /// <summary>
-        /// TextExacerbaMuyGraves control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextExacerbaMuyGraves;
-        
-        /// <summary>
-        /// checkboxOxiSupleSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxOxiSupleSi;
-        
-        /// <summary>
-        /// checkboxOxiSupleNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxOxiSupleNo;
-        
-        /// <summary>
-        /// checkboxIndacaterolSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxIndacaterolSi;
-        
-        /// <summary>
-        /// checkboxIndacaterolNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxIndacaterolNo;
-        
-        /// <summary>
-        /// checkboxTiotropioSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTiotropioSi;
-        
-        /// <summary>
-        /// checkboxTiotropioNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTiotropioNo;
-        
-        /// <summary>
-        /// checkboxbroncodilatadorSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxbroncodilatadorSi;
-        
-        /// <summary>
-        /// checkboxbroncodilatadorNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxbroncodilatadorNo;
-        
-        /// <summary>
-        /// checkboxEsteroideSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEsteroideSi;
-        
-        /// <summary>
-        /// checkboxEsteroideNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEsteroideNo;
-        
-        /// <summary>
-        /// checkboxTeofilinaSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTeofilinaSi;
-        
-        /// <summary>
-        /// checkboxTeofilinaNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTeofilinaNo;
-        
-        /// <summary>
-        /// checkboxEsteroideSisteSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEsteroideSisteSi;
-        
-        /// <summary>
-        /// checkboxEsteroideSisteNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEsteroideSisteNo;
-        
-        /// <summary>
-        /// checkboxBroncodilatadorCortaSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxBroncodilatadorCortaSi;
-        
-        /// <summary>
-        /// checkboxBroncodilatadorCortaNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxBroncodilatadorCortaNo;
-        
-        /// <summary>
-        /// checkboxRoflumilastSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRoflumilastSi;
-        
-        /// <summary>
-        /// checkboxRoflumilastNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRoflumilastNo;
-        
-        /// <summary>
-        /// checkboxRehabilitacionSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRehabilitacionSi;
-        
-        /// <summary>
-        /// checkboxRehabilitacionNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRehabilitacionNo;
-        
-        /// <summary>
-        /// checkboxVacunasSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxVacunasSi;
-        
-        /// <summary>
-        /// checkboxVacunasNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxVacunasNo;
-        
-        /// <summary>
-        /// DivTratamientoComorbilidades control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DivTratamientoComorbilidades;
-        
-        /// <summary>
-        /// checkboxAntihipertensivoSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxAntihipertensivoSi;
-        
-        /// <summary>
-        /// checkboxAntihipertensivoNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxAntihipertensivoNo;
-        
-        /// <summary>
-        /// checkboxDiureticoSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxDiureticoSi;
-        
-        /// <summary>
-        /// checkboxDiureticoNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxDiureticoNo;
-        
-        /// <summary>
-        /// checkboxHipoglucemianteNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxHipoglucemianteNo;
-        
-        /// <summary>
-        /// checkboxHipoglucemianteSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxHipoglucemianteSi;
-        
-        /// <summary>
-        /// checkboxEstatinaSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEstatinaSi;
-        
-        /// <summary>
-        /// checkboxEstatinaNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEstatinaNo;
-        
-        /// <summary>
-        /// checkboxMediParaDormirSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxMediParaDormirSi;
-        
-        /// <summary>
-        /// checkboxMediParaDormirNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxMediParaDormirNo;
-        
-        /// <summary>
-        /// checkboxAntidepresivoSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxAntidepresivoSi;
-        
-        /// <summary>
-        /// checkboxAntidepresivoNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxAntidepresivoNo;
-        
-        /// <summary>
-        /// checkboxacetilsalicilicoSi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxacetilsalicilicoSi;
-        
-        /// <summary>
-        /// checkboxacetilsalicilicoNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxacetilsalicilicoNo;
-        
-        /// <summary>
-        /// TextOtros control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TextOtros;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextOtroCual;
         
         /// <summary>
         /// DivSignosVitales control.
@@ -2234,5 +1685,248 @@ namespace PIEEDRAWEB.Views.EPOC {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText TextTotalPuntos;
+        
+        /// <summary>
+        /// ManejoActualEOPC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ManejoActualEOPC;
+        
+        /// <summary>
+        /// checkboxOxigenoSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxOxigenoSi;
+        
+        /// <summary>
+        /// checkboxOxigenoNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxOxigenoNo;
+        
+        /// <summary>
+        /// checkboxIndacaterolSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxIndacaterolSi;
+        
+        /// <summary>
+        /// checkboxIndacaterolNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxIndacaterolNo;
+        
+        /// <summary>
+        /// checkboxTiotropioSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTiotropioSi;
+        
+        /// <summary>
+        /// checkboxTiotropioNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTiotropioNo;
+        
+        /// <summary>
+        /// checkboxCombinacionSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxCombinacionSi;
+        
+        /// <summary>
+        /// checkboxCombinacionNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxCombinacionNo;
+        
+        /// <summary>
+        /// checkboxEsteroideSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEsteroideSi;
+        
+        /// <summary>
+        /// checkboxEsteroideNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEsteroideNo;
+        
+        /// <summary>
+        /// checkboxTeofilinaSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTeofilinaSi;
+        
+        /// <summary>
+        /// checkboxTeofilinaNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxTeofilinaNo;
+        
+        /// <summary>
+        /// checkboxEsteSismeSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEsteSismeSi;
+        
+        /// <summary>
+        /// checkboxEsteSismeNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxEsteSismeNo;
+        
+        /// <summary>
+        /// checkboxBroncoCortoSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxBroncoCortoSi;
+        
+        /// <summary>
+        /// checkboxBroncoCortoNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxBroncoCortoNo;
+        
+        /// <summary>
+        /// checkboxRoflumilastSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRoflumilastSi;
+        
+        /// <summary>
+        /// checkboxRoflumilastNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRoflumilastNo;
+        
+        /// <summary>
+        /// checkboxRehabiPulmoSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRehabiPulmoSi;
+        
+        /// <summary>
+        /// checkboxRehabiPulmoNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxRehabiPulmoNo;
+        
+        /// <summary>
+        /// checkboxVacuCorrienteSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxVacuCorrienteSi;
+        
+        /// <summary>
+        /// checkboxVacuCorrienteNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox checkboxVacuCorrienteNo;
+        
+        /// <summary>
+        /// TextOtroManejo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextOtroManejo;
+        
+        /// <summary>
+        /// DropDownListCausaMuerte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCausaMuerte;
+        
+        /// <summary>
+        /// TextOtros control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextOtros;
+        
+        /// <summary>
+        /// DropDownListNotifiMuerte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListNotifiMuerte;
     }
 }

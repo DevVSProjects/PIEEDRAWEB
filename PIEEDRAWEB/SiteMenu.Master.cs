@@ -90,7 +90,7 @@ namespace PIEEDRAWEB
                 {
                     if (Session["Usuario"] == null)
                     {
-                        Response.Redirect("~/Views/Account/LogOutMVC.aspx");
+                        //Response.Redirect("~/Views/Account/LogOutMVC.aspx");
                     }
                     else
                     {
@@ -136,13 +136,13 @@ namespace PIEEDRAWEB
                 {
                     MenuEpoc.Visible = false;
                     MenuReportes.Visible = false;
-                    MenuAdminUser.Visible = false;
+                    //MenuAdminUser.Visible = false;
                 }
                 else if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "EPOC")
                 {
                     MenuEspirometrias.Visible = false;
                     MenuReportes.Visible = false;
-                    MenuAdminUser.Visible = false;
+                    //MenuAdminUser.Visible = false;
                 }               
             }
             catch (Exception ex)

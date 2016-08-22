@@ -145,7 +145,7 @@
          
 				<!-- logout button -->
 				<div id="logout" class="btn-header transparent pull-right">
-					<span> <a href="../Views/Account/LogOutMVC.aspx" title="Sign Out" data-action="userLogout" data-logout-msg="Por su seguridad despues de cerrar la sesión cierre el navegador abierto."><i class="fa fa-sign-out"></i></a> </span>
+					<span> <a href="../Account/LogOutMVC.aspx" title="Sign Out" data-action="userLogout" data-logout-msg="Por su seguridad despues de cerrar la sesión cierre el navegador abierto."><i class="fa fa-sign-out"></i></a> </span>
 				</div>
                 
 				<!-- end logout button -->
@@ -206,16 +206,16 @@
 								<a href="Etapa1.aspx">Etapa 1</a>
 							</li>
 							<li>
-								<a href="#">Etapa 2 <%--<span class="badge inbox-badge bg-color-greenLight">Etapa 2</span>--%></a>
+								<a href="Etapa2.aspx">Etapa 2 <%--<span class="badge inbox-badge bg-color-greenLight">Etapa 2</span>--%></a>
 							</li>
 							<li>
-								<a href="#">Etapa 3</a>
+								<a href="Etapa3.aspx">Etapa 3</a>
 							</li>
                             <li>
-								<a href="#">Etapa 4</a>
+								<a href="Etapa4.aspx">Etapa 4</a>
 							</li>
                             <li>
-								<a href="#">Etapa 5</a>
+								<a href="Etapa5.aspx">Etapa 5</a>
 							</li>
 						</ul>
 					</li>
@@ -239,7 +239,7 @@
 							</li>
 						</ul>
 					</li>
-					<li id="MenuAdminUser" runat="server">
+					<%--<li id="MenuAdminUser" runat="server">
 						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Admin Usuarios</span></a>
 						<ul>
 							<li>
@@ -263,14 +263,14 @@
 							<li>
 								<a href="ExamenGencshtml.aspx#wid-id-6">Conclusiones</a>
 							</li>
-							<%--<li>
+							<li>
 								<a href="#">Dropzone </a>
 							</li>
 							<li>
 								<a href="#">Image Cropping <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
-							</li>--%>
+							</li>
 						</ul>
-					</li>                    
+					</li>--%>                    
 				</ul>
 			</nav>
 			<span class="minifyme" data-action="minifyMenu"> 
