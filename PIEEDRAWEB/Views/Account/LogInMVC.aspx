@@ -102,7 +102,7 @@
 
 				    <div class="row">
 					    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
-						    <h1 class="txt-color-red login-header-big">PIEEDRA</h1>
+						    <h1 class="txt-color-red login-header-big">Humo de Leña</h1>
 						    <div class="hero">
 
 							    <div class="pull-left login-desc-box-l">

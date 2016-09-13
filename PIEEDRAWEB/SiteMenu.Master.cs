@@ -90,7 +90,7 @@ namespace PIEEDRAWEB
                 {
                     if (Session["Usuario"] == null)
                     {
-                        //Response.Redirect("~/Views/Account/LogOutMVC.aspx");
+                       Response.Redirect("~/Views/Account/LogOutMVC.aspx");
                     }
                     else
                     {

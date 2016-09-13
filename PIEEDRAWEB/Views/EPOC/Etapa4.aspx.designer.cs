@@ -490,12 +490,12 @@ namespace PIEEDRAWEB.Views.EPOC {
         protected global::System.Web.UI.HtmlControls.HtmlInputText TextOtros;
         
         /// <summary>
-        /// DropDownListNotifiMuerte control.
+        /// TextNotideMuerte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListNotifiMuerte;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText TextNotideMuerte;
     }
 }

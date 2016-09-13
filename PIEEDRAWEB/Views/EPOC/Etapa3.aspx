@@ -1,7 +1,229 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMenu.Master" AutoEventWireup="true" CodeBehind="Etapa3.aspx.cs" Inherits="PIEEDRAWEB.Views.EPOC.Etapa3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript" language="javascript">
+        function fnKeyPress(evt, opc) {	//-- Objetivo : valida que se teclee numeros  
+            //-- Variables de entrada : evt = Evento que se ejecuto
+            //-- EricZan 02/Jul/2014
+            // NOTE:   Enter = 13 
 
+            var _TextPeso = document.getElementById('<%=TextPeso.ClientID %>')
+            var _TextTalla = document.getElementById('<%=TextTalla.ClientID %>')
+            var _TextIMCSignos = document.getElementById('<%=TextIMCSignos.ClientID %>')
+            var _TextIMC = document.getElementById('<%=TextIMC.ClientID %>')
+            var _TextSaturacion = document.getElementById('<%=TextSaturacion.ClientID %>')
+            var _TextFC = document.getElementById('<%=TextFC.ClientID %>')
+            var _TextFR = document.getElementById('<%=TextFR.ClientID %>')
+            var _TextSistolica = document.getElementById('<%=TextSistolica.ClientID %>')
+            var _TextDiastolica = document.getElementById('<%=TextDiastolica.ClientID %>')
+            var _TextCintura = document.getElementById('<%=TextCintura.ClientID %>')
+            
+
+            evt = (evt) ? evt : window.event
+            var charCode = (evt.which) ? evt.which : evt.keyCode
+
+            if (charCode == 13 || charCode == 1) {
+                if (_TextPeso.value == '') {
+                    _TextPeso.focus();
+                    _TextPeso.value = '';
+                    return false;
+                }
+                else if (_TextPeso.value < 30 || _TextPeso.value > 150) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 30 Y 150');
+                    _TextPeso.focus();
+                    _TextPeso.value = '';
+                    return false;
+                }                
+                if (_TextTalla.value == '') {                   
+                    _TextTalla.focus();
+                    _TextTalla.value = '';
+                    return false;
+                }
+                else if (_TextTalla.value < 1.10 || _TextTalla.value > 2.10) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 1.10 Y 2.10');
+                    _TextTalla.focus();
+                    _TextTalla.value = '';
+                    return false;
+                }
+
+                var r;    // Se declara la variable
+                r = parseFloat(_TextPeso.value) / (parseFloat(_TextTalla.value) * parseFloat(_TextTalla.value)); // Convierte en Float y sumar
+                _TextIMCSignos.value = r.toFixed(2); // El resultado en TextBox resultado
+                _TextIMC.value = _TextIMCSignos.value;
+
+                if (_TextSaturacion.value == '') {                   
+                    _TextSaturacion.focus();
+                    _TextSaturacion.value = '';
+                    return false;
+                }
+                else if (_TextSaturacion.value < 60 || _TextSaturacion.value > 100) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 60 Y 100');
+                    _TextSaturacion.focus();
+                    _TextSaturacion.value = '';
+                    return false;
+                }
+                if (_TextFC.value == '') {                   
+                    _TextFC.focus();
+                    _TextFC.value = '';
+                    return;
+                }
+                else if (_TextFC.value < 40 || _TextFC.value > 150) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 40 Y 150');
+                    _TextFC.focus();
+                    _TextFC.value = '';
+                    return;
+                }
+                if (_TextFR.value == '') {                   
+                    _TextFR.focus();
+                    _TextFR.value = '';
+                    return;
+                }
+                else if (_TextFR.value < 12 || _TextFR.value > 36) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 12 Y 36');
+                    _TextFR.focus();
+                    _TextFR.value = '';
+                    return;
+                }
+                if (_TextSistolica.value == '') {                    
+                    _TextSistolica.focus();
+                    _TextSistolica.value = '';
+                    return;
+                }
+                else if (_TextSistolica.value < 70 || _TextSistolica.value > 220) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 70 Y 220');
+                    _TextSistolica.focus();
+                    _TextSistolica.value = '';
+                    return;
+                }
+                if (_TextDiastolica.value == '') {                   
+                    _TextDiastolica.focus();
+                    _TextDiastolica.value = '';
+                    return;
+                }
+                else if (_TextDiastolica.value < 30 || _TextDiastolica.value > 120) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 30 Y 120');
+                    _TextDiastolica.focus();
+                    _TextDiastolica.value = '';
+                    return;
+                }
+                if (_TextCintura.value == '') {                    
+                    _TextCintura.focus();
+                    _TextCintura.value = '';
+                    return;
+                }
+                if (_TextCintura.value < 50 || _TextCintura.value > 160) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 50 Y 160');
+                    _TextCintura.focus();
+                    _TextCintura.value = '';
+                    return;
+                }
+                else {
+                    if (opc == '1') { _TextTalla.focus(); }
+                    if (opc == '2') { _TextSaturacion.focus(); }
+                    //if (opc == '3') { .focus(); }
+                    if (opc == '4') { _TextFC.focus(); }
+                    if (opc == '5') { _TextFR.focus(); }
+                    if (opc == '6') { _TextSistolica.focus(); }
+                    if (opc == '7') { _TextDiastolica.focus(); }
+                    if (opc == '8') { _TextCintura.focus(); }
+                    if (opc == '9') { _TextPeso.focus(); }
+
+                    return false;
+                }
+
+            }
+            else if (charCode == 9) {
+                alert('Presione la tecla Enter para validar');
+            }
+        }
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+
+        function fnKeyPress2(evt, opc) {	//-- Objetivo : valida que se teclee numeros  
+            //-- Variables de entrada : evt = Evento que se ejecuto
+            //-- EricZan 02/Jul/2014
+            // NOTE:   Enter = 13 
+
+            var _Text1VEF = document.getElementById('<%=Text1VEF.ClientID %>')
+            var _Text2VEF = document.getElementById('<%=Text2VEF.ClientID %>')
+            var _Text3FVC = document.getElementById('<%=Text3FVC.ClientID %>')
+            var _Text4FVC = document.getElementById('<%=Text4FVC.ClientID %>')
+            var _Text5Rel = document.getElementById('<%=Text5Rel.ClientID %>')                        
+
+            evt = (evt) ? evt : window.event
+            var charCode = (evt.which) ? evt.which : evt.keyCode
+
+            if (charCode == 13 || charCode == 1) {
+                if (_Text1VEF.value == '') {
+                    _Text1VEF.focus();
+                    _Text1VEF.value = '';
+                    return false;
+                }
+                else if (_Text1VEF.value < 90 || _Text1VEF.value > 4000) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 90 Y 4000');
+                    _Text1VEF.focus();
+                    _Text1VEF.value = '';
+                    return false;
+                }                
+                if (_Text2VEF.value == '') {
+                    _Text2VEF.focus();
+                    _Text2VEF.value = '';
+                    return false;
+                }
+                else if (_Text2VEF.value < 5 || _Text2VEF.value > 150) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 5 Y 150');
+                    _Text2VEF.focus();
+                    _Text2VEF.value = '';
+                    return false;
+                } 
+                if (_Text3FVC.value == '') {
+                    _Text3FVC.focus();
+                    _Text3FVC.value = '';
+                    return false;
+                }
+                else if (_Text3FVC.value < 700 || _Text3FVC.value > 7000) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 700 Y 7000');
+                    _Text3FVC.focus();
+                    _Text3FVC.value = '';
+                    return false;
+                }
+                if (_Text4FVC.value == '') {
+                    _Text4FVC.focus();
+                    _Text4FVC.value = '';
+                    return false;
+                }
+                else if (_Text4FVC.value < 30 || _Text4FVC.value > 170) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 30 Y 170');
+                    _Text4FVC.focus();
+                    _Text4FVC.value = '';
+                    return false;
+                }
+                if (_Text5Rel.value == '') {
+                    _Text5Rel.focus();
+                    _Text5Rel.value = '';
+                    return false;
+                }
+                else if (_Text5Rel.value < 10 || _Text5Rel.value > 69.9) {
+                    alert('EL VALOR DEBE ESTAR ENTRE 10 Y 69.9');
+                    _Text5Rel.focus();
+                    _Text5Rel.value = '';
+                    return false;
+                }                
+                else {
+                    if (opc == '1') { _Text2VEF.focus(); }
+                    if (opc == '2') { _Text3FVC.focus(); }
+                    if (opc == '3') { _Text4FVC.focus(); }
+                    if (opc == '4') { _Text5Rel.focus(); }
+                    if (opc == '5') { _Text1VEF.focus(); }
+
+                    return false;
+                }
+            }
+            else if (charCode == 9) {
+                alert('Presione la tecla Enter para validar');
+            }
+        }
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -80,14 +302,8 @@
                                         <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                    
                                             <asp:DropDownList ID="DropDownListTipoVisita" runat="server" class="select2">
                                                 <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                <asp:ListItem Value="1">Caso 1</asp:ListItem>
-                                                <asp:ListItem Value="2">Caso 2</asp:ListItem>
-                                                <asp:ListItem Value="3">Caso 3</asp:ListItem>
-                                                <asp:ListItem Value="4">Caso 4</asp:ListItem>
-                                                <asp:ListItem Value="5">Caso 5</asp:ListItem>
-                                                <asp:ListItem Value="6">Caso 6</asp:ListItem>
-                                                <asp:ListItem Value="7">Caso 7</asp:ListItem>
-                                                <asp:ListItem Value="8">Caso 8</asp:ListItem>
+                                                <asp:ListItem Value="1">Presencial</asp:ListItem>
+                                                <asp:ListItem Value="2">No presencial</asp:ListItem>                                                
                                             </asp:DropDownList>
                                     </div>
                                 </div>
@@ -98,7 +314,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="select2">
-                                    <label>Si el tipo de visita es distinto a "En Persona", anote la causa:</label>
+                                    <label>Si el tipo de visita es distinto a "Presencial", anote la causa:</label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="icon-append fa fa-list"></i></span>
                                         <input class="form-control input-md" type="text" id="TextNoVisita" name="Otros" placeholder="Causa" runat="server" />                                                                                            
@@ -274,7 +490,7 @@
                                                                                     <div class="input-group">
                                                                                         <div class="select2">
                                                                                             <dl>Exacerbaciones moderadas:
-                                                                                              <dt>¿requirió cortisona con o sin antibiótico, sin ameritar hospitalización, en el año previo?.</dt>
+                                                                                              <dt>¿Requirió agregar tratamiento con esteroide sistémico?.</dt>
                                                                                             </dl>                                                                                            
                                                                                         </div>
                                                                                     </div>
@@ -299,7 +515,7 @@
                                                                                         <div class="select2">                                                                                                                                                                                        
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerModeradas" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerModeradas" name="Edad" placeholder="No. de exacerbaciones" runat="server" />
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -338,16 +554,14 @@
                                                                                         <div class="select2">                                                                                                                                                                                        
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaGraves" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaGraves" name="Edad" placeholder="No. de exacerbaciones" runat="server" />
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
-                                                                        <div class="col-sm-12">
-                                                              
+                                                                        <div class="col-sm-12">                                                              
                                                                             <div class="col-sm-4">
                                                                                 <div class="form-group">
                                                                                     <div class="input-group">
@@ -378,7 +592,7 @@
                                                                                         <div class="select2">                                                                                                                                                                                        
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaMuyGraves" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaMuyGraves" name="Edad" placeholder="No. de exacerbaciones" runat="server" />
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -708,7 +922,7 @@
 					<!-- end row -->
 
 
-                       <!-- row -->
+                        <!-- row -->
 					<div class="row">
 				
 						<!-- NEW WIDGET START -->
@@ -763,7 +977,7 @@
                                                                                             <label>Peso:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextPeso" name="Peso" placeholder="Peso" runat="server" />
+                                                                                                <input class="form-control input-md signos-vitales" type="text" id="TextPeso" name="Peso" placeholder="Peso" runat="server" onKeyPress="return fnKeyPress (event,1)" onclick="return fnKeyPress(event, 1)" maxlength="3"/>
                                                                                             </div>
                                                                                             <div class="note">
 														                                        <strong>Kg</strong> (No menos de 30 Kg ni más de 200 Kg)
@@ -776,10 +990,42 @@
                                                                                 <div class="form-group">
                                                                                     <div class="input-group">
                                                                                         <div class="select2">
+                                                                                            <label>Talla:</label>
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <input class="form-control input-md" type="text" id="TextTalla" name="Talla" placeholder="Talla" runat="server" onKeyPress="return fnKeyPress (event,2)" onclick="return fnKeyPress(event, 2)" maxlength="4"/>
+                                                                                            </div>
+                                                                                            <div class="note">
+														                                        <strong>cms</strong>
+													                                        </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">
+                                                                                            <label>IMC:</label>
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                <input class="form-control input-md" type="text" id="TextIMCSignos" name="IMC" placeholder="IMC" runat="server" disabled="disabled" />
+                                                                                            </div>
+                                                                                            <div class="note">
+														                                        <strong style="color:white">cms</strong>
+													                                        </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">
                                                                                             <label>Saturación sin O2:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextSaturacion" name="Saturación" placeholder="Saturación" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextSaturacion" name="Saturación" placeholder="Saturación" runat="server" onKeyPress="return fnKeyPress (event,4)" onclick="return fnKeyPress(event, 4)" maxlength="3"/>
                                                                                             </div>
                                                                                             <div class="note">
 														                                        <strong>%</strong> (No menos de 50%)
@@ -795,7 +1041,7 @@
                                                                                             <label>FC:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextFC" name="FC" placeholder="FC" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextFC" name="FC" placeholder="FC" runat="server" onKeyPress="return fnKeyPress (event,5)" onclick="return fnKeyPress(event, 5)" maxlength="3"/>
                                                                                             </div>
                                                                                             <div class="note">
 														                                        <strong>X min.</strong> (No menos de 40)
@@ -811,7 +1057,7 @@
                                                                                             <label>FR:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextFR" name="FR" placeholder="FR" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextFR" name="FR" placeholder="FR" runat="server" onKeyPress="return fnKeyPress (event,6)" onclick="return fnKeyPress(event, 6)" maxlength="2"/>
                                                                                             </div>
                                                                                             <div class="note">
 														                                        <strong>X min.</strong>
@@ -827,7 +1073,7 @@
                                                                                             <label>Presión Arterial (mmHg) Sistólica:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextSistolica" name="Sistolica" placeholder="Sistolica" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextSistolica" name="Sistolica" placeholder="Sistolica" runat="server" onKeyPress="return fnKeyPress (event,7)" onclick="return fnKeyPress(event, 7)" maxlength="3"/>
                                                                                             </div>
                                                                                             <div class="note">
 														                                        <strong>mmHg</strong>
@@ -843,7 +1089,7 @@
                                                                                             <label>Presión Arterial (mmHg) Diastólica:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextDiastolica" name="Diastolica" placeholder="Diastolica" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextDiastolica" name="Diastolica" placeholder="Diastolica" runat="server" onKeyPress="return fnKeyPress (event,8)" onclick="return fnKeyPress(event, 8)" maxlength="3"/>
                                                                                             </div>
                                                                                             <div class="note">
 														                                        <strong>mmHg</strong>
@@ -859,31 +1105,15 @@
                                                                                             <label>Cintura:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextCintura" name="Cintura" placeholder="Cintura" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextCintura" name="Cintura" placeholder="Cintura" runat="server" onKeyPress="return fnKeyPress (event,9)" onclick="return fnKeyPress(event, 9)" maxlength="3"/>
                                                                                             </div>
                                                                                             <div class="note">
-														                                        <strong>cm</strong>
+														                                        <strong>cms</strong>
 													                                        </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Talla:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextTalla" name="Talla" placeholder="Talla" runat="server" />
-                                                                                            </div>
-                                                                                            <div class="note">
-														                                        <strong>cm</strong>
-													                                        </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>                                                                            
+                                                                            </div>                                                                                                                                                        
                                                                     </div>
                                                                 </div>                                                                
                                                         </fieldset>
@@ -905,7 +1135,7 @@
         
                     <!-- end row -->
 
-                     <!-- row -->
+                    <!-- row  VI-->
 					<div class="row">
 				
 						<!-- NEW WIDGET START -->
@@ -963,56 +1193,48 @@
                                                                             <div class="smart-form">
                                                                                 <div class="widget-body no-padding ">
                                                                                     <header>
-                                                                                        Si no tiene EPOC, favor de no continuar
+                                                                                        Espirometría Post-BD
                                                                                     </header>                                                                                    
                                                                                 </div>
-                                                                            </div>
-                                                                            <header style="margin-bottom:15px">
-                                                                                Espirometría Post-BD
-                                                                            </header>
+                                                                            </div>                                                                              
                                                                             <div class="col-sm-2">
-                                                                                 <div class="form-group">
-													                                <label class="col-md-2 control-label">1. VEF</label>
-													                                <div class="col-md-6">
-														                                <input class="form-control input-md" type="text" id="Text1VEF" name="1VEF" placeholder="" runat="server" />
-													                                </div>
-                                                                                     <label class="col-md-2 control-label">ml</label>                                                                                     
+                                                                                 <div class="form-group">													                              
+													                                <label class="col-md-9 control-label">1.VEF1 ml</label>
+                                                                                     <div class="col-md-4">
+														                                <input class="form-control input-md" type="text" id="Text1VEF" name="1VEF" placeholder="" runat="server" style="width:56px" maxlength="4" onKeyPress="return fnKeyPress2 (event,1)" onclick="return fnKeyPress2(event, 1)"/>
+													                                </div>                                                                                     
 												                                </div>
                                                                             </div>
                                                                             <div class="col-sm-2">
                                                                                  <div class="form-group">
-													                                <label class="col-md-2 control-label">2. VEF</label>
-													                                <div class="col-md-6">
-														                                <input class="form-control input-md" type="text" id="Text2VEF" name="2VEF" placeholder="" runat="server" />
-													                                </div>
-                                                                                     <label class="col-md-2 control-label">%</label>                                                                                     
-												                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-2">
-                                                                                 <div class="form-group">
-													                                <label class="col-md-2 control-label">3. FVC</label>
-													                                <div class="col-md-6">
-														                                <input class="form-control input-md" type="text" id="Text3FVC" name="3FVC" placeholder="" runat="server" />
-													                                </div>
-                                                                                     <label class="col-md-2 control-label">ml</label>                                                                                     
-												                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-2">
-                                                                                 <div class="form-group">
-													                                <label class="col-md-2 control-label">4. FVC</label>
-													                                <div class="col-md-6">
-														                                <input class="form-control input-md" type="text" id="Text4FVC" name="4FVC" placeholder="" runat="server" />
-													                                </div>
-                                                                                     <label class="col-md-2 control-label">%</label>                                                                                     
-												                                </div>
-                                                                            </div>
-                                                                            <div class="col-sm-4">
-                                                                                 <div class="form-group">
-													                                <label class="col-md-6 control-label">5. Relación (Máximo 69%)</label>
+													                                <label class="col-md-9 control-label">2.VEF1 %</label>
 													                                <div class="col-md-4">
-														                                <input class="form-control input-md" type="text" id="Text5Rel" name="5Rel" placeholder="" runat="server" />
-													                                </div>
-                                                                                     <label class="col-md-2 control-label">%</label>                                                                                     
+														                                <input class="form-control input-md" type="text" id="Text2VEF" name="2VEF" placeholder="" runat="server" style="width:50px" maxlength="3" onKeyPress="return fnKeyPress2 (event,2)" onclick="return fnKeyPress2(event, 2)"/>
+													                                </div>                                                                                                                                                                          
+												                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group">
+													                                <label class="col-md-12 control-label">3.FVC/CVF ml</label>
+													                                <div class="col-md-4">
+														                                <input class="form-control input-md" type="text" id="Text3FVC" name="3FVC" placeholder="" runat="server" style="width:56px" maxlength="4" onKeyPress="return fnKeyPress2 (event,3)" onclick="return fnKeyPress2(event, 3)"/>
+													                                </div>                                                                                                                                                                          
+												                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group">
+													                                <label class="col-md-12 control-label">4.FVC/CVF %</label>
+													                                <div class="col-md-4">
+														                                <input class="form-control input-md" type="text" id="Text4FVC" name="4FVC" placeholder="" runat="server" style="width:50px" maxlength="3" onKeyPress="return fnKeyPress2 (event,4)" onclick="return fnKeyPress2(event, 4)"/>
+													                                </div>                                                                                                                                                                          
+												                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-3">
+                                                                                 <div class="form-group">
+													                                <label class="col-md-12 control-label">5.VEF1/CVF (Máx. 69%)</label>
+													                                <div class="col-md-4">
+														                                <input class="form-control input-md" type="text" id="Text5Rel" name="5Rel" placeholder="" runat="server" style="width:56px" maxlength="4" onKeyPress="return fnKeyPress2 (event,5)" onclick="return fnKeyPress2(event, 5)"/>
+													                                </div>                                                                                                                                                                          
 												                                </div>
                                                                             </div>                                                                            
                                                                          </div>
@@ -1024,14 +1246,8 @@
                                                                                             <label>IMC:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextIMC" name="IMC" placeholder="IMC" runat="server" />
-                                                                                            </div>
-                                                                                            <div class="note">
-														                                        <button class="btn btn-primary" type="submit">
-															                                        <i class="fa fa-search"></i>
-															                                        Calcular
-														                                        </button>
-													                                        </div>
+                                                                                                    <input class="form-control input-md" type="text" id="TextIMC" name="IMC" placeholder="IMC" runat="server" disabled="disabled" />
+                                                                                            </div>                                                                                            
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -1046,24 +1262,20 @@
 													                                        </div>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxPruebaSi" runat="server" disabled="disabled"><i></i>Sí
-                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxPruebaNo" disabled="disabled"><i></i>No</label>
+                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxPruebaSi" runat="server"><i></i>Sí
+                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxPruebaNo"><i></i>No</label>
                                                                                             </div>
                                                                                             <div class="note">
 														                                        En caso de NO indique porqué
 													                                        </div>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <asp:DropDownList ID="DropDownListPruebaNo" runat="server" class="select2" disabled="disabled">
+                                                                                                    <asp:DropDownList ID="DropDownListPruebaNo" runat="server" class="select2">
                                                                                                         <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                        <asp:ListItem Value="1">Caso 1</asp:ListItem>
-                                                                                                        <asp:ListItem Value="2">Caso 2</asp:ListItem>
-                                                                                                        <asp:ListItem Value="3">Caso 3</asp:ListItem>
-                                                                                                        <asp:ListItem Value="4">Caso 4</asp:ListItem>
-                                                                                                        <asp:ListItem Value="5">Caso 5</asp:ListItem>
-                                                                                                        <asp:ListItem Value="6">Caso 6</asp:ListItem>
-                                                                                                        <asp:ListItem Value="7">Caso 7</asp:ListItem>
-                                                                                                        <asp:ListItem Value="8">Caso 8</asp:ListItem>
+                                                                                                        <asp:ListItem Value="1">Disnea</asp:ListItem>
+                                                                                                        <asp:ListItem Value="2">Ya no camina</asp:ListItem>
+                                                                                                        <asp:ListItem Value="3">Fractura</asp:ListItem>
+                                                                                                        <asp:ListItem Value="4">Otro</asp:ListItem>                                                                                                        
                                                                                                     </asp:DropDownList>
                                                                                             </div>
                                                                                         </div>
@@ -1077,7 +1289,7 @@
                                                                                                 <label>Metros caminados:</label>
                                                                                                 <div class="input-group">
                                                                                                     <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <input class="form-control input-md" type="text" id="TextMetrosCami" name="FC" placeholder="Metros Caminados" runat="server" disabled="disabled"/>
+                                                                                                        <input class="form-control input-md" type="text" id="TextMetrosCami" name="FC" placeholder="Metros Caminados" runat="server" disabled="disabled" />
                                                                                                 </div>                                                                                            
                                                                                             </div>
                                                                                         </div>
@@ -1104,7 +1316,7 @@
                                                                                 <strong>Grado 4:</strong> - No puedo salir de la casa porque me falta el aire, o me falta el aire cuando me visto o desvisto.
 							                                                </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
@@ -1113,452 +1325,407 @@
                                                                                             <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
                                                                                                 <asp:DropDownList ID="DropDownListDisnea" runat="server" class="select2">
                                                                                                     <asp:ListItem Value="0">--SELECCIONE EL GRADO--</asp:ListItem>
-                                                                                                    <asp:ListItem Value="1">Grado 1</asp:ListItem>
-                                                                                                    <asp:ListItem Value="2">Grado 2</asp:ListItem>
-                                                                                                    <asp:ListItem Value="3">Grado 3</asp:ListItem>
-                                                                                                    <asp:ListItem Value="4">Grado 4</asp:ListItem>                                                                                                    
+                                                                                                    <asp:ListItem Value="1">Grado 0</asp:ListItem>
+                                                                                                    <asp:ListItem Value="2">Grado 1</asp:ListItem>
+                                                                                                    <asp:ListItem Value="3">Grado 2</asp:ListItem>
+                                                                                                    <asp:ListItem Value="4">Grado 3</asp:ListItem>
+                                                                                                    <asp:ListItem Value="5">Grado 4</asp:ListItem>                                                                                                    
                                                                                                 </asp:DropDownList>
                                                                                         </div>                                                                                        
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
                                                                                         <label>Indice BODE:</label>
+                                                                                        <label style="color:white">Escala de sensación de falta de aire</label>
                                                                                         <div class="input-group">
                                                                                             <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                <input class="form-control input-md" type="text" id="TextIndiceBODE" name="IndiceBODE" placeholder="Indice BODE" runat="server" />
+                                                                                                <input class="form-control input-md" type="text" id="TextIndiceBODE" name="IndiceBODE" placeholder="Indice BODE" runat="server" disabled="disabled"/>
                                                                                         </div>
-                                                                                        <div class="note">
+                                                                                        <%--<div class="note">
 														                                    <button class="btn btn-primary" type="submit">
 															                                    <i class="fa fa-search"></i>
 															                                    Calcular índice BODE
 														                                    </button>
-													                                    </div>
+													                                    </div>--%>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        <div class="col-sm-4">
+                                                                                <div class="form-group">
+                                                                                    <div class="input-group">
+                                                                                        <div class="select2">
+                                                                                            <label>Su paciente se despierta durante la noche por falta de aire:</label>
+                                                                                            <div class="input-group">
+                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
+                                                                                                    <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxFaltaAireSi" runat="server"><i></i>Sí
+                                                                                                    <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxFaltaAireNo"><i></i>No</label>
+                                                                                                <label>Cuáles:</label>                                                                                                                                                                                          
+                                                                                                <asp:DropDownList ID="DropDownList1" runat="server" class="select2">
+                                                                                                    <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
+                                                                                                    <asp:ListItem Value="1">Al menos 1 noche a la semana</asp:ListItem>
+                                                                                                    <asp:ListItem Value="2">De 2 a 3 noches a la semana</asp:ListItem>
+                                                                                                    <asp:ListItem Value="3">Mas de 3 noches a la semana</asp:ListItem>
+                                                                                                </asp:DropDownList>                                                                                           
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
                                                                         <div class="col-sm-12">   
                                                                             <p class="alert alert-info">
 											                                    <strong>Cuestionario CAT Calidad de Vida</strong>
 										                                    </p>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>Nunca Toso: 
-																                            <input type="checkbox" name="checkbox" id="checkboxNuncaToso0" value="0" runat="server">
+                                                                                        <label>Nunca Toso</label>                                                                                                                                                                                                                                                                            
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                     
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxToso0" value="0" runat="server">
 																                            <i></i>0
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaToso1" value="1" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxToso1" value="1" runat="server">
 																                            <i></i>1
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaToso2" value="2" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxToso2" value="2" runat="server">
 																                            <i></i>2
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaToso3" value="3" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxToso3" value="3" runat="server">
 																                            <i></i>3
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaToso4" value="4" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxToso4" value="4" runat="server">
 																                            <i></i>4
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaToso5" value="5" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxToso5" value="5" runat="server">
 																                            <i></i>5
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaToso6" value="6" runat="server">
-																                            <i></i>6
-                                                                                        </label>
-                                                                                                                                                                                    
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxToso6" value="6" runat="server">
+																                            <i></i>6 
+                                                                                      
+																                                                                                                                                                                                                                                                                                                
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">                                                                                        
+                                                                                        <label>Siempre estoy tosiendo</label>                                                                                                                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>Siempre estoy tosiendo: 
-																                            <input type="checkbox" name="checkbox" id="checkboxSiempreToso0" value="0" runat="server">
+                                                                                        <label>Nunca tengo flema (mucosidad) en el pecho</label>                                                                                                                                                                                                                                                                            
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                     
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxFlemaPecho0" value="0" runat="server">
 																                            <i></i>0
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSiempreToso1" value="1" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxFlemaPecho1" value="1" runat="server">
 																                            <i></i>1
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSiempreToso2" value="2" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxFlemaPecho2" value="2" runat="server">
 																                            <i></i>2
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSiempreToso3" value="3" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxFlemaPecho3" value="3" runat="server">
 																                            <i></i>3
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSiempreToso4" value="4" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxFlemaPecho4" value="4" runat="server">
 																                            <i></i>4
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSiempreToso5" value="5" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxFlemaPecho5" value="5" runat="server">
 																                            <i></i>5
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSiempreToso6" value="6" runat="server">
-																                            <i></i>6
-                                                                                        </label>
-                                                                                                                                                                                    
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxFlemaPecho6" value="6" runat="server">
+																                            <i></i>6 
+                                                                                      
+																                                                                                                                                                                                                                                                                                                
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">                                                                                        
+                                                                                        <label>Tengo el pecho completamente lleno de flema (mucosidad)</label>                                                                                                                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>Nunca tengo flema (Mucosidad) en el pecho: </label>
-																                        <label>    
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaFlema0" value="0" runat="server">
+                                                                                        <label>No siento ninguna opresión en el pecho</label>                                                                                                                                                                                                                                                                            
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                     
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxOpresionPecho0" value="0" runat="server">
 																                            <i></i>0
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaFlema1" value="1" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxOpresionPecho1" value="1" runat="server">
 																                            <i></i>1
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaFlema2" value="2" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxOpresionPecho2" value="2" runat="server">
 																                            <i></i>2
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaFlema3" value="3" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxOpresionPecho3" value="3" runat="server">
 																                            <i></i>3
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaFlema4" value="4" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxOpresionPecho4" value="4" runat="server">
 																                            <i></i>4
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaFlema5" value="5" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxOpresionPecho5" value="5" runat="server">
 																                            <i></i>5
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNuncaFlema6" value="6" runat="server">
-																                            <i></i>6
-                                                                                        </label>
-                                                                                                                                                                                    
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxOpresionPecho6" value="6" runat="server">
+																                            <i></i>6 
+                                                                                      
+																                                                                                                                                                                                                                                                                                                
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">                                                                                        
+                                                                                        <label>Siento mucha opresión en el pecho</label>                                                                                                                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>Tengo el pecho completamente lleno de flema (mucosidad): </label>
-                                                                                        <label>
-																                            <input type="checkbox" name="checkbox" id="checkboxTengoFlema0" value="0" runat="server">
+                                                                                        <label>Cuando subo una pendiente o un tramo de escalera, no me falta el aire</label>                                                                                                                                                                                                                                                                            
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                     
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxSubePendiente0" value="0" runat="server">
 																                            <i></i>0
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxTengoFlema1" value="1" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxSubePendiente1" value="1" runat="server">
 																                            <i></i>1
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxTengoFlema2" value="2" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxSubePendiente2" value="2" runat="server">
 																                            <i></i>2
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxTengoFlema3" value="3" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxSubePendiente3" value="3" runat="server">
 																                            <i></i>3
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxTengoFlema4" value="4" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxSubePendiente4" value="4" runat="server">
 																                            <i></i>4
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxTengoFlema5" value="5" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxSubePendiente5" value="5" runat="server">
 																                            <i></i>5
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxTengoFlema6" value="6" runat="server">
-																                            <i></i>6
-                                                                                        </label>
-                                                                                                                                                                                    
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxSubePendiente6" value="6" runat="server">
+																                            <i></i>6 
+                                                                                      
+																                                                                                                                                                                                                                                                                                                
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">                                                                                        
+                                                                                        <label>Cuando subo una pendiente o un tramo de escaleras, me falta mucho el aire</label>                                                                                                                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>No siento ninguna opresión en el pecho: </label>
-                                                                                            <label>
-																                            <input type="checkbox" name="checkbox" id="checkboxSinOpresion0" value="0" runat="server">
+                                                                                        <label>No me siento limitado para realizar actividades domésticas</label>                                                                                                                                                                                                                                                                            
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                     
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxActiDomes0" value="0" runat="server">
 																                            <i></i>0
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSinOpresion1" value="1" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxActiDomes1" value="1" runat="server">
 																                            <i></i>1
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSinOpresion2" value="2" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxActiDomes2" value="2" runat="server">
 																                            <i></i>2
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSinOpresion3" value="3" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxActiDomes3" value="3" runat="server">
 																                            <i></i>3
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSinOpresion4" value="4" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxActiDomes4" value="4" runat="server">
 																                            <i></i>4
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSinOpresion5" value="5" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxActiDomes5" value="5" runat="server">
 																                            <i></i>5
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxSinOpresion6" value="6" runat="server">
-																                            <i></i>6
-                                                                                        </label>
-                                                                                                                                                                                    
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxActiDomes6" value="6" runat="server">
+																                            <i></i>6 
+                                                                                      
+																                                                                                                                                                                                                                                                                                                
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Siento mucha opresión en el pecho: </label> <br />
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxConOpresion0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConOpresion1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConOpresion2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConOpresion3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConOpresion4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConOpresion5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConOpresion6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
+                                                                                    <div class="select2">                                                                                        
+                                                                                        <label>Me siento muy limitado para realizar actividades domésticas</label>                                                                                                                                                                                    
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>Cuando subo una pendiente o un tramo de escaleras, no me falta el aire: </label>
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxConAire0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConAire1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConAire2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConAire3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConAire4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConAire5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxConAire6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
+                                                                                        <label>Me siento seguro para salir de casa a pesar de la afección pulmonar que padezco</label>                                                                                                                                                                                                                                                                            
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>Cuando subo una pendiente o un tramo de escaleras, me falta mucho el aire: </label>
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxSinAire0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSinAire1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSinAire2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSinAire3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSinAire4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSinAire5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSinAire6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>No me siento limitado para realizar actividades domésticas: </label>
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxActiDomessi0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxActiDomessi1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxActiDomessi2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxActiDomessi3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxActiDomessi4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxActiDomessi5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxActiDomessi6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Me siento muy limitado para realizar actividades domésticas: </label>
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxLimiActiDomes0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxLimiActiDomes1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxLimiActiDomes2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxLimiActiDomes3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxLimiActiDomes4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxLimiActiDomes5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxLimiActiDomes6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Me siento seguro para salir de casa a pesar de la afección pulmonar que padezco: </label>
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxSeguroAfec0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSeguroAfec1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSeguroAfec2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSeguroAfec3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSeguroAfec4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSeguroAfec5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSeguroAfec6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>No me siento nada seguro al salir de casa debido a la afección pulmonar que padezco: </label>
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxNadaSeguroAfec0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNadaSeguroAfec1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNadaSeguroAfec2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNadaSeguroAfec3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNadaSeguroAfec4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNadaSeguroAfec5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNadaSeguroAfec6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Duermo sin problemas: </label> <br /> <br />
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxSleep0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSleep1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSleep2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSleep3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSleep4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSleep5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxSleep6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Tengo problemas para dormir debido a la afección pulmonar que padezco: </label>
-                                                                                            <label>
-																                                <input type="checkbox" name="checkbox" id="checkboxNoSleep0" value="0" runat="server">
-																                                <i></i>0
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNoSleep1" value="1" runat="server">
-																                                <i></i>1
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNoSleep2" value="2" runat="server">
-																                                <i></i>2
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNoSleep3" value="3" runat="server">
-																                                <i></i>3
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNoSleep4" value="4" runat="server">
-																                                <i></i>4
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNoSleep5" value="5" runat="server">
-																                                <i></i>5
-                                                                                                <input type="checkbox" name="checkbox" id="checkboxNoSleep6" value="6" runat="server">
-																                                <i></i>6
-                                                                                            </label>
-                                                                                                                                                                                    
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-sm-6">
-                                                                            <div class="form-group">
-                                                                                <div class="input-group">
-                                                                                    <div class="select2">
-                                                                                        <label>Tengo mucha energía: 
-																                            <input type="checkbox" name="checkbox" id="checkboxEnergy0" value="0" runat="server">
+                                                                                     
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxAfecPulmo0" value="0" runat="server">
 																                            <i></i>0
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergy1" value="1" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxAfecPulmo1" value="1" runat="server">
 																                            <i></i>1
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergy2" value="2" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxAfecPulmo2" value="2" runat="server">
 																                            <i></i>2
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergy3" value="3" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxAfecPulmo3" value="3" runat="server">
 																                            <i></i>3
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergy4" value="4" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxAfecPulmo4" value="4" runat="server">
 																                            <i></i>4
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergy5" value="5" runat="server">
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxAfecPulmo5" value="5" runat="server">
 																                            <i></i>5
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergy6" value="6" runat="server">
-																                            <i></i>6
-                                                                                        </label>
-                                                                                                                                                                                    
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxAfecPulmo6" value="6" runat="server">
+																                            <i></i>6 
+                                                                                      
+																                                                                                                                                                                                                                                                                                                
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">                                                                                        
+                                                                                        <label>No me siento nada seguro al salir de casa debido a la afección pulmonar que padezco</label>                                                                                                                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
                                                                             <div class="form-group">
                                                                                 <div class="input-group">
                                                                                     <div class="select2">
-                                                                                        <label>No tengo ninguna energía: 
-																                            <input type="checkbox" name="checkbox" id="checkboxNoEnergy0" value="0" runat="server">
-																                            <i></i>0
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNoEnergy1" value="1" runat="server">
-																                            <i></i>1
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNoEnergy2" value="2" runat="server">
-																                            <i></i>2
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNoEnergy3" value="3" runat="server">
-																                            <i></i>3
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNoEnergy4" value="4" runat="server">
-																                            <i></i>4
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNoEnergy5" value="5" runat="server">
-																                            <i></i>5
-                                                                                            <input type="checkbox" name="checkbox" id="checkboxNoEnergy6" value="6" runat="server">
-																                            <i></i>6
-                                                                                        </label>
-                                                                                                                                                                                    
+                                                                                        <label>Duermo sin problemas</label>                                                                                                                                                                                                                                                                            
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                     
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxDormir0" value="0" runat="server">
+																                            <i></i>0
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxDormir1" value="1" runat="server">
+																                            <i></i>1
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxDormir2" value="2" runat="server">
+																                            <i></i>2
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxDormir3" value="3" runat="server">
+																                            <i></i>3
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxDormir4" value="4" runat="server">
+																                            <i></i>4
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxDormir5" value="5" runat="server">
+																                            <i></i>5
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxDormir6" value="6" runat="server">
+																                            <i></i>6 
+                                                                                      
+																                                                                                                                                                                                                                                                                                                
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">                                                                                        
+                                                                                        <label>Tengo problemas para dormir debido a la afección pulmonar que padezco</label>                                                                                                                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                        <label>Tengo mucha energía</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">
+                                                                                     
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergia0" value="0" runat="server">
+																                            <i></i>0
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergia1" value="1" runat="server">
+																                            <i></i>1
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergia2" value="2" runat="server">
+																                            <i></i>2
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergia3" value="3" runat="server">
+																                            <i></i>3
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergia4" value="4" runat="server">
+																                            <i></i>4
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergia5" value="5" runat="server">
+																                            <i></i>5
+                                                                                            <input type="checkbox" name="checkbox" id="checkboxEnergia6" value="6" runat="server">
+																                            <i></i>6 
+                                                                                      
+																                                                                                                                                                                                                                                                                                                
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4">
+                                                                            <div class="form-group">
+                                                                                <div class="input-group">
+                                                                                    <div class="select2">                                                                                        
+                                                                                        <label>No tengo ninguna energía</label>                                                                                                                                                                                    
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>  
                                                                         <div class="col-sm-6">
                                                                                 <div class="form-group">
                                                                                     <div class="input-group">
@@ -1566,8 +1733,14 @@
                                                                                             <label>Total de puntos:</label>
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>
-                                                                                                <input class="form-control input-md" type="text" id="TextTotalPuntos" name="TotalPuntos" placeholder="" runat="server" />
-                                                                                            </div>                                                                                            
+                                                                                                <input class="form-control input-md" type="text" id="TextTotalPuntos" name="TotalPuntos" placeholder="" runat="server" disabled="disabled"/>
+                                                                                            </div>
+                                                                                            <div class="note">
+														                                        <button class="btn btn-primary" type="submit">
+															                                        <i class="fa fa-save"></i>
+															                                        Guardar Cambios
+														                                        </button>
+													                                    </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -1598,330 +1771,7 @@
                     <!-- end row -->
 
 
-                    <!-- row -->
-					<div class="row">
-				
-						<!-- NEW WIDGET START -->
-						<%--<article class="col-sm-12 col-md-12 col-lg-6">--%>
-						<article class="col-lg-12">
-						
-							<!-- Widget ID (each widget will need unique ID)-->
-							<div class="jarviswidget" id="ManejoActualEOPC" 
-                                data-widget-colorbutton="false" 
-                                data-widget-editbutton="false" 
-                                data-widget-deletebutton="false"
-                                 visible="True"
-                                runat="server">
-								<!-- widget options:
-								usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-				
-								data-widget-colorbutton="false"
-								data-widget-editbutton="false"
-								data-widget-togglebutton="false"
-								data-widget-deletebutton="false"
-								data-widget-fullscreenbutton="false"
-								data-widget-custombutton="false"
-								data-widget-collapsed="true"
-								data-widget-sortable="false"
-				
-								-->
-								<header>
-									<span class="widget-icon"> <i class="fa fa-eye-slash"></i> </span>
-									<h2>VI. Manejo actual de la EPOC</h2>
-								</header>
-				
-								<!-- widget div-->
-
-                                <div>
-                                    <section id="widget-grid" class="">
-                                            <!-- row -->
-                                            <div class="row">
-                                                <!-- NEW WIDGET START -->
-                                                <article class="col-sm-12 col-md-12 col-lg-12">
-                                                    <!-- Widget ID (each widget will need unique ID)-->                
-                                             
-                                                            <div class="row">
-                                                                <form id="filtrosBusquedaForm2">
-                                                                    <fieldset>
-                                                                        <div id="bootstrap-wizard-3" class="col-sm-12">
-                                                                            <div class="row">
-                                                                                <div class="col-sm-12">
-                                                                                    <div class="alert alert-success fade in">
-                                                                                        <i class="fa-fw fa fa-check"></i>
-                                                                                        <strong>Verificar si hay manejo previo y si hay algún nuevo medicamento</strong>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Oxígeno suplementario:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxOxigenoSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxOxigenoNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Indacaterol:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxIndacaterolSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxIndacaterolNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Tiotropio:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxTiotropioSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxTiotropioNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Broncodilatador / esteroide inhalado:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxCombinacionSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxCombinacionNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Esteroide inhalado solo:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxEsteroideSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxEsteroideNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Teofilina:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxTeofilinaSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxTeofilinaNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Esteroide sistémico:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxEsteSismeSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxEsteSismeNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Broncodilatador de corta acción:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxBroncoCortoSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxBroncoCortoNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Roflumilast:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxRoflumilastSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxRoflumilastNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Rehabilitación pulmonar:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxRehabiPulmoSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxRehabiPulmoNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Vacunas al corriente:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <label class="form-control input-md"><input type="checkbox" name="checkbox-inline" id="checkboxVacuCorrienteSi" runat="server"><i></i>Sí
-                                                                                                        <i></i><i> / </i><i></i><input type="checkbox" name="checkbox-inline" runat="server" id="checkboxVacuCorrienteNo"><i></i>No</label>                                                                                                        
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Otra Causa:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <input class="form-control input-md" type="text" id="TextOtroManejo" name="Otros" placeholder="Cuales" runat="server" />
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-12">   
-                                                                                    <p class="alert alert-info">
-                                                                                        <strong>Reporte de defunción</strong>
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Fecha de defunción:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="icon-append fa fa-calendar"></i></span>
-                                                                                                    <input type="text" name="startdate" id="startdate" placeholder="Fecha de defunción" class="form-control input-md">                                                                                            
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                <div class="form-group">
-                                                                                    <div class="input-group">
-                                                                                        <div class="select2">
-                                                                                            <label>Causa de muerte:</label>
-                                                                                            <div class="input-group">
-                                                                                                <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <asp:DropDownList ID="DropDownListCausaMuerte" runat="server" class="select2">
-                                                                                                        <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                        <asp:ListItem Value="1">Caso 1</asp:ListItem>
-                                                                                                        <asp:ListItem Value="2">Caso 2</asp:ListItem>
-                                                                                                        <asp:ListItem Value="3">Caso 3</asp:ListItem>
-                                                                                                        <asp:ListItem Value="4">Caso 4</asp:ListItem>
-                                                                                                        <asp:ListItem Value="5">Caso 5</asp:ListItem>
-                                                                                                        <asp:ListItem Value="6">Caso 6</asp:ListItem>
-                                                                                                        <asp:ListItem Value="7">Caso 7</asp:ListItem>
-                                                                                                        <asp:ListItem Value="8">Caso 8</asp:ListItem>
-                                                                                                    </asp:DropDownList>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Otra Causa:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <input class="form-control input-md" type="text" id="TextOtros" name="Otros" placeholder="Cuales" runat="server" />
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <div class="form-group">
-                                                                                        <div class="input-group">
-                                                                                            <div class="select2">
-                                                                                                <label>Notificación de muerte por:</label>
-                                                                                                <div class="input-group">
-                                                                                                    <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                        <asp:DropDownList ID="DropDownListNotifiMuerte" runat="server" class="select2">
-                                                                                                            <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                            <asp:ListItem Value="1">Caso 1</asp:ListItem>
-                                                                                                            <asp:ListItem Value="2">Caso 2</asp:ListItem>
-                                                                                                            <asp:ListItem Value="3">Caso 3</asp:ListItem>
-                                                                                                            <asp:ListItem Value="4">Caso 4</asp:ListItem>
-                                                                                                            <asp:ListItem Value="5">Caso 5</asp:ListItem>
-                                                                                                            <asp:ListItem Value="6">Caso 6</asp:ListItem>
-                                                                                                            <asp:ListItem Value="7">Caso 7</asp:ListItem>
-                                                                                                            <asp:ListItem Value="8">Caso 8</asp:ListItem>
-                                                                                                        </asp:DropDownList>
-                                                                                                </div>                                                                                                    
-                                                                                            </div>                                                                                                
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="note">
-                                                                                    <button class="btn btn-primary" type="submit">
-                                                                                        <i class="fa fa-save"></i>
-                                                                                        Guardar Cambios
-                                                                                    </button>
-                                                                                </div>
-                                                                                                                                                            
-                                                                            </div>
-                                                                        </div>                                                                
-                                                                    </fieldset>
-                                                                </form>
-                                                            </div>                                        
-                                                        <!-- end widget content -->                                     
-           
-                                                    <!-- end widget -->
-                                                </article>
-                                                <!-- WIDGET END -->
-                                            </div>
-                                    </section>
-                                </div>
-								
-                                
-                        </div>
-                        </article>
-                    </div>
-        
-                    <!-- end row -->
+                 
                     
                 </section>								
 				

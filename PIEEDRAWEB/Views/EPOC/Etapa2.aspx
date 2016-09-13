@@ -258,7 +258,7 @@
                                                                                     <div class="input-group">
                                                                                         <div class="select2">
                                                                                             <dl>Exacerbaciones moderadas:
-                                                                                              <dt>¿requirió cortisona con o sin antibiótico, sin ameritar hospitalización, en el año previo?.</dt>
+                                                                                              <dt>¿Requirió agregar tratamiento con esteroide sistémico?.</dt>
                                                                                             </dl>                                                                                            
                                                                                         </div>
                                                                                     </div>
@@ -283,7 +283,7 @@
                                                                                         <div class="select2">                                                                                                                                                                                        
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerModeradas" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerModeradas" name="Edad" placeholder="No. de exacerbaciones" runat="server" />
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -322,16 +322,14 @@
                                                                                         <div class="select2">                                                                                                                                                                                        
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaGraves" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaGraves" name="Edad" placeholder="No. de exacerbaciones" runat="server" />
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
-                                                                        <div class="col-sm-12">
-                                                              
+                                                                        <div class="col-sm-12">                                                              
                                                                             <div class="col-sm-4">
                                                                                 <div class="form-group">
                                                                                     <div class="input-group">
@@ -362,12 +360,12 @@
                                                                                         <div class="select2">                                                                                                                                                                                        
                                                                                             <div class="input-group">
                                                                                                 <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaMuyGraves" name="Edad" placeholder="¿Cuántas?" runat="server" />
+                                                                                                    <input class="form-control input-md" type="text" id="TextExacerbaMuyGraves" name="Edad" placeholder="No. de exacerbaciones" runat="server" />
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
+                                                                            </div> 
                                                                         </div>                                                                        
                                                                     </div>
                                                                 </div>
@@ -747,14 +745,9 @@
                                                                                                         <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
                                                                                                             <asp:DropDownList ID="DropDownListCausaMuerte" runat="server" class="select2">
                                                                                                                 <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                                <asp:ListItem Value="1">Caso 1</asp:ListItem>
-                                                                                                                <asp:ListItem Value="2">Caso 2</asp:ListItem>
-                                                                                                                <asp:ListItem Value="3">Caso 3</asp:ListItem>
-                                                                                                                <asp:ListItem Value="4">Caso 4</asp:ListItem>
-                                                                                                                <asp:ListItem Value="5">Caso 5</asp:ListItem>
-                                                                                                                <asp:ListItem Value="6">Caso 6</asp:ListItem>
-                                                                                                                <asp:ListItem Value="7">Caso 7</asp:ListItem>
-                                                                                                                <asp:ListItem Value="8">Caso 8</asp:ListItem>
+                                                                                                                <asp:ListItem Value="1">Exacerbación</asp:ListItem>
+                                                                                                                <asp:ListItem Value="2">Infarto</asp:ListItem>
+                                                                                                                <asp:ListItem Value="3">No especifica</asp:ListItem>                                                                                                                
                                                                                                             </asp:DropDownList>
                                                                                                     </div>
                                                                                                 </div>
@@ -781,17 +774,7 @@
                                                                                                     <label>Notificación de muerte por:</label>
                                                                                                     <div class="input-group">
                                                                                                         <span class="input-group-addon"><i class="fa fa-list fa-fw"></i></span>                                                                                            
-                                                                                                            <asp:DropDownList ID="DropDownListNotifiMuerte" runat="server" class="select2">
-                                                                                                                <asp:ListItem Value="0">--SELECCIONAR--</asp:ListItem>
-                                                                                                                <asp:ListItem Value="1">Caso 1</asp:ListItem>
-                                                                                                                <asp:ListItem Value="2">Caso 2</asp:ListItem>
-                                                                                                                <asp:ListItem Value="3">Caso 3</asp:ListItem>
-                                                                                                                <asp:ListItem Value="4">Caso 4</asp:ListItem>
-                                                                                                                <asp:ListItem Value="5">Caso 5</asp:ListItem>
-                                                                                                                <asp:ListItem Value="6">Caso 6</asp:ListItem>
-                                                                                                                <asp:ListItem Value="7">Caso 7</asp:ListItem>
-                                                                                                                <asp:ListItem Value="8">Caso 8</asp:ListItem>
-                                                                                                            </asp:DropDownList>
+                                                                                                           <input class="form-control input-md" type="text" id="TextNotideMuerte" name="Notificación" placeholder="Notifi. de muerte" runat="server" /> 
                                                                                                     </div>                                                                                                    
                                                                                                 </div>                                                                                                
                                                                                             </div>

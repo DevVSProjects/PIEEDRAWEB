@@ -92,10 +92,15 @@ namespace PIEEDRAWEB.Views.Account
                     {
                         if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "Espirometria")
                         {
-                            Response.Redirect("../../Espirometria.aspx", false);
+                            Response.Redirect("../Espirometrias/Espirometrias.aspx", false);
                             HttpContext.Current.ApplicationInstance.CompleteRequest();
                         }
                         else if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "EPOC")
+                        {
+                            Response.Redirect("../EPOC/Etapa1.aspx", false);
+                            HttpContext.Current.ApplicationInstance.CompleteRequest();
+                        }
+                        else if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "Admin")
                         {
                             Response.Redirect("../EPOC/Etapa1.aspx", false);
                             HttpContext.Current.ApplicationInstance.CompleteRequest();

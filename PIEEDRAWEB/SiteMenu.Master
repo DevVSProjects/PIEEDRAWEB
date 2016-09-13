@@ -197,25 +197,25 @@
 			<nav>
 				<ul>
 				    <li id="MenuEspirometrias" runat="server">
-						<a href="#"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Espirometrias</span></a>
+						<a href="../Espirometrias/Espirometrias.aspx"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Espirometrias</span></a>
 					</li>					
 					<li id="MenuEpoc" runat="server">
 						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">EPOC</span></a>
 						<ul>
 							<li>
-								<a href="Etapa1.aspx">Etapa 1</a>
+								<a href="../EPOC/Etapa1.aspx">Etapa 1</a>
 							</li>
 							<li>
-								<a href="Etapa2.aspx">Etapa 2 <%--<span class="badge inbox-badge bg-color-greenLight">Etapa 2</span>--%></a>
+								<a href="../EPOC/Etapa2.aspx">Etapa 2 <%--<span class="badge inbox-badge bg-color-greenLight">Etapa 2</span>--%></a>
 							</li>
 							<li>
-								<a href="Etapa3.aspx">Etapa 3</a>
+								<a href="../EPOC/Etapa3.aspx">Etapa 3</a>
 							</li>
                             <li>
-								<a href="Etapa4.aspx">Etapa 4</a>
+								<a href="../EPOC/Etapa4.aspx">Etapa 4</a>
 							</li>
                             <li>
-								<a href="Etapa5.aspx">Etapa 5</a>
+								<a href="../EPOC/Etapa5.aspx">Etapa 5</a>
 							</li>
 						</ul>
 					</li>

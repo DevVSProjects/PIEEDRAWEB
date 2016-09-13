@@ -276,7 +276,7 @@ namespace PIEEDRAWEB.Views.Account
             //Lo siguiente es obligatorio si enviamos el mensaje desde Gmail
             
             cliente.Port = Convert.ToInt32(ConfigurationManager.AppSettings["Servidorsmtppto"].ToString());
-            cliente.EnableSsl = true;
+            cliente.EnableSsl = false;
 
 
             cliente.Host = ConfigurationManager.AppSettings["Servidorsmtp"].ToString(); //Para Gmail "smtp.gmail.com";

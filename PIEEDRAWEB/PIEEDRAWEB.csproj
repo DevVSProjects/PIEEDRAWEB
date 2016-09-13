@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Datos_Perfil\ADMIN\Documents\Respaldo Pemex\C\Ajax Control Kit\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -868,6 +872,7 @@
     <Content Include="Views\EPOC\Etapa3.aspx" />
     <Content Include="Views\EPOC\Etapa4.aspx" />
     <Content Include="Views\EPOC\Etapa5.aspx" />
+    <Content Include="Views\Espirometrias\Espirometrias.aspx" />
     <Content Include="Views\Token\ValidaToken.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -1049,6 +1054,13 @@
     <Compile Include="Views\EPOC\Etapa5.aspx.designer.cs">
       <DependentUpon>Etapa5.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Espirometrias\Espirometrias.aspx.cs">
+      <DependentUpon>Espirometrias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Espirometrias\Espirometrias.aspx.designer.cs">
+      <DependentUpon>Espirometrias.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Token\ValidaToken.aspx.cs">
       <DependentUpon>ValidaToken.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1060,7 +1072,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="img\realestate\thumbs\" />
-    <Folder Include="Views\Espirometrias\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
