@@ -102,21 +102,17 @@
 
 				    <div class="row">
 					    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
-						    <h1 class="txt-color-red login-header-big">Humo de Leña</h1>
+						    <h1 class="txt-color-red login-header-big">Bioepoc</h1>
 						    <div class="hero">
-
-							    <div class="pull-left login-desc-box-l">
-								    <h4 class="paragraph-header">Perfil del paciente con EPOC en diferentes regiones y altitudes de México</h4>
+                                <h4 class="">Perfil del paciente con EPOC en diferentes regiones y altitudes de México</h4>
+							    <div class="">								    
 								    <%--<div class="login-app-icons">
 									    <a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
 									    <a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
 								    </div>--%>
+                                    <img src="../../img/demo/Mapa-satelital-vivo.jpg" class="" alt="" style="width:570px;">
 							    </div>
-							
-							    <img src="../../img/demo/iphoneview.png" class="pull-right display-image" alt="" style="width:210px">
-
-						    </div>
-
+						    </div>                            
 						    <div class="row">
 							    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 								    <h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>

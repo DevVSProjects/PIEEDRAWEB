@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteMenu.Master" AutoEventWireup="true" CodeBehind="Etapa3.aspx.cs" Inherits="PIEEDRAWEB.Views.EPOC.Etapa3" %>
+﻿<%@ Page Title="Visita 2" Language="C#" MasterPageFile="~/SiteMenu.Master" AutoEventWireup="true" CodeBehind="Etapa3.aspx.cs" Inherits="PIEEDRAWEB.Views.EPOC.Etapa3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript" language="javascript">

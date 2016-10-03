@@ -89,18 +89,15 @@
                     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 hidden-xs hidden-sm">
                         <h1 class="txt-color-red login-header-big">PIEEDRA</h1>
                         <div class="hero">
-
-                            <div class="pull-left login-desc-box-l">
-                                <h4 class="paragraph-header">Perfil del paciente con EPOC en diferentes regiones y altitudes de México</h4>
-                                <!--<div class="login-app-icons">
-                    <a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
-                    <a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
-                </div>-->
-                            </div>
-
-                            <img src="../../img/demo/iphoneview.png" alt="" class="pull-right display-image" style="width:210px">
-
-                        </div>
+                                <h4 class="">Perfil del paciente con EPOC en diferentes regiones y altitudes de México</h4>
+							    <div class="">								    
+								    <%--<div class="login-app-icons">
+									    <a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
+									    <a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
+								    </div>--%>
+                                    <img src="../../img/demo/Mapa-satelital-vivo.jpg" class="" alt="" style="width:570px;">
+							    </div>
+						    </div>
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">

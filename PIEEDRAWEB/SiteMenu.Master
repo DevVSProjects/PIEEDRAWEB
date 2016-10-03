@@ -66,7 +66,9 @@
     
     <script type="text/javascript">
             onload= function() {
-            document.getElementById('dir').value = self.location.href.match(/\/([^/]+)$/)[1];
+                //document.getElementById('dir').value = self.location.href.match(/\/([^/]+)$/)[1];
+                document.getElementById('dir').value = document.title;
+
         }
     </script>
     <asp:ContentPlaceHolder ID="head" runat="server">

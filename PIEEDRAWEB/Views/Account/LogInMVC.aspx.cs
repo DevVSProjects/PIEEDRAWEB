@@ -102,7 +102,7 @@ namespace PIEEDRAWEB.Views.Account
                         }
                         else if (resp.Tables[0].Rows[0].ItemArray[12].ToString() == "Admin")
                         {
-                            Response.Redirect("../EPOC/Etapa1.aspx", false);
+                            Response.Redirect("../EPOC/WbWelcome.aspx", false);
                             HttpContext.Current.ApplicationInstance.CompleteRequest();
                         }
                     }
