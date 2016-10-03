@@ -27,7 +27,7 @@
                     <nav id="menu" class="nav">
                         <ul>
                             <li>
-                                <a href="../ExamenMedico/WbClasifExa.aspx">
+                                <a href="Etapa1.aspx">
                                     <span class="icon">
                                         <i aria-hidden="true" class="icon-services"></i>
                                     </span>
